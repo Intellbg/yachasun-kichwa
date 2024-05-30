@@ -97,7 +97,7 @@ const activities = [
     {
         "unlock_score": 40,
         "course": 0,
-        "name": "Evaluación 2"
+        "name": "Evaluación 3"
     },
 
 ]
