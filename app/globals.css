@@ -24,6 +24,7 @@ body {
 }
 .passed{
     background-color: green;
+    color: white;
 }
 .current{
     background-color: yellow;
