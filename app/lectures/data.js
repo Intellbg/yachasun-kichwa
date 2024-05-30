@@ -3,22 +3,26 @@ const activities = [
         "name": "Alfabeto",
         "course": 0,
         "unlock_score": 0,
+        "slug":"alfabeto"
     },
     {
         "course": "Básico",
         "course": 0,
         "name": "Números",
-        "unlock_score": 1
+        "unlock_score": 1,
+        "slug":"numeros"
     },
     {
         "unlock_score": 2,
         "course": 0,
-        "name": "Colores"
+        "name": "Colores",
+        "slug":"colores"
     },
     {
         "unlock_score": 3,
         "course": 0,
-        "name": "Gramática: Pronombres y Estructura Básica de Oraciones"
+        "name": "Gramática: Pronombres y Estructura Básica de Oraciones",
+        "slug":"gramatica-1"
     },
     {
         "unlock_score": 4,

@@ -1,4 +1,6 @@
 import activities from "./data";
+import Link from 'next/link'
+
 export default function Courses() {
     let actual_user_score = 4
     return (
@@ -13,11 +15,10 @@ export default function Courses() {
                                         <div class="col-md-8">
                                             <div class="card-body">
                                                 <h5 class="card-title">{element.name}</h5>
-                                                <p class="card-text">Este curso esta diseñado para continuar con el lenguaje</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center">
-                                            <a href="#" class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button" data-bs-toggle="button">Iniciar</a>
+                                            <Link href={`lectures/${element.slug}`} class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} >Iniciar</Link>
                                         </div>
                                     </div>
                                 </div>
