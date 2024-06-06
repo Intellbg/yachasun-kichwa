@@ -28,7 +28,24 @@ export default function Courses() {
                                 <div class="card-body">
                                     <h5 class="card-title">Curso Intermedio</h5>
                                     <p class="card-text">Continua con tu aprendizaje del lenguaje.</p>
-                                    <a href="#" class="btn btn-primary bg-primary-custom mx-2 disabled" role="button" data-bs-toggle="button">Iniciar</a>
+                                    {/* <a href="/lessons" class="btn btn-primary bg-primary-custom mx-2 disabled" role="button" data-bs-toggle="button">Iniciar</a> */}
+                                    <a href="/lectures" class="btn btn-primary bg-primary-custom mx-2" role="button">Iniciar</a>
+                                    <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3" className="blocked">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/img/goal.png" height={"200px"} class="cover" alt="start-flag" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Logros</h5>
+                                    <p class="card-text">Mira tus insignias para ver los logros que haz conseguido.</p>
+                                    {/* <a href="/lessons" class="btn btn-primary bg-primary-custom mx-2 disabled" role="button" data-bs-toggle="button">Iniciar</a> */}
+                                    <a href="/achievements" class="btn btn-primary bg-primary-custom mx-2" role="button">Iniciar</a>
                                     <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
                                 </div>
                             </div>

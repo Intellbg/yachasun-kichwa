@@ -1,29 +1,32 @@
 const activities = [
     {
-        "name": "Alfabeto",
+        "name": "Los números 100-1000000",
         "course": 0,
         "unlock_score": 0,
+        "slug":"numero100-1000000"
     },
     {
-        "course": "Básico",
         "course": 0,
-        "name": "Números",
-        "unlock_score": 1
+        "name": "Numeros ordinales",
+        "unlock_score": 1,
+        "slug":"numeroordinal"
     },
     {
         "unlock_score": 2,
         "course": 0,
-        "name": "Colores"
+        "name": "Los animales",
+        "slug": "animales"
     },
     {
         "unlock_score": 3,
         "course": 0,
-        "name": "Gramática: Pronombres y Estructura Básica de Oraciones"
+        "name": "Los alimentos",
+        "slug": "alimentos"
     },
     {
         "unlock_score": 4,
         "course": 0,
-        "name": "Juego A0"
+        "name": "Juego B0"
     },
     {
         "unlock_score": 9,
@@ -31,67 +34,36 @@ const activities = [
         "name": "Evaluación 1"
     },
     {
-        "unlock_score": 14,
+        "name": "Las particulas pak y nkapak",
         "course": 0,
-        "name": "Saludos Cortesía y Despedidas"
+        "unlock_score": 0,
+        "slug":"pak_nkapak"
     },
     {
-        "unlock_score": 15,
         "course": 0,
-        "name": "La familia"
+        "name": "Partículas de pregunta y respuesta",
+        "unlock_score": 1,
+        "slug":"pregunta_respuesta"
     },
     {
-        "unlock_score": 16,
+        "unlock_score": 2,
         "course": 0,
-        "name": "Animales"
+        "name": "Las partículas tak y ta",
+        "slug": "tak_ta"
     },
     {
-        "unlock_score": 17,
+        "unlock_score": 3,
         "course": 0,
-        "name": "Partes del Cuerpo"
+        "name": "Las partículas pi y man",
+        "slug": "pi_man"
     },
     {
-        "unlock_score": 18,
+        "unlock_score": 4,
         "course": 0,
-        "name": "Cosas del Hogar"
+        "name": "Juego B1"
     },
     {
-        "unlock_score": 19,
-        "course": 0,
-        "name": "Juego A1"
-    },
-    {
-        "unlock_score": 20,
-        "course": 0,
-        "name": "Evaluación 2"
-    },
-    {
-        "unlock_score": 35,
-        "course": 0,
-        "name": "El Aula"
-    },
-    {
-        "unlock_score": 36,
-        "course": 0,
-        "name": "Alimentos"
-    },
-    {
-        "unlock_score": 37,
-        "course": 0,
-        "name": "Gramática: género, plural, tamaño, cantidad"
-    },
-    {
-        "unlock_score": 38,
-        "course": 0,
-        "name": "Gramática: Imperativo, Tiempo Presente"
-    },
-    {
-        "unlock_score": 39,
-        "course": 0,
-        "name": "Juego C3"
-    },
-    {
-        "unlock_score": 40,
+        "unlock_score": 9,
         "course": 0,
         "name": "Evaluación 2"
     },

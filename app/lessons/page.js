@@ -1,8 +1,6 @@
 import activities from "./data";
-import Link from 'next/link'
-
 export default function Courses() {
-    let actual_user_score = 4
+    let actual_user_score = 0
     return (
         <div className="container d-flex justify-content-center align-items-center vh-100">
             <div className="row">
@@ -19,7 +17,8 @@ export default function Courses() {
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center">
-                                            <Link href={`lectures/${element.slug}`} class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} >Iniciar</Link>
+                                        <a href="/lectures" class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button">Iniciar</a>
+                                            {/* <a href="#" class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button" data-bs-toggle="button">Iniciar</a> */}
                                         </div>
                                     </div>
                                 </div>

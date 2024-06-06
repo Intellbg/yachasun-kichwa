@@ -25,9 +25,11 @@ export default function RootLayout({ children }) {
           {children}
           <BootstrapClient />
           <Footer />
+          
         </body>
-
+        
       </body>
+      
     </html>
   )
 }
