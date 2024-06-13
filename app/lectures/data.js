@@ -67,6 +67,40 @@ const activities = [
         "course": 0,
         "name": "Evaluación 2"
     },
+    {
+        "name": "La negación",
+        "course": 0,
+        "unlock_score": 0,
+        "slug":"negacion"
+    },
+    {
+        "course": 0,
+        "name": "Los verbos",
+        "unlock_score": 1,
+        "slug":"verbos"
+    },
+    {
+        "unlock_score": 2,
+        "course": 0,
+        "name": "Los adjetivos",
+        "slug": "adjetivos"
+    },
+    {
+        "unlock_score": 3,
+        "course": 0,
+        "name": "Vocabulario: la ciudad",
+        "slug": "laciudad"
+    },
+    {
+        "unlock_score": 4,
+        "course": 0,
+        "name": "Juego B2"
+    },
+    {
+        "unlock_score": 9,
+        "course": 0,
+        "name": "Evaluación 3"
+    },
 
 ]
 

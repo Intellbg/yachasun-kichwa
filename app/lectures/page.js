@@ -15,7 +15,6 @@ export default function Courses() {
                                         <div class="col-md-8">
                                             <div class="card-body">
                                                 <h5 class="card-title">{element.name}</h5>
-                                                <p class="card-text">Este curso esta diseñado para continuar con el lenguaje</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4 d-flex align-items-center">
