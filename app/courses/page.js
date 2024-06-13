@@ -4,32 +4,32 @@ export default function Courses() {
             <div className="row">
 
                 <div className="col">
-                    <div class="card mb-3" >
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/img/start-flag.png" class="" alt="start-flag" />
+                    <div className="card mb-3" >
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src="/img/start-flag.png" className="" alt="start-flag" />
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Curso Inicial</h5>
-                                    <p class="card-text">Este curso esta diseñado para continuar con el lenguaje</p>
-                                    <a href="/lectures" class="btn btn-primary bg-primary-custom mx-2" role="button">Iniciar</a>
-                                    <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h5 className="card-title">Curso Inicial</h5>
+                                    <p className="card-text">Este curso esta diseñado para continuar con el lenguaje</p>
+                                    <a href="/lectures" className="btn btn-primary bg-primary-custom mx-2" role="button">Iniciar</a>
+                                    <a href="#" className="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3" className="blocked">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/img/goal.png" height={"200px"} class="cover" alt="start-flag" />
+                    <div className="card mb-3" className="blocked">
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src="/img/goal.png" height={"200px"} className="cover" alt="start-flag" />
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Curso Intermedio</h5>
-                                    <p class="card-text">Continua con tu aprendizaje del lenguaje.</p>
-                                    <a href="#" class="btn btn-primary bg-primary-custom mx-2 disabled" role="button" data-bs-toggle="button">Iniciar</a>
-                                    <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h5 className="card-title">Curso Intermedio</h5>
+                                    <p className="card-text">Continua con tu aprendizaje del lenguaje.</p>
+                                    <a href="#" className="btn btn-primary bg-primary-custom mx-2 disabled" role="button" data-bs-toggle="button">Iniciar</a>
+                                    <a href="#" className="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
                                 </div>
                             </div>
                         </div>
