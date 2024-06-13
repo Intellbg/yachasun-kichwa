@@ -19,7 +19,7 @@ export default function Courses() {
                             </div>
                         </div>
                     </div>
-                    <div className="card mb-3" className="blocked">
+                    <div className="card mb-3 blocked">
                         <div className="row g-0">
                             <div className="col-md-4">
                                 <img src="/img/goal.png" height={"200px"} className="cover" alt="start-flag" />
