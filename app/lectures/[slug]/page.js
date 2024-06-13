@@ -12,8 +12,6 @@ export default async function RemoteMdxPage({ params }) {
 
     const file = await fs.readFile(process.cwd() + `/app/lectures/content/es/${params.slug}.mdx`, { remarkPlugins: [remarkGfm] });
     const lecture = lectures.find((element) => (element.slug == params.slug))
-    console.log(lecture.next)
-    console.log(lecture)
     return (
         <div className='container my-5 py-5 h-100'>
             <MDXRemote source={file} />
