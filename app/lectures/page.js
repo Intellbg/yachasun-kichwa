@@ -18,7 +18,7 @@ export default function Courses() {
                                             </div>
                                         </div>
                                         <div className="col-md-4 d-flex align-items-center">
-                                            <Link href={`lectures/${element.slug}`} className={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} >Iniciar</Link>
+                                            <Link href={`lectures/es/${element.slug}`} className={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} >Iniciar</Link>
                                         </div>
                                     </div>
                                 </div>
