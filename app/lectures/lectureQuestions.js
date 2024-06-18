@@ -12,7 +12,7 @@ const lectureQuestions = [
     },
     {
         "slug": "alphabet",
-        "question": "¿Cómo se dice caballo en Kiwcha?",
+        "question": "¿Cómo se dice caballo en Kichwa?",
         "options": [
             "amaru",
             "apyu",
