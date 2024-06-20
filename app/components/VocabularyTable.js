@@ -1,10 +1,9 @@
 import { WORDS_ENDPOINT } from "../../constants"
 
-export default async function VocabularyTable({ lecture }) {
-    var data = await fetch(`${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc`,{ cache: 'no-store' })
+export default async function VocabularyTable({ lecture, sort='kichwa' }) {
+    var data = await fetch(`${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`,{ cache: 'no-store' })
         .then((response) => response.json())
         .catch((error) => console.error(error));
-
     return (
         <table className="table table-bordered">
             <thead className="thead-light">

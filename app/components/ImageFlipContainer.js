@@ -2,8 +2,8 @@ import ImageFlipCard from './ImageFlipCard';
 import authFetch from '../api/authFetch'
 import { WORDS_ENDPOINT } from "../../constants"
 
-const ImageFlipContainer = async ({ lecture }) => {
-  const data = await authFetch(`${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc`, { cache: 'no-store', method: "GET" })
+const ImageFlipContainer = async ({ lecture,sort='kichwa'  }) => {
+  const data = await authFetch(`${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`, { cache: 'no-store', method: "GET" })
     .then((response) => response.json())
     .catch((error) => console.error(error));
   return (
