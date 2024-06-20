@@ -1,3 +1,5 @@
+import MiniTestForm from "../../../components/MiniTestForm"
+
 # Gramática 1
 
 En esta lección se cubrirá la primera lección gramtical con esto aprenderá como decir oraciones
@@ -130,15 +132,6 @@ de la siguiente manera.
     </tbody>
   </table>
 
-  <table className="table">
-    <tbody>
-      <tr>
-        <td>Imak (Sujeto)</td>
-        <td>Paktachik (complemento)</td>
-        <td>Imachik (verbo)</td>
-      </tr>
-    </tbody>
-  </table>
 Una oración básica es 
 Sisaka sarata mikun
 Donde:
@@ -150,25 +143,7 @@ Por lo tanto la oración	significa Sisaka come maiz
 ### Nota Importante
 En el Kichwa no existen los espacios en las palabras de una oración. Por el momento se mantendrán los espacios.
 Por lo que la anterior oración sería: Sisakasaratamiku
-
-## Preguntas
-    <div className="quiz-container">
-        <form  method="POST">
-            <div>
-                <h3>¿Qué significa kikinkuna?</h3>
-                <label><input type="radio" name="q1" value="c"/>el</label><br/>
-                <label><input type="radio" name="q1" value="b"/>yo</label><br/>
-                <label><input type="radio" name="q1" value="c"/>ustedes</label><br/>
-                <label><input type="radio" name="q1" value="d"/>nosotros</label>
-            </div>
-            <div>
-                <h3>¿El Kichwa y el español tienen la misma estructura de una oración?</h3>
-                <label><input type="radio" name="q2" value="a"/>No</label><br/>
-                <label><input type="radio" name="q2" value="b"/>Si</label><br/>
-            </div>
-            {            /* TODO: when ok display the button to continue */}
-            <a href="/lectures/game-a0" className='text-center btn btn-success'>Enviar</a>
-        </form>
-    </div>
+ 
     
-
+<hr />
+<MiniTestForm lecture="grammar-1" />

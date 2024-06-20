@@ -1,3 +1,5 @@
+import MiniTestForm from "../../../components/MiniTestForm"
+
 # Los Colores (Tullpukuna)
  
 La vida sin colores no es vida
@@ -99,22 +101,8 @@ Con estos
 
 !Buen trabajo! Esto concluye la tercera lección.
 
-    <div className="quiz-container">
-        <form  method="POST">
-            <div>
-                <h3>¿Cómo se dice morado en Kichwa?</h3>
-                <label><input type="radio" name="q1" value="c"/>wamisnsi</label><br/>
-                <label><input type="radio" name="q1" value="b"/>waylla</label><br/>
-                <label><input type="radio" name="q1" value="c"/>killu</label><br/>
-                <label><input type="radio" name="q1" value="d"/>kishpu</label>
-            </div>
-            <div>
-                <h3>¿El cielo es chawa ankas?</h3>
-                <label><input type="radio" name="q2" value="a"/>Si</label><br/>
-                <label><input type="radio" name="q2" value="b"/>No</label><br/>
-            </div>
-            {            /* TODO: when ok display the button to continue */}
-        </form>
-    </div>
-    
+<hr />
+<MiniTestForm lecture="colors" />
+
+
 
