@@ -1,4 +1,4 @@
-import { getToken } from '../utils/getToken';
+import { getToken } from '../lib/getToken';
 
 const authFetch = async (url, options = {}) => {
     const token = getToken();

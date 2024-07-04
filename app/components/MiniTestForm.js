@@ -2,9 +2,18 @@
 import lectureQuestions from '../lectures/lectureQuestions'
 import lectures from '../lectures/data'
 import React, { useState } from 'react';
+import { shuffle } from '../lib/randomize';
+
+function getQuestions(lecture){
+    var questions = lectureQuestions.filter((element) => (element.slug == lecture))
+    questions.forEach((element)=>{
+        shuffle(element.options)
+    })
+    return questions
+}
 
 export default function MiniTestForm({ lecture }) {
-    const questions = lectureQuestions.filter((element) => (element.slug == lecture))
+    const questions = getQuestions(lecture)
     const lectureData = lectures.find((element) => (element.slug == lecture))
     if (!questions) { return (<div></div>) }
     if (!questions[0].options) { return (<div></div>) }
