@@ -4,8 +4,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 import BootstrapClient from '@/app/components/BootstrapClient.js';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 
 export const metadata = {
   title: "Yachasun Kichwa",
@@ -17,10 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <body className={inter.className}>
-          <Navbar />
           {children}
           <BootstrapClient />
-          <Footer />
         </body>
       </body>
     </html>
