@@ -18,7 +18,6 @@ export default function Login() {
         resolver: yupResolver(LoginSchema),
     });
     const [apiError, setApiError] = useState("")
-
     const onSubmit = async (data) => {
         const res = await fetch(AUTH_ENDPOINT + "login/", {
             method: "POST",
@@ -66,6 +65,7 @@ export default function Login() {
                     </div>
 
                     <div className="text-center mt-3">
+                        <p>¿Todavía no tienes cuenta? <a href='/signup' className="text-decoration-none">Regístrate Aquí</a></p>
                         <a href="/forgot-password" className="text-decoration-none">¿Olvidaste tu contraseña?</a>
                     </div>
                 </form>
