@@ -1,32 +1,70 @@
-"use client";
+'use client'
+import bg from '../../public/img/backgrounds/cloth.webp'
+import "./styles.css";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { AUTH_ENDPOINT } from '@/constants';
+import { useState } from 'react';
+import { handleLogin } from './actions';
+
+const LoginSchema = yup.object().shape({
+    email: yup.string().required('Email requerido'),
+    password: yup.string().required('Contraseña requerida')
+});
+
 export default function Login() {
-    async function onSubmit(event) {
-        event.preventDefault()
-        window.location.href = "/courses"
-        // const formData = new FormData(event.currentTarget)
-        // const response = await fetch('/api/submit', {
-        //     method: 'POST',
-        //     body: formData,
-        // })
-        // const data = await response.json()
+    const { register, handleSubmit, watch, formState: { errors } } = useForm({
+        resolver: yupResolver(LoginSchema),
+    });
+    const [apiError, setApiError] = useState("")
+
+    const onSubmit = async (data) => {
+        const res = await fetch(AUTH_ENDPOINT + "login/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        if (res.ok) {
+            const user = await res.json()
+            handleLogin(user['token'])
+        } else {
+            await res.json().then((data) => {
+                if (data['message'] == 'unverified') {
+                    setApiError("Correo no verificado")
+                } else {
+                    setApiError("Error al autenticar")
+                }
+            });
+        }
     }
 
     return (
-        <div className="container d-flex justify-content-center align-items-center vh-100">
-            <div className="card p-4 shadow-lg">
+        <div className="d-flex justify-content-center align-items-center h-100" style={{
+            backgroundImage: `url(${bg.src})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+        }}>
+            <div className="card p-4 shadow-lg w-50">
                 <h3 className="text-center mb-4">Iniciar Sesión</h3>
-                <form onSubmit={onSubmit}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-3">
-                        <label htmlFor="username" className="form-label">Email</label>
-                        <input type="text" className="form-control" id="username" placeholder="Ingresa email" />
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="email" className="form-control" id="email" name='email' placeholder="Ingresa email" {...register("email")} />
+                        {errors.email && <p role="alert" className='text-danger'>{errors.email?.message}</p>}
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Contraseña</label>
-                        <input type="password" className="form-control" id="password" placeholder="Ingresa contraseña" />
+                        <input type="password" className="form-control" id="password" name='password' placeholder="Ingresa contraseña" {...register("password")} />
+                        {errors.password && <p role="alert" className='text-danger'>{errors.password?.message}</p>}
                     </div>
+                    <div>{apiError && <p role='alert' className='text-danger'>{apiError}</p>}</div>
                     <div className="d-grid">
-                        <button type="submit" className="btn btn-primary bg-primary-custom">Login</button>
+                        <button type="submit" className="btn btn-primary bg-primary-custom" >Login</button>
                     </div>
+
                     <div className="text-center mt-3">
                         <a href="/forgot-password" className="text-decoration-none">¿Olvidaste tu contraseña?</a>
                     </div>
