@@ -1,4 +1,4 @@
-import activities from "./data";
+import activities from "../data";
 import Link from 'next/link'
 
 export default function Courses() {
