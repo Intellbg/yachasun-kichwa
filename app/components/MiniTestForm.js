@@ -1,6 +1,6 @@
 "use client"
 import lectureQuestions from '../lectures/lectureQuestions'
-import lectures from '../lectures/data'
+import lectures from '../lectures/basic/data'
 import React, { useState } from 'react';
 import { shuffle } from '../lib/randomize';
 
@@ -73,7 +73,7 @@ export default function MiniTestForm({ lecture }) {
                 <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={validate}>Enviar</button>
             </form >
             <div className={`${isAnswerCorrect ? "" : "text-danger"}`} >{message}</div>
-            <a href={`/lectures/es/${lectureData.next}`} className={`text-center btn btn-success ${isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
+            <a href={`/lectures/basic/es/${lectureData.next}`} className={`text-center btn btn-success ${isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
         </div >
     );
 }

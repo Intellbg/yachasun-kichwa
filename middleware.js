@@ -8,5 +8,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-    matcher: ['/courses','/lectures'],
+    matcher: ['/courses','/lectures/:path*'],
 }

@@ -34,19 +34,6 @@ nav {
 }
 
 
-.blocked {
-  background-color: gray;
-}
-
-.passed {
-  background-color: green;
-  color: white;
-}
-
-.current {
-  background-color: yellow;
-}
-
 .overflow-column {
   overflow-y: scroll;
   max-height: 400px;
