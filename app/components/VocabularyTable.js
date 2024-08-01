@@ -1,7 +1,10 @@
 import { WORDS_ENDPOINT } from "../../constants"
 
-export default async function VocabularyTable({ lecture, sort='kichwa' }) {
-    var data = await fetch(`${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`,{ cache: 'no-store' })
+export default async function VocabularyTable({ lecture, sort='kichwa', tag="" }) {
+    var url = `${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`
+    if (tag){ url+=`&tags=${tag}`}
+    console.log(url)
+    var data = await fetch(url,{ cache: 'no-store' })
         .then((response) => response.json())
         .catch((error) => console.error(error));
     return (
@@ -20,7 +23,7 @@ export default async function VocabularyTable({ lecture, sort='kichwa' }) {
                             <tr key={index}>
                                 <td className='text-center align-middle'>{word.kichwa}</td>
                                 <td className='text-center align-middle'>{word.spanish}</td>
-                                <td className='text-center align-middle'><img height={150} width={150} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCA3hqYW6SiRznu2wfLksnL1thUehRtB01fBJiwbLGXBpQ3_UF" /></td>
+                                <td className='text-center align-middle'><img height={150} width={150} src={"/img/downloads/"+word.english+'.jpg'} /></td>
                             </tr>
                         )
                     })
