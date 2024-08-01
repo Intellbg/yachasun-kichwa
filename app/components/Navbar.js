@@ -1,28 +1,13 @@
 "use client";
-import Link from 'next/link'
-import { useState, useEffect } from 'react';
-
 export default function Navbar() {
-    const [scrolled, setScrolled] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            const offset = window.scrollY;
-            setScrolled(offset > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
-        <nav className={`${scrolled ? "bg-primary-custom " : 'bg-transparent'} navbar navbar-expand-lg navbar-light fixed-top px-3`}>
+        <nav className={`bg-primary-custom navbar navbar-expand-lg fixed-top px-3`}>
             <a className="navbar-brand" href="/">
                 <div className='d-flex align-items-center'>
-                    <img src='/img/logo.png' className='d-block logo' alt='Yachasum Kichwa Logo'></img>
+                    <img src='/img/logo.png' className='d-block logo h-100' alt='Yachasum Kichwa Logo'></img>
                     <div className='d-flex flex-column text-center'>
-                        <h1 className={`${scrolled ? 'text-light' : "primary"} h4 mb-0`}>Yachasum</h1>
-                        <h2 className={`${scrolled ? 'text-light' : "primary"} h5`}>Kichwa</h2>
+                        <h1 className={`text-white h4 mb-0`}>Yachasum</h1>
+                        <h2 className={`text-white h5`}>Kichwa</h2>
                     </div>
                 </div>
             </a>

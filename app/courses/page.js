@@ -48,22 +48,7 @@ export default function Courses() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="card mb-3 blocked">
-                        <div className="row g-0">
-                            <div className="col-md-4">
-                                <img src="/img/goal.png" height={"200px"} className="cover" alt="start-flag" />
-                            </div>
-                            <div className="col-md-8">
-                                <div className="card-body">
-                                    <h5 className="card-title">Juegos prueba</h5>
-                                    <p className="card-text">Juegos</p>
-                                    <a href="/game" className="btn btn-primary bg-primary-custom mx-2" role="button" >Iniciar</a>
-                                    <a href="#" className="btn btn-warning" role="button" data-bs-toggle="button" aria-pressed="true">Conoce más</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
                 <div className="col">
                     <img src="/img/mascot.png" alt="Humita Happy" />

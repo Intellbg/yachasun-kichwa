@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@jaredreisinger/react-crossword": "^5.2.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.4",
@@ -19,10 +21,13 @@
     "next": "14.2.3",
     "next-mdx-remote": "^5.0.0",
     "react": "^18",
+    "react-crossword": "^0.2.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18",
-    "remark-gfm": "^3.0.0"
+    "react-hook-form": "^7.52.1",
+    "remark-gfm": "^3.0.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -1,6 +1,6 @@
 const lectureQuestions = [
     {
-        "slug": "numbers",
+        "slug": "numbers-2",
         "question": "¿Comó se escribe en kichwa 20000?",
         "options": [
             "Ishkay waranka",
@@ -11,13 +11,13 @@ const lectureQuestions = [
         "answer": "Ishkay waranka"
     },
     {
-        "slug": "numbers",
+        "slug": "numbers-2",
         "question": "¿Qué numero es el Shuk waranka chunka shuk?",
         "options": [
             "1011",
             "1000",
             "3100",
-            "2011"
+            "2011",
         ],
         "answer": "1011"
     },
@@ -44,7 +44,7 @@ const lectureQuestions = [
         "answer": "Vigésimoprimero"        
     },
     {
-        "slug": "animals",
+        "slug": "animals-2",
         "question": "¿Qué significa Wakra?",
         "options": [
             "Pez",
@@ -55,7 +55,7 @@ const lectureQuestions = [
         "answer": "Ganado" 
     },
     {
-        "slug": "animals",
+        "slug": "animals-2",
         "question": "¿Cómo se escribe Llama en kichwa?",
         "options": [
             "Llama",
@@ -66,7 +66,7 @@ const lectureQuestions = [
         "answer": "Runa llama" 
     },
     {
-        "slug": "food",
+        "slug": "food-2",
         "question": "¿Qué significa Chawpi puncha mikuna?",
         "options": [
             "Desayuno",
@@ -76,7 +76,7 @@ const lectureQuestions = [
         "answer": "Almuerzo" 
     },
     {
-        "slug": "food",
+        "slug": "food-2",
         "question": "¿Cómo se dice Aguacate en Kichwa?",
         "options": [
             "Palta",
@@ -87,7 +87,7 @@ const lectureQuestions = [
         "answer": "Palta" 
     },
     {
-        "slug": "grammar-1",
+        "slug": "grammar-1-2",
         "question": "¿Qué significa paykunapak allku?",
         "options": [
             "Su perro",
@@ -97,7 +97,7 @@ const lectureQuestions = [
         "answer": "Su perro" 
     },
     {
-        "slug": "grammar-1",
+        "slug": "grammar-1-2",
         "question": "¿Cómo se dice 'nos vamos a bailar' en kichwa?",
         "options": [
             "Ñukanchik tushunkapak rinchik",
@@ -105,11 +105,7 @@ const lectureQuestions = [
             "Ñukaka mikunkapak shamuni"                        
         ],
         "answer": "Ñukanchik tushunkapak rinchik" 
-    },
-    {
-        "slug": "game-1",
-
-    },
+    },    
     {
         "slug": "test-1",
     },
