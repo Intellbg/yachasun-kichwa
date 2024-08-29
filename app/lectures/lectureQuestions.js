@@ -84,11 +84,100 @@ const lectureQuestions = [
         "answer": "No"
     },
     {
-        "slug": "game-1",
+        "slug": "animals",
+        "question": "¿Cómo se dice la vaca es grande en kiwcha?",
+        "options": [
+            "Wakraka hatunmi kan",
+            "Wakraka uchillami kan",
+            "Misi uchillami kan",
+            "Misi hatunmi kan",
+        ],
+        "answer": "Wakraka hatunmi kan"
     },
     {
-        "slug": "test-1",
+        "slug": "animals",
+        "question": "¿Qué significa wallinku?",
+        "options": [
+            "Zorro",
+            "Conejo",
+            "Ardilla",
+            "Perro",
+        ],
+        "answer": "Conejo"
     },
+    {
+        "slug": "body",
+        "question": "¿Cómo se dice la parte del cuerpo que usamos para ver en kichwa?",
+        "options": [
+            "ñawi",
+            "rinri",
+            "washa",
+            "chaki",
+        ],
+        "answer": "ñawi"
+    },
+    {
+        "slug": "body",
+        "question": "¿Qué significa anaku",
+        "options": [
+            "falda",
+            "pantalón",
+            "sombrero",
+            "camisa",
+        ],
+        "answer": "falda"
+    },
+    {
+        "slug": "classroom",
+        "question": "¿Qué significa kamu?",
+        "options": [
+            "libro",
+            "silla",
+            "bandera",
+            "bolígrafo",
+        ],
+        "answer": "libro"
+    },
+    {
+        "slug": "classroom",
+        "question": "¿Cómo se dice lápiz en kichwa?",
+        "options": [
+            "killkana kaspi",
+            "tiyarina",
+            "killkakatina",
+            "yachakuna",
+        ],
+        "answer": "killkana kaspi"
+    },
+    {
+        "slug": "food",
+        "question": "¿Qué significa mishki haku?",
+        "options": [
+            "azúcar",
+            "harina",
+            "tanta",
+            "papa",
+        ],
+        "answer": "azúcar"
+    },
+    {
+        "slug": "food",
+        "question": "¿Cómo se dice leche en kichwa?",
+        "options": [
+            "ñuñu",
+            "sara",
+            "chiwilla",
+            "yachakuna",
+        ],
+        "answer": "ñuñu"
+    },
+    {
+        "slug": "grammar-2",
+    },
+    {
+        "slug": "home",
+    },
+
     {
         "slug": "greetings-farewells",
     },
@@ -96,32 +185,19 @@ const lectureQuestions = [
         "slug": "family",
     },
     {
-        "slug": "animals",
+        "slug": "grammar-3",
     },
     {
-        "slug": "body",
-
+        "slug": "game-1",
     },
     {
-        "slug": "grammar-2",
+        "slug": "test-1",
     },
     {
         "slug": "game-2",
     },
     {
         "slug": "test-2",
-    },
-    {
-        "slug": "home",
-    },
-    {
-        "slug": "classroom",
-    },
-    {
-        "slug": "food",
-    },
-    {
-        "slug": "grammar-3",
     },
     {
         "slug": "game-3",
