@@ -1,7 +1,37 @@
-"use client";
-export default function Navbar() {
+import { getSessionData } from "../lib/getSession";
+import { handleLogout } from "../logout/actions";
+function Menu() {
     return (
-        <nav className={`bg-primary-custom navbar navbar-expand-lg fixed-top px-3`}>
+        <>
+            <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="/signup">Crear cuenta</a>
+            </li>
+        </>
+    )
+}
+function LoggedInMenu() {
+    return (
+        <>
+            <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/courses">Cursos</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="/achievements">Logros</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="/logout">Salir</a>
+            </li>
+        </>
+    )
+}
+
+export default async function Navbar() {
+    const data = await getSessionData()
+    return (
+        <nav className={`bg-primary-custom navbar navbar-expand-lg fixed-top px-3 navbar-dark`}>
             <a className="navbar-brand" href="/">
                 <div className='d-flex align-items-center'>
                     <img src='/img/logo.png' className='d-block logo h-100' alt='Yachasum Kichwa Logo'></img>
@@ -17,12 +47,9 @@ export default function Navbar() {
 
             <div className="collapse navbar-collapse w-100" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto">
-                    <li className="nav-item">
-                    </li>
-                    <a className="dropdown-item mx-1" href="/register">Crear Cuenta</a>
-                    <li className="nav-item">
-                        <a className="dropdown-item mx-1" href="/login">Iniciar Sesión</a>
-                    </li>
+                    {
+                        data ? <LoggedInMenu /> : <Menu />
+                    }
                 </ul>
             </div>
         </nav >

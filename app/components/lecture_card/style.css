@@ -1,0 +1,37 @@
+a {
+    text-decoration: none;
+}
+
+.hover-div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover .hover-div {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.blocked {
+    background-color: #FF6F61; 
+    color: #FFFFFF; 
+    border: 2px solid #D9534F; 
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.passed {
+    background-color: #4CAF50; 
+    color: #FFFFFF; 
+    border: 2px solid #388E3C; 
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.current  {
+    background-color: #FFC107; 
+    color: #000000; 
+    border: 2px solid #FFA000; 
+    padding: 10px;
+    border-radius: 5px;
+}

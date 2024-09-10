@@ -1,4 +1,11 @@
-export default function Courses() {
+import CourseCard from "../components/course_card/CourseCard"
+import Navbar from "../components/Navbar"
+import { getSessionData } from "../lib/getSession"
+import { courses } from './data.js'
+
+export default async function Courses() {
+    const data = await getSessionData()
+    let currentScore = data['app_score']
     return (
         <div className="container d-flex justify-content-center align-items-center vh-100">
             <div className="row">
