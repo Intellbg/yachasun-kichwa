@@ -23,7 +23,7 @@ export default function Home() {
                 <h2>Descubre un nuevo mundo</h2>
                 <p>Nuestra aplicación está diseñada para hacer que el aprendizaje de Kichwa sea divertido, atractivo y efectivo.</p>
                 <p>Ya seas principiante o estés buscando perfeccionar tus habilidades.Yachasun Kichwa ofrece una experiencia adaptada a tus necesidades.</p>
-                <a className='btn btn-success w-25 my-2 mx-auto' href="/register">Crear una cuenta</a>
+                <a className='btn btn-success w-25 my-2 mx-auto' href="/signup">Crear una cuenta</a>
                 <span>o</span>
                 <a className='btn btn-warning w-25 my-2 mx-auto' href="/login">Iniciar Sesión</a>
               </div>
