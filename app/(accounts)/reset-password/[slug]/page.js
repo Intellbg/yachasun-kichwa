@@ -51,9 +51,9 @@ export default function ForgotPassword({ params }) {
             backgroundSize: 'cover',
         }}>
             <div className="card p-4 shadow-lg w-50">
-                <h3 className="text-center mb-4">Restablecer contraseña</h3>
                 {
                     isFormVisible && !formSubmitted ? (<form onSubmit={handleSubmit(onSubmit)} id="form">
+                        <h3 className="text-center mb-4">Restablecer contraseña</h3>
                         <div className="mb-3">
                             <label htmlFor="password" className="form-label">Contraseña</label>
                             <input type="password" className="form-control" id="password" placeholder="Ingresa contraseña" {...register("password")} />
@@ -74,7 +74,7 @@ export default function ForgotPassword({ params }) {
                     </form>) : (
                         <div className="mb-3">
                             <h3>Contraseña re establecida</h3>
-                            <a href="/login" className=" btn text-decoration-none">Inicial sesión</a>
+                            <a href="/login" className="btn btn-primary bg-primary-custom text-decoration-none w-100">Inicial sesión</a>
                         </div>
                     )
                 }
