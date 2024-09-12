@@ -4,7 +4,7 @@ export default function CourseCard({ data, currentScore }) {
     const unlocked = currentScore < data.score_required
     console.log(unlocked)
     return (
-        <a href={!unlocked && data.url} className="text-decoration-none">
+        <a href={!unlocked ? data.url : ""} className="text-decoration-none">
             <div className={`card m-3 ${unlocked ? "blocked" : "hover-div"}`}>
                 <div className="d-flex">
                     <img src={data.img} height={"200px"} width={"200px"} alt={data.title + " icono"} />
