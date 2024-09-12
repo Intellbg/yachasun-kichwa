@@ -13,10 +13,11 @@ const UserSchema = yup.object().shape({
         .matches(/^[A-Za-z\s]+$/, 'El nombre solo puede incluir letras y espacios'),
     email: yup.string()
         .required('Email requerido')
-        .email('Email debe ser válido'),
+        .email('Email debe ser válido')
+        .transform((value) => value.toLowerCase()),
     password: yup.string()
         .required('Contraseña requerida')
-        .min(8, 'Contraseña debe tiener al menos 8 caracteres')
+        .min(8, 'Contraseña debe tener al menos 8 caracteres')
         .matches(/[A-Z]/, 'Contraseña debe contener al menos una mayúscula')
         .matches(/[0-9]/, 'Contraseña debe contener al menos un número')
         .matches(/[@$!%*?&]/, 'Contraseña debe contener al menos un carácter especial @$!%*?&'),
@@ -28,7 +29,7 @@ const UserSchema = yup.object().shape({
 function Success() {
     return (
         <div className='text-center'>
-            <img src='/img/iconography/check.png'/>
+            <img src='/img/iconography/check.png' />
             <h1>!Cuenta creada exitosamente!</h1>
             <h2>Recuerda revisar tu correo para activar tu cuenta</h2>
             <a className='btn btn-success btn-lg' href='/login'>Continuar</a>
