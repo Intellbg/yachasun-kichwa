@@ -1,5 +1,5 @@
 'use client'
-import bg from '../../public/img/backgrounds/cloth.webp'
+import bg from '@/public/img/backgrounds/cloth.webp'
 import "./styles.css";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';

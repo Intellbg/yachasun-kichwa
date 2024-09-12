@@ -1,4 +1,4 @@
-import bg from '../../../public/img/backgrounds/cloth2.jpg'
+import bg from '@/public/img/backgrounds/cloth2.jpg'
 import { AUTH_ENDPOINT } from '@/constants';
 import "./styles.css";
 
