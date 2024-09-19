@@ -23,7 +23,8 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
     "remark-gfm": "^3.0.0",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "eslint": "^8",
