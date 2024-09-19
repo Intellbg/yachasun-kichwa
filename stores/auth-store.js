@@ -3,7 +3,8 @@ import { persist } from 'zustand/middleware'
 
 const defaultInitState = {
   key: "",
-  username: ""
+  username: "",
+  level: 0
 }
 
 export const createAuthStore = (initState = defaultInitState) => {
@@ -12,6 +13,7 @@ export const createAuthStore = (initState = defaultInitState) => {
       (set) => ({
         ...initState,
         setAuth: (info) => set((state) => ({ key: info.key, username: info.username })),
+        addLevel: () => set((state) => ({ level: state.level + 1 })),
         resetStore: () => set(defaultInitState),
       }),
       {

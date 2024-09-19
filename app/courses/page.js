@@ -1,21 +1,23 @@
+'use client'
 import CourseCard from "../components/course_card/CourseCard"
 import Navbar from "../components/Navbar"
-import { getSessionData } from "../lib/getSession"
 import { courses } from './data.js'
+import { useAuthStore } from '@/providers/auth-store-provider.js'
 
-export default async function Courses() {
-    const data = await getSessionData()
-    let currentScore = data['app_score']
+export default function Courses() {
+    const { level } = useAuthStore(
+        (state) => state,
+    )
     return (
         <>
             <Navbar />
             <div className="container d-flex justify-content-center align-items-center h-100">
                 <div className="row">
                     <div className="col">
-                        {courses.map((item) => <CourseCard key={item.title} data={item} currentScore={currentScore} />)}
+                        {courses.map((item) => <CourseCard key={item.title} data={item} currentScore={level} />)}
                     </div>
                     <div className="col">
-                        <img src="/img/mascot.png" alt="Humita Happy" />
+                        <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400}/>
                     </div>
                 </div>
             </div>
