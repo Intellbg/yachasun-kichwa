@@ -1,8 +1,12 @@
-import { getSessionData } from "../lib/getSession";
-import { handleLogout } from "../logout/actions";
+'use client'
+import { useAuthStore } from '@/providers/auth-store-provider.js'
+
 function Menu() {
     return (
         <>
+            <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="/courses">Curso</a>
+            </li>
             <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
             </li>
@@ -28,8 +32,8 @@ function LoggedInMenu() {
     )
 }
 
-export default async function Navbar() {
-    const data = await getSessionData()
+export default function Navbar() {
+    const { username } = useAuthStore((state) => state)
     return (
         <nav className={`bg-primary-custom navbar navbar-expand-lg fixed-top px-3 navbar-dark`}>
             <a className="navbar-brand" href="/">
@@ -48,7 +52,7 @@ export default async function Navbar() {
             <div className="collapse navbar-collapse w-100" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto">
                     {
-                        data ? <LoggedInMenu /> : <Menu />
+                        username !== "" ? <LoggedInMenu /> : <Menu />
                     }
                 </ul>
             </div>

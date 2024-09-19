@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-
+import { persist } from 'zustand/middleware'
 
 const defaultInitState = {
   key: "",
@@ -7,8 +7,15 @@ const defaultInitState = {
 }
 
 export const createAuthStore = (initState = defaultInitState) => {
-  return create((set) => ({
-    ...initState,
-    setAuth: (info) => set((state) => ({ key: info.key, username: info.username })),
-  }))
+  return create(
+    persist(
+      (set) => ({
+        ...initState,
+        setAuth: (info) => set((state) => ({ key: info.key, username: info.username })),
+      }),
+      {
+        "name": "user-storage"
+      }
+    )
+  )
 }

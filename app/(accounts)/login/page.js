@@ -6,17 +6,22 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { AUTH_ENDPOINT } from '@/constants';
 import { useState } from 'react';
-import { handleLogin } from './actions';
+import { useAuthStore } from '@/providers/auth-store-provider.js' 
+import { useRouter } from 'next/navigation'
 
 const LoginSchema = yup.object().shape({
     email: yup.string().required('Email requerido'),
     password: yup.string().required('Contraseña requerida')
 });
 
-export default function Login() {
+export default function  Login() {
+    const router = useRouter() 
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
         resolver: yupResolver(LoginSchema),
     });
+    const { setAuth } = useAuthStore(
+        (state) => state,
+    )
     const [apiError, setApiError] = useState("")
     const onSubmit = async (data) => {
         const res = await fetch(AUTH_ENDPOINT + "login/", {
@@ -27,8 +32,9 @@ export default function Login() {
             body: JSON.stringify(data),
         })
         if (res.ok) {
-            const user = await res.json()
-            handleLogin(user['token'])
+            const info = await res.json()
+            setAuth(info)
+            router.push('/courses')
         } else {
             await res.json().then((data) => {
                 if (data['message'] == 'unverified') {
