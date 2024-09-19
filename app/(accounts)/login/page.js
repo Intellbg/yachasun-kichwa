@@ -6,22 +6,24 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { AUTH_ENDPOINT } from '@/constants';
 import { useState } from 'react';
-import { useAuthStore } from '@/providers/auth-store-provider.js' 
+import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { useRouter } from 'next/navigation'
+
 
 const LoginSchema = yup.object().shape({
     email: yup.string().required('Email requerido'),
     password: yup.string().required('Contraseña requerida')
 });
 
-export default function  Login() {
-    const router = useRouter() 
+export default function Login() {
+    const router = useRouter()
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
         resolver: yupResolver(LoginSchema),
     });
-    const { setAuth } = useAuthStore(
+    const { username, setAuth } = useAuthStore(
         (state) => state,
     )
+    if (username){router.push('/courses')}
     const [apiError, setApiError] = useState("")
     const onSubmit = async (data) => {
         const res = await fetch(AUTH_ENDPOINT + "login/", {
