@@ -6,6 +6,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { AUTH_ENDPOINT } from '@/constants';
 import { useState } from 'react';
+import { useAuthStore } from '@/providers/auth-store-provider.js'
+import { useRouter } from 'next/navigation'
+
 
 const UserSchema = yup.object().shape({
     name: yup.string()
@@ -39,11 +42,16 @@ function Success() {
 
 
 export default function Signup() {
+    const router = useRouter()
+    const { username } = useAuthStore((state) => state,)
+    if (username) { router.push('/courses') }
     const { register, handleSubmit, watch, formState: { errors } } = useForm({
         resolver: yupResolver(UserSchema),
     });
     const [apiError, setApiError] = useState("")
     const [success, setSuccess] = useState(false)
+
+
 
     const onSubmit = async (data) => {
         data['device'] = 'web'

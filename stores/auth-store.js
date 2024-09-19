@@ -12,6 +12,7 @@ export const createAuthStore = (initState = defaultInitState) => {
       (set) => ({
         ...initState,
         setAuth: (info) => set((state) => ({ key: info.key, username: info.username })),
+        resetStore: () => set(defaultInitState),
       }),
       {
         "name": "user-storage"

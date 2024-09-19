@@ -1,14 +1,12 @@
 'use client'
-import { useEffect } from 'react';
-import { handleLogout } from './actions';
+import { useAuthStore } from '@/providers/auth-store-provider.js'
+import { useRouter } from 'next/navigation'
 
 export default function Logout() {
-    useEffect(() => {
-        const logout = async () => {
-            await handleLogout();
-        };
-        logout();
-    }, []);
-
-    return null;
+    const router = useRouter()
+    const { resetStore } = useAuthStore(
+        (state) => state,
+    )
+    resetStore()
+    router.push('/login')
 }
