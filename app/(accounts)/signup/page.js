@@ -47,7 +47,6 @@ export default function Signup() {
 
     const onSubmit = async (data) => {
         data['device'] = 'web'
-        console.log(data);
         const res = await fetch(AUTH_ENDPOINT + "register/", {
             method: "POST",
             headers: {
@@ -59,7 +58,6 @@ export default function Signup() {
             setSuccess(true)
         } else {
             await res.json().then((data) => {
-                console.log(data)
                 if (data['error'].includes("E11000")) {
                     setApiError("Correo ya utilizado")
                 } else {

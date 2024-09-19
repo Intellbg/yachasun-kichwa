@@ -2,7 +2,6 @@ import '../lecture_card/style.css'
 
 export default function CourseCard({ data, currentScore }) {
     const unlocked = currentScore < data.score_required
-    console.log(unlocked)
     return (
         <a href={!unlocked ? data.url : ""} className="text-decoration-none">
             <div className={`card m-3 ${unlocked ? "blocked" : "hover-div"}`}>
