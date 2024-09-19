@@ -1,11 +1,13 @@
+'use client'
 import activities from "./data";
 import Navbar from "../../components/Navbar"
 import LectureCard from "@/app/components/lecture_card/LectureCard";
-import { getSessionData } from "../../lib/getSession"
+import { useAuthStore } from '@/providers/auth-store-provider.js'
 
-export default async function Lectures() {
-    const data = await getSessionData()
-    let currentScore = data['app_score']
+export default function Lectures() {
+    const { level } = useAuthStore(
+        (state) => state,
+    )
     return (
         <>
             <Navbar />
@@ -14,12 +16,12 @@ export default async function Lectures() {
                     <div className="col overflow-column">
                         {
                             activities.map(element => {
-                                return <LectureCard key={element.name} data={element} currentScore={currentScore} />
+                                return <LectureCard key={element.name} data={element} currentScore={level} />
                             })
                         }
                     </div>
                     <div className="col">
-                        <img src="/img/mascot.png" alt="Humita Happy" />
+                        <img src="/img/humu/humu-happy.png" alt="Humu Happy"  height={400}/>
                     </div>
                 </div>
             </div>
