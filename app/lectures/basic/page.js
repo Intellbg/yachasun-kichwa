@@ -21,7 +21,7 @@ export default function Lectures() {
                         }
                     </div>
                     <div className="col">
-                        <img src="/img/humu/humu-happy.png" alt="Humu Happy"  height={400}/>
+                        <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400} />
                     </div>
                 </div>
             </div>
