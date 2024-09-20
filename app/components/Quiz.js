@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Question from "./Question";
 import lectureQuestions from '../lectures/lectureQuestions'
 import lectures from '../lectures/basic/data'
+import { useAuthStore } from '@/providers/auth-store-provider.js'
 
 function getQuestions(lecture) {
   var questions = lectureQuestions.filter((element) => (element.slug == lecture))
@@ -12,6 +13,10 @@ function getQuestions(lecture) {
 
 
 export default function Quiz({ lecture }) {
+  const { level, addLevel } = useAuthStore(
+    (state) => state,
+  )
+
   const lectureData = lectures.find((element) => (element.slug == lecture))
   const questions = getQuestions(lecture)
 
@@ -33,7 +38,9 @@ export default function Quiz({ lecture }) {
     if (correctCount == questions.length) {
       setIsAnswerCorrect(true)
       setResult(`Felicitaciones puede continuar a la siguiente lección`);
-
+      if (lectureData.score_required < level) {
+        addLevel();
+      }
     } else {
       setResult(`Obtuvo ${correctCount} de ${questions.length} correctas`);
     }
@@ -41,8 +48,8 @@ export default function Quiz({ lecture }) {
 
   return (
     <div className="container">
+      <div className={`${(lectureData.score_required < level) | isAnswerCorrect ? "d-none" : ""}`}>
       <h3>Evaluación</h3>
-      <div className={`${isAnswerCorrect ? "d-none" : ""}`}>
 
         {questions.map((questionData, index) => (
           <Question
@@ -57,7 +64,7 @@ export default function Quiz({ lecture }) {
 
         {result && <p>{result}</p>}
       </div>
-      <a href={`/lectures/basic/es/${lectureData.next}`} className={`text-center btn btn-success ${isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
+      <a href={`/lectures/basic/es/${lectureData.next}`} className={`text-center btn btn-success ${ (lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
     </div>
   );
 };
