@@ -85,14 +85,14 @@ const lectureQuestions = [
     },
     {
         "slug": "animals",
-        "question": "¿Cómo se dice la vaca es grande en kiwcha?",
+        "question": "¿Cómo se dice la vaca en kiwcha?",
         "options": [
-            "Wakraka hatunmi kan",
-            "Wakraka uchillami kan",
-            "Misi uchillami kan",
-            "Misi hatunmi kan",
+            "Wallinku",
+            "Wakraka",
+            "Misi",
+            "Ukucha",
         ],
-        "answer": "Wakraka hatunmi kan"
+        "answer": "Wakraka"
     },
     {
         "slug": "animals",
@@ -173,16 +173,61 @@ const lectureQuestions = [
     },
     {
         "slug": "grammar-2",
+        "question": "¿Cómo se dice la vaca es grande en kiwcha?",
+        "options": [
+            "Wakraka hatunmi kan",
+            "Wakraka uchillami kan",
+            "Misi uchillami kan",
+            "Misi hatunmi kan",
+        ],
+        "answer": "Wakraka hatunmi kan"
     },
     {
         "slug": "home",
     },
-
     {
         "slug": "greetings-farewells",
+        "question": "¿Cuál es la traducción de 'chisi' en español?",
+        "options": [
+            "noche",
+            "tarde",
+            "hola",
+            "día"
+        ],
+        "answer": "tarde"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se dice 'buenas tardes' en kichwa?",
+        "options": [
+            "alichishi",
+            "allituta",
+            "allipuncha",
+            "imanalla"
+        ],
+        "answer": "alichishi"
     },
     {
         "slug": "family",
+        "question": "¿Qué significa 'ushishi' en español?",
+        "options": [
+            "hermana",
+            "hija",
+            "madre",
+            "nieto"
+        ],
+        "answer": "hija"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se traduce 'ayllu' al español?",
+        "options": [
+            "familia",
+            "hermano",
+            "padre",
+            "abuelo"
+        ],
+        "answer": "familia"
     },
     {
         "slug": "grammar-3",
