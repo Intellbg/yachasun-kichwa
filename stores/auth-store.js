@@ -12,7 +12,7 @@ export const createAuthStore = (initState = defaultInitState) => {
     persist(
       (set) => ({
         ...initState,
-        setAuth: (info) => set((state) => ({ key: info.key, username: info.username })),
+        setAuth: (info) => set((state) => ({ key: info.key, username: info.username, level: info.level })),
         addLevel: () => set((state) => ({ level: state.level + 1 })),
         resetStore: () => set(defaultInitState),
       }),
