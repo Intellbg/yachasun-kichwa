@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function Logros() {
+export default function Achievements() {
     const [currentCard, setCurrentCard] = useState(null);
     const cards = [
         {
