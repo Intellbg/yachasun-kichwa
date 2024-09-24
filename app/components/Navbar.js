@@ -23,9 +23,6 @@ function LoggedInMenu() {
                 <a className="nav-link active" aria-current="page" href="/courses">Cursos</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/achievements">Logros</a>
-            </li>
-            <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="/logout">Salir</a>
             </li>
         </>
