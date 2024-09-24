@@ -1,0 +1,324 @@
+[
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cuál es la traducción de 'imanalla' en español?",
+        "options": [
+            "tarde",
+            "buenos días",
+            "hola",
+            "buenas noches"
+        ],
+        "answer": "hola"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cuál es la traducción de 'chisi' en español?",
+        "options": [
+            "noche",
+            "tarde",
+            "hola",
+            "día"
+        ],
+        "answer": "tarde"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Qué significa 'allituta' en español?",
+        "options": [
+            "buenas noches",
+            "buenos días",
+            "buenas tardes",
+            "hola"
+        ],
+        "answer": "buenas noches"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Qué significa 'allipuncha' en español?",
+        "options": [
+            "buenos días",
+            "buenas noches",
+            "hola",
+            "buenas tardes"
+        ],
+        "answer": "buenos días"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se traduce 'alli' al español?",
+        "options": [
+            "bueno",
+            "malo",
+            "hola",
+            "noche"
+        ],
+        "answer": "bueno"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Qué significa 'alichishi' en español?",
+        "options": [
+            "buenas tardes",
+            "buenos días",
+            "buenas noches",
+            "tarde"
+        ],
+        "answer": "buenas tardes"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se dice 'hola' en kichwa?",
+        "options": [
+            "allipuncha",
+            "alichishi",
+            "imanalla",
+            "alli"
+        ],
+        "answer": "imanalla"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se dice 'tarde' en kichwa?",
+        "options": [
+            "allituta",
+            "chisi",
+            "alli",
+            "alichishi"
+        ],
+        "answer": "chisi"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se dice 'buenas noches' en kichwa?",
+        "options": [
+            "alli",
+            "alichishi",
+            "imanalla",
+            "allituta"
+        ],
+        "answer": "allituta"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cuál es la traducción de 'buenos días' al kichwa?",
+        "options": [
+            "allipuncha",
+            "alichishi",
+            "imanalla",
+            "alli"
+        ],
+        "answer": "allipuncha"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se dice 'bueno' en kichwa?",
+        "options": [
+            "alli",
+            "allipuncha",
+            "alichishi",
+            "chisi"
+        ],
+        "answer": "alli"
+    },
+    {
+        "slug": "greetings-farewells",
+        "question": "¿Cómo se dice 'buenas tardes' en kichwa?",
+        "options": [
+            "alichishi",
+            "allituta",
+            "allipuncha",
+            "imanalla"
+        ],
+        "answer": "alichishi"
+    }
+]
+
+[
+    {
+        "slug": "family",
+        "question": "¿Cuál es la traducción de 'ñaña' en español?",
+        "options": [
+            "hermana",
+            "hija",
+            "esposa",
+            "hermana a hermana"
+        ],
+        "answer": "hermana a hermana"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cuál es la traducción de 'wawki' en español?",
+        "options": [
+            "hermano de hermana a hermano",
+            "hermano de hermano a hermano",
+            "esposo",
+            "padre"
+        ],
+        "answer": "hermano (de hermano a hermano)"
+    },
+    {
+        "slug": "family",
+        "question": "¿Qué significa 'warmi' en español?",
+        "options": [
+            "esposa",
+            "hija",
+            "abuela",
+            "madre"
+        ],
+        "answer": "esposa"
+    },
+    {
+        "slug": "family",
+        "question": "¿Qué significa 'ushishi' en español?",
+        "options": [
+            "hermana",
+            "hija",
+            "madre",
+            "nieto"
+        ],
+        "answer": "hija"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se traduce 'turi' al español?",
+        "options": [
+            "hermano de hermana a hermano",
+            "hermano de hermano a hermano",
+            "esposo",
+            "nieto"
+        ],
+        "answer": "hermano (de hermana a hermano)"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'padre' en kichwa?",
+        "options": [
+            "tayta",
+            "mama",
+            "kusa",
+            "ayllu"
+        ],
+        "answer": "tayta"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'hermana' en kichwa?",
+        "options": [
+            "pani",
+            "ñaña",
+            "warmi",
+            "ushishi"
+        ],
+        "answer": "pani"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se traduce 'mama' al español?",
+        "options": [
+            "madre",
+            "abuela",
+            "hermana",
+            "esposa"
+        ],
+        "answer": "madre"
+    },
+    {
+        "slug": "family",
+        "question": "¿Qué significa 'kusa' en español?",
+        "options": [
+            "hermano",
+            "esposo",
+            "hijo",
+            "padre"
+        ],
+        "answer": "esposo"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'nieta' en kichwa?",
+        "options": [
+            "hatun ushishi",
+            "hatun churi",
+            "churi",
+            "ayllu"
+        ],
+        "answer": "hatun ushishi"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se traduce 'hatun tayta' al español?",
+        "options": [
+            "abuelo",
+            "padre",
+            "hermano",
+            "hijo"
+        ],
+        "answer": "abuelo"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'abuela' en kichwa?",
+        "options": [
+            "hatun mama",
+            "tayta",
+            "warmi",
+            "pani"
+        ],
+        "answer": "hatun mama"
+    },
+    {
+        "slug": "family",
+        "question": "¿Qué significa 'hatun churi' en español?",
+        "options": [
+            "nieto",
+            "nieta",
+            "hermano",
+            "esposo"
+        ],
+        "answer": "nieto"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'hijo' en kichwa?",
+        "options": [
+            "churi",
+            "hatun churi",
+            "ushishi",
+            "wawki"
+        ],
+        "answer": "churi"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se traduce 'ayllu' al español?",
+        "options": [
+            "familia",
+            "hermano",
+            "padre",
+            "abuelo"
+        ],
+        "answer": "familia"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'hermana a hermana' en kichwa?",
+        "options": [
+            "ñaña",
+            "pani",
+            "warmi",
+            "ushishi"
+        ],
+        "answer": "ñaña"
+    },
+    {
+        "slug": "family",
+        "question": "¿Cómo se dice 'hermano de hermano a hermano' en kichwa?",
+        "options": [
+            "wawki",
+            "turi",
+            "churi",
+            "kusa"
+        ],
+        "answer": "wawki"
+    }
+]
