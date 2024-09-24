@@ -8,17 +8,17 @@ export default function Courses() {
                     {
                         activities.map(element => {
                             return (
-                                <div class={`${element.unlock_score > actual_user_score ? "blocked" : element.unlock_score == actual_user_score ? "current" : "passed"} card mb-3`} >
-                                    <div class="row g-0">
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{element.name}</h5>
-                                                <p class="card-text">Este curso esta diseñado para continuar con el lenguaje</p>
+                                <div className={`${element.unlock_score > actual_user_score ? "blocked" : element.unlock_score == actual_user_score ? "current" : "passed"} card mb-3`} >
+                                    <div className="row g-0">
+                                        <div className="col-md-8">
+                                            <div className="card-body">
+                                                <h5 className="card-title">{element.name}</h5>
+                                                <p className="card-text">Este curso esta diseñado para continuar con el lenguaje</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 d-flex align-items-center">
-                                        <a href="/lectures" class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button">Iniciar</a>
-                                            {/* <a href="#" class={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button" data-bs-toggle="button">Iniciar</a> */}
+                                        <div className="col-md-4 d-flex align-items-center">
+                                        <a href="/lectures" className={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button">Iniciar</a>
+                                            {/* <a href="#" className={`${element.unlock_score > actual_user_score ? "disabled" : ""} btn btn-primary bg-primary-custom mx-auto`} role="button" data-bs-toggle="button">Iniciar</a> */}
                                         </div>
                                     </div>
                                 </div>
