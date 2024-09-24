@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Question from "./Question";
-import lectureQuestions from '../lectures/lectureQuestions'
+import lectureQuestions from '../lectures/basic/lectureQuestions'
 import lectures from '../lectures/basic/data'
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
