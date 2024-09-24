@@ -40,12 +40,7 @@ export default function Quiz({ lecture }) {
     if (correctCount == questions.length) {
       setIsAnswerCorrect(true)
       setResult(`Felicitaciones puede continuar a la siguiente lección`);
-      console.log(level)
-      console.log(lectureData.score_required )
-      console.log(lectureData.score_required > level )
-      console.log(id )
-      console.log(key )
-      if (lectureData.score_required > level) {
+      if (lectureData.score_required >= level) {
         addLevel();
         fetch(USER_ENDPOINT + `${id}/level`, {
           method: "PATCH",
