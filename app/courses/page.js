@@ -3,11 +3,15 @@ import CourseCard from "../components/course_card/CourseCard"
 import Navbar from "../components/Navbar"
 import { courses } from './data.js'
 import { useAuthStore } from '@/providers/auth-store-provider.js'
+import { useRouter } from 'next/navigation'
 
 export default function Courses() {
-    const { level } = useAuthStore(
+    const router = useRouter()
+    const { level, username } = useAuthStore(
         (state) => state,
     )
+    if (!username) { router.push('/login') }
+
     return (
         <>
             <Navbar />
@@ -25,32 +29,32 @@ export default function Courses() {
             <div className="container w-100 text-center">
                 <div className="row d-flex justify-content-center ">
 
-                <a href="/achievements" className="text-decoration-none col-3">
-                    <div className="card hover-div w-100">
-                        <div className="d-flex flex-column">
-                            <div className="card-body">
-                                <h1 className="display-1">
-                                    <i className="bi bi-trophy-fill "></i>
-                                </h1>
-                                <h5 className="card-title">Logros</h5>
-                                <p className="card-text">Revisa tus insignias</p>
+                    <a href="/achievements" className="text-decoration-none col-3">
+                        <div className="card hover-div w-100">
+                            <div className="d-flex flex-column">
+                                <div className="card-body">
+                                    <h1 className="display-1">
+                                        <i className="bi bi-trophy-fill "></i>
+                                    </h1>
+                                    <h5 className="card-title">Logros</h5>
+                                    <p className="card-text">Revisa tus insignias</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="/game" className="text-decoration-none col-3">
-                    <div className="card hover-div w-100">
-                        <div className="d-flex flex-column">
-                            <div className="card-body">
-                                <h1 className="display-1">
-                                    <i className="bi bi-joystick"></i>
-                                </h1>
-                                <h5 className="card-title">Juegos</h5>
-                                <p className="card-text">Practica tus habilidades</p>
+                    </a>
+                    <a href="/game" className="text-decoration-none col-3">
+                        <div className="card hover-div w-100">
+                            <div className="d-flex flex-column">
+                                <div className="card-body">
+                                    <h1 className="display-1">
+                                        <i className="bi bi-joystick"></i>
+                                    </h1>
+                                    <h5 className="card-title">Juegos</h5>
+                                    <p className="card-text">Practica tus habilidades</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
                 </div>
             </div >
         </>

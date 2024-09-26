@@ -5,9 +5,6 @@ function Menu() {
     return (
         <>
             <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/courses">Curso</a>
-            </li>
-            <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
             </li>
             <li className="nav-item">
