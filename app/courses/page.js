@@ -3,14 +3,11 @@ import CourseCard from "../components/course_card/CourseCard"
 import Navbar from "../components/Navbar"
 import { courses } from './data.js'
 import { useAuthStore } from '@/providers/auth-store-provider.js'
-import { useRouter } from 'next/navigation'
 
 export default function Courses() {
-    const router = useRouter()
-    const { level, username } = useAuthStore(
+    const { level } = useAuthStore(
         (state) => state,
     )
-    if (!username) { router.push('/login') }
 
     return (
         <>
@@ -42,7 +39,7 @@ export default function Courses() {
                             </div>
                         </div>
                     </a>
-                    <a href="/game" className="text-decoration-none col-3">
+                    <a href="/games" className="text-decoration-none col-3">
                         <div className="card hover-div w-100">
                             <div className="d-flex flex-column">
                                 <div className="card-body">
