@@ -8,7 +8,7 @@ import { AUTH_ENDPOINT } from '@/constants';
 import { useState } from 'react';
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { useRouter } from 'next/navigation'
-
+import Cookies from 'js-cookie';
 
 const LoginSchema = yup.object().shape({
     email: yup.string().required('Email requerido'),
@@ -23,7 +23,6 @@ export default function Login() {
     const { username, setAuth } = useAuthStore(
         (state) => state,
     )
-    if (username){router.push('/courses')}
     const [apiError, setApiError] = useState("")
     const onSubmit = async (data) => {
         const res = await fetch(AUTH_ENDPOINT + "login/", {
@@ -36,6 +35,7 @@ export default function Login() {
         if (res.ok) {
             const info = await res.json()
             setAuth(info)
+            Cookies.set('authToken', info["key"], { expires: 1 });
             router.push('/courses')
         } else {
             await res.json().then((data) => {
