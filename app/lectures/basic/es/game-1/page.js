@@ -1,6 +1,8 @@
 'use client'
 import Navbar from "@/app/components/Navbar.js"
 import Wordle from "@/app/components/games/wordle/Worlde.js"
+import Helper from "@/app/components/helper/Helper.js"
+import WordleInstructions from "@/app/components/instructions/wordle/WordleInstructions.js"
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { useState, useRef, useEffect } from 'react';
 
@@ -14,6 +16,9 @@ export default function Game1() {
     };
     return (
         <>
+            <Helper imageSrc="\img\humu\humu-happy.png" >
+                <WordleInstructions />
+            </Helper>
             <Navbar />
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <Wordle level={level} onSendData={handleChildData} />
