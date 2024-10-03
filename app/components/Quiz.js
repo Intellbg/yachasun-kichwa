@@ -49,7 +49,7 @@ export default function Quiz({ lecture }) {
             "authorization": key,
           },
           redirect: "follow",
-          body: JSON.stringify({ "level": level }),
+          body: JSON.stringify({ "level": level+1 }),
         }).then((r)=>console.log(r))
       }
     } else {
