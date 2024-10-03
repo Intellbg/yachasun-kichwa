@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Crossword from "@jaredreisinger/react-crossword";
+import CrosswordComponent from "@jaredreisinger/react-crossword"; // Cambié el nombre aquí
 import styles from './style.css';
 
 const data = {
@@ -29,22 +29,22 @@ const Crossword = () => {
 
   return (
     <div className={styles.crosswordContainer}>
-      <Crossword
+      <CrosswordComponent // Aquí usamos el nuevo nombre
         data={data}
         ref={crosswordRef}
-        onCrosswordComplete={(complete) => handleCrosswordComplete(complete)}
-      /> 
+        onCrosswordComplete={handleCrosswordComplete}
+      />
       {feedback.message && (
-       <div className={`alert alert-${feedback.type} mt-3`} role="alert">
+        <div className={`alert alert-${feedback.type} mt-3`} role="alert">
           {feedback.message}
         </div>
-      )}     
+      )}
     </div>
-    
   );
 };
 
 export default Crossword;
+
 
 
 

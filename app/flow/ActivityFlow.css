@@ -1,0 +1,15 @@
+
+
+.animate-btn {
+    transition: transform 0.2s;
+  }
+  
+  .animate-btn:active {
+    transform: scale(1.05); 
+  }
+  
+  .progress-bar {
+    transition: width 0.5s ease-in-out; 
+  }
+
+  

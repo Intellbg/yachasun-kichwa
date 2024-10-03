@@ -1,4 +1,4 @@
-"use client"; // Agrega esto en la parte superior
+"use client";
 
 import { useState, useEffect } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
@@ -6,7 +6,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import update from 'immutability-helper';
 import styles from './style.css';
 
-// Función de barajado usando el algoritmo de Fisher-Yates
 const shuffleArray = (array) => {
   const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -33,29 +32,36 @@ const Word = ({ word, index, moveWord }) => {
   });
 
   return (
-    <div ref={(node) => ref(drop(node))} className={`${styles.word} btn btn-secondary m-1`}>
+    <div ref={(node) => ref(drop(node))} className={`${styles.word}`}>
       {word}
     </div>
   );
 };
 
 const Target = ({ index, word, setTargetWord }) => {
-  const [, drop] = useDrop({
+  const [{ isOver }, drop] = useDrop({
     accept: 'WORD',
     drop: (draggedItem) => {
       setTargetWord(index, draggedItem.index);
-    }
+    },
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
   });
 
   return (
-    <div ref={drop} className={`${styles.target} btn btn-light m-1`}>
-      {word}
+    <div
+      ref={drop}
+      className={`${styles.target} ${word ? '' : styles.targetEmpty} ${isOver ? styles.dropAccepted : ''}`}
+    >
+      {word || <span>&nbsp;&ndash;&nbsp;</span>}
     </div>
   );
 };
 
 const DragAndDrop = ({ phrase }) => {
-  const initialWords = phrase.split(' ').map((word, index) => ({ id: index, word }));
+  const initialWords = (phrase ? phrase.split(' ') : []).map((word, index) => ({ id: index, word }));
+  
   const [words, setWords] = useState([]);
   const [targetWords, setTargetWords] = useState([]);
   const [gameOver, setGameOver] = useState(false);
@@ -94,18 +100,33 @@ const DragAndDrop = ({ phrase }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="container">        
-        <div className="d-flex flex-wrap mb-4">
-          {words.map((item, index) => (
-            <Word key={item.id} word={item.word} index={index} moveWord={moveWord} />
-          ))}
+      <div className="container">
+        
+        {/* Contenedor de la imagen */}
+        <div className={styles.imageContainer}>
+          <img src="/path/to/your/image.png" alt="Character" />
         </div>
+
+        {/* Palabras para arrastrar */}
         <div className="d-flex flex-wrap mb-4">
+  {words.map((item, index) => (
+    <Word key={item.id} word={item.word} index={index} moveWord={moveWord} />
+  ))}
+</div>
+
+
+        {/* Espacios de destino */}
+        <div className="d-flex flex-wrap justify-content-center mb-4">
           {targetWords.map((word, index) => (
             <Target key={index} index={index} word={word} setTargetWord={setTargetWord} />
           ))}
         </div>
-        <button className="btn btn-success" onClick={checkAnswer}>Revisar</button>
+
+        {/* Botones para revisar y continuar */}
+        <div className={styles.buttonContainer}>
+          <button onClick={checkAnswer}>Revisar</button>
+        </div>
+        
         {gameOver && isCorrectGuess && (
           <div className="alert alert-success mt-3" role="alert">
             ¡Felicidades! La oración es correcta.
@@ -122,6 +143,8 @@ const DragAndDrop = ({ phrase }) => {
 };
 
 export default DragAndDrop;
+
+
 
 
 

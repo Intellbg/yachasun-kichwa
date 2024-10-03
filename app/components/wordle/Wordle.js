@@ -1,4 +1,4 @@
-"use client";  // Agrega esto en la parte superior
+"use client";  
 
 import { useState, useRef, useEffect } from 'react';
 import styles from './style.css';
