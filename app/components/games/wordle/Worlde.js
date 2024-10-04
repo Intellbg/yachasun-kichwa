@@ -13,10 +13,13 @@ export default function Wordle({ level, onSendData }) {
   const inputRefs = useRef([]);
 
   useEffect(() => {
-    const fetchedQuestions = getQuestions(level);
-    const randomQuestion = fetchedQuestions[Math.floor(Math.random() * fetchedQuestions.length)];
-    setQuestion(randomQuestion);
-    setCorrectWord(randomQuestion.answer.toUpperCase());
+    const fetchData = async () => {
+      const questions = await getQuestions("alphabet,colors,grammar-1");
+      const randomQuestion = questions[0]
+      setQuestion(randomQuestion);
+      setCorrectWord(randomQuestion.answer.toUpperCase());
+    };
+    fetchData()
   }, [level]);
 
   useEffect(() => {
@@ -50,7 +53,7 @@ export default function Wordle({ level, onSendData }) {
             setCurrentGuessIndex(rowIndex + 1);
           } else {
             setGameOver(true);
-            onSendData(true);
+            onSendData(false);
 
           }
         }
@@ -66,10 +69,12 @@ export default function Wordle({ level, onSendData }) {
     return 'bg-secondary text-white';
   };
   if (!question) return null;
-
+  const reloadPage = () => {
+    window.location.reload();
+  };
   return (
     <div className="container">
-      <h1>{question.question}</h1>
+      <h1 className='text-center'>{question.question}</h1>
       {guesses.map((guess, rowIndex) => (
         <div className="d-flex justify-content-center mb-2" key={rowIndex}>
           {Array.from({ length: correctWord.length }).map((_, colIndex) => {
@@ -89,22 +94,24 @@ export default function Wordle({ level, onSendData }) {
           })}
         </div>
       ))}
-      {gameOver && isCorrectGuess && (
-        <>
-          <div className="alert alert-success mt-3" role="alert">
-            ¡Felicidades! Has adivinado la palabra correcta.
-          </div>
-        </>
-      )}
-      {gameOver && !isCorrectGuess && (
-        <>
-          <div className="alert alert-danger mt-3" role="alert">
-            ¡Lo siento! No has adivinado la palabra correcta. {question.answer}
-          </div>
-          <button className='text-center btn btn-warning' >Re intentar</button>
-        </>
+      <div className='w-50 text-center m-auto'>
+        {gameOver && isCorrectGuess && (
+          <>
+            <div className="alert alert-success mt-3" role="alert">
+              ¡Felicidades! Has adivinado la palabra correcta.
+            </div>
+          </>
+        )}
+        {gameOver && !isCorrectGuess && (
+          <>
+            <div className="alert alert-danger mt-3" role="alert">
+              ¡Lo siento! No has adivinado la palabra correcta. {question.answer}
+            </div>
+            <button className='text-center btn btn-warning' onClick={reloadPage}>Re intentar</button>
+          </>
 
-      )}
+        )}
+      </div>
     </div>
   );
 };
