@@ -8,7 +8,7 @@ const DragDrop = dynamic(() => import('../components/drag_drop/DragDrop'), {
   loading: () => <p>LCargando la actividad...</p>,
   ssr: false
 });
-const Wordle = dynamic(() => import('../components/wordle/Wordle'), {
+const Wordle = dynamic(() => import('../components/games/wordle/Worlde'), {
   loading: () => <p>Cargando la actividad...</p>,
   ssr: false
 });
