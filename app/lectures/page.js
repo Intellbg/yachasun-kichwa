@@ -6,8 +6,7 @@ export default function Courses() {
     return (
         <div className="container d-flex justify-content-center align-items-center vh-100">
             <div className="row">
-                <div className="col overflow-column">
-                    {
+                <div className="col overflow-column">                    {
                         activities.map(element => {
                             return (
                                 <div className={`${element.unlock_score > actual_user_score ? "blocked" : element.unlock_score == actual_user_score ? "current" : "passed"} card mb-3`} >

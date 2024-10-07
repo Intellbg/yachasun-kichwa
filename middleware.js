@@ -1,12 +1,15 @@
-import { getSessionData } from "./app/lib/getSession"
+import { NextResponse } from 'next/server';
 
-export async function middleware(request) {
-    const data = await getSessionData(request)
-    if (!data) {
-        return Response.redirect(new URL('/login', request.url));
+
+export function middleware(req) {
+    const token = req.cookies.get('authToken')?.value;
+    if (!token) {
+        return NextResponse.redirect(new URL('/login', req.url));
     }
+
+    return NextResponse.next();
 }
 
 export const config = {
-    matcher: ['/courses','/lectures/:path*'],
-}
+    matcher: ['/courses', '/games', "/lectures/:path*"],
+};

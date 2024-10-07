@@ -1,0 +1,96 @@
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: 'Ejemplo',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['Maypitak kawsanki', '¿En dónde vives?'],           
+    ],
+  },
+];
+
+export const tablesData2 = [
+  {
+    title: 'Ejemplo',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['Kuchika', '¿Y el chancho?'],           
+    ],
+  },
+];
+
+export const tablesData3 = [
+  {
+    title: 'Ejemplo',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['Yachana wasichu', '¿Es un centro educativo?'],           
+    ],
+  },
+  {
+    title: 'Ejemplos con respuesta',
+    headers: ['Pregunta en Kichwa', 'Pregunta en Español','Respuesta positiva en Kichwa','Respuesta positiva en Español','Respuesta negativa en Kichwa','Respuesta negativa en Español'],
+    rows: [
+      ['Kanchu shamurkanki', '¿Viniste tú?', 'Ari, ñukami shamurkani', 'Si, yo vine', 'Mana, ñukaka mana shamurkanichu', 'No, yo no vine'],
+      ['Kanchu mikurkanki', '¿Comiste tú?', 'Ari, ñukami mikurkani', 'Sí, yo comí', 'Mana, ñukaka mana mikurkanichu', 'No, yo no estuve comiendo'],           
+    ],
+  },
+];
+
+export const tablesData4 = [
+  {
+    title: 'Ejemplos con respuesta',
+    headers: ['Pregunta en Kichwa', 'Pregunta en Español','Respuesta positiva en Kichwa','Respuesta positiva en Español','Respuesta negativa en Kichwa','Respuesta negativa en Español'],
+    rows: [
+      ['Paychu shamurka', '¿Vino él?', 'Ari, paymi shamurka', 'Si, él vino', 'Mana, payka mana shamurkachu', 'No, él no vino'],      
+    ],
+  },
+];
+
+export const tablesData5 = [
+  {
+    title: 'Preguntas frecuentes',
+    headers: ['Pregunta en Kichwa', 'Pregunta en Español'],
+    rows: [
+      ['Maypitak', '¿Dónde, en donde?'],
+      ['Piwantak', '¿Con quién?'],
+      ['Pitak', '¿Quién? ¿Quién es?'],
+      ['Pitatak', '¿A quién?'],
+      ['Imatatak', '¿Qué?'],
+      ['Imatak', '¿Qué es?'],
+      ['Imashinatak', '¿Cómo, de qué forma, cómo está?'],
+      ['Imatak kay', '¿Qué es esto?'],
+      ['Imatak chayka', '¿Qué es eso?'],
+      ['Imapaktak', '¿Para qué?'],
+      ['Maymantatak', '¿De dónde?'],
+      ['Maymantak', '¿A dónde?'],
+      ['Maykantak', '¿Cuál?'],
+      ['Ima pachamantatak', '¿Desde cuándo?'],
+      ['Ima pachakamantak', '¿Hasta cuándo?'],
+      ['Mashnakunatak', '¿Cuántos?'],      
+    ],
+  },
+];
+
+# Partículas de pregunta y respuesta (Tapuy shimikukuna kutichi shimikukunapash)
+## -tak
+Esta partícula nos sirve para hacer preguntas. Ya que en kichwa no utilizamos signas de pregunta, la partícula -tak debe ir después de las palabras de pregunta.
+<TablesWithTabs tables={tablesData} />   
+## -ka
+Esta partícula también es para hacer preguntas.
+<TablesWithTabs tables={tablesData2} />  
+## -chu
+Esta partícula también es para hacer preguntas. A diferencia del -tak, este no va con palabras de pregunta - va con pronombres personales. El -chu acepta dos posibles respuestas, el negativo o el positivo.
+Además, el -chu va en una respuesta negativa. 
+<TablesWithTabs tables={tablesData3} /> 
+## -mi
+Esta partícula da más fuerza de afirmación a una respuesta afirmativa.
+<TablesWithTabs tables={tablesData4} /> 
+<hr />
+## Para uso diario
+<TablesWithTabs tables={tablesData5} /> 
+<hr />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección de las particulas de pregunta y respuesta." character = "humuFeliz"/>
+<hr />

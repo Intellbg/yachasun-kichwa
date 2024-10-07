@@ -61,7 +61,7 @@ export default function ActivityFlow() {
     <div className="container-fluid text-center d-flex flex-column justify-content-between" style={{ height: "100vh" }}>
   {/* Barra superior con X y puntos */}
   <div className="d-flex align-items-center justify-content-between" style={{ height: "20vh" }}>
-    <Link href="/lectures_intermedio">
+    <Link href="/intermediate/lecture">
       <button className="btn btn-link text-dark text-decoration-none" aria-label="Volver al menú">
         X
       </button>

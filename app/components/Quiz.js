@@ -2,8 +2,11 @@
 
 import React, { useState } from "react";
 import Question from "./Question";
-import lectureQuestions from '../lectures/lectureQuestions'
+import lectureQuestions from '../lectures/basic/lectureQuestions'
 import lectures from '../lectures/basic/data'
+import { useAuthStore } from '@/providers/auth-store-provider.js'
+import { USER_ENDPOINT } from "@/constants.js"
+
 
 function getQuestions(lecture) {
   var questions = lectureQuestions.filter((element) => (element.slug == lecture))
@@ -12,6 +15,10 @@ function getQuestions(lecture) {
 
 
 export default function Quiz({ lecture }) {
+  const { level, addLevel, id, key } = useAuthStore(
+    (state) => state,
+  )
+
   const lectureData = lectures.find((element) => (element.slug == lecture))
   const questions = getQuestions(lecture)
 
@@ -33,7 +40,18 @@ export default function Quiz({ lecture }) {
     if (correctCount == questions.length) {
       setIsAnswerCorrect(true)
       setResult(`Felicitaciones puede continuar a la siguiente lección`);
-
+      if (lectureData.score_required >= level) {
+        addLevel();
+        fetch(USER_ENDPOINT + `${id}/level`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": key,
+          },
+          redirect: "follow",
+          body: JSON.stringify({ "level": level+1 }),
+        }).then((r)=>console.log(r))
+      }
     } else {
       setResult(`Obtuvo ${correctCount} de ${questions.length} correctas`);
     }
@@ -41,8 +59,8 @@ export default function Quiz({ lecture }) {
 
   return (
     <div className="container">
-      <h3>Evaluación</h3>
-      <div className={`${isAnswerCorrect ? "d-none" : ""}`}>
+      <div className={`${(lectureData.score_required < level) | isAnswerCorrect ? "d-none" : ""}`}>
+        <h3>Evaluación</h3>
 
         {questions.map((questionData, index) => (
           <Question
@@ -53,14 +71,11 @@ export default function Quiz({ lecture }) {
             onSelectAnswer={handleSelectAnswer}
           />
         ))}
-        <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers}>Enviar</button>
+        <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
 
         {result && <p>{result}</p>}
       </div>
-      <a href={`/lectures/basic/es/${lectureData.next}`} className={`text-center btn btn-success ${isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
+      <a href={`/lectures/basic/es/${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
     </div>
   );
 };
-
-
-

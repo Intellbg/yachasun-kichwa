@@ -1,0 +1,51 @@
+.word {
+  background-color: #333;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  min-width: 80px;
+}
+
+.word:hover {
+  background-color: #e0e0e0; /* Fondo más oscuro cuando se pasa el cursor */
+  border-color: #888;        /* Borde más oscuro */
+  color: #000;
+}
+
+/* Estilos para los espacios de destino (target) */
+.target {
+  width: auto;  /* Ajustar el ancho automáticamente según la palabra */
+  min-width: 150px;
+  height: 50px;  /* Altura ajustada */
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fafafa;  /* Fondo gris claro */
+  border: 2px dashed #aaa;    /* Borde de líneas discontinuas */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;  /* Tamaño del texto ajustado */
+  color: #666;
+  margin: 10px;   /* Añadir margen entre los targets */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.target.dropAccepted {
+  background-color: #e0f7fa;  /* Fondo azul claro cuando el objeto está sobre el target */
+  border-color: #007bff;      /* Borde azul */
+}
+
+.targetEmpty {
+  background-color: #fff;
+  color: #999;  /* Color gris claro para el texto */
+  border: 2px dashed #ccc;  /* Borde discontínuo claro */
+}
+
+
+
+
+
+  
+  

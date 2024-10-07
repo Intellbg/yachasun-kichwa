@@ -18,8 +18,9 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "immutability-helper": "^3.1.1",
+    "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
-    "next": "^14.2.7",
+    "next": "14.2.3",
     "next-mdx-remote": "^5.0.0",
     "react": "^18",
     "react-crossword": "^0.2.0",
@@ -28,7 +29,9 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
     "remark-gfm": "^3.0.0",
-    "yup": "^1.4.0"
+    "yachasum-kichwa": "file:",
+    "yup": "^1.4.0",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -135,5 +135,5 @@ const activities = [
         "next": "/",
     },
 ]
-export default activities
 
+export default activities

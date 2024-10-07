@@ -3,7 +3,6 @@ import { WORDS_ENDPOINT } from "../../constants"
 export default async function VocabularyTable({ lecture, sort='kichwa', tag="" }) {
     var url = `${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`
     if (tag){ url+=`&tags=${tag}`}
-    console.log(url)
     var data = await fetch(url,{ cache: 'no-store' })
         .then((response) => response.json())
         .catch((error) => console.error(error));

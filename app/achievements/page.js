@@ -1,6 +1,7 @@
 "use client"; 
 
 import { useState } from 'react';
+import Navbar from "../components/Navbar"
 import styles from './Logros.module.css'; 
 
 export default function Logros() {
@@ -56,6 +57,8 @@ export default function Logros() {
     };
 
     return (
+        <>
+        <Navbar />
         <div className="container-fluid p-0">
             <main className="container my-5">
                 <section className="text-start mb-5">
@@ -106,6 +109,7 @@ export default function Logros() {
                     </div>
                 </main>
             </div>
+            </>
         );
     }
 

@@ -1,10 +1,9 @@
 "use client";
-
 import { useState, useEffect } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import update from 'immutability-helper';
-import styles from './style.css';
+import styles from './style.module.css'; 
 
 const shuffleArray = (array) => {
   const shuffledArray = [...array];
@@ -32,7 +31,7 @@ const Word = ({ word, index, moveWord }) => {
   });
 
   return (
-    <div ref={(node) => ref(drop(node))} className={`${styles.word}`}>
+    <div ref={(node) => ref(drop(node))} className={styles.word}>
       {word}
     </div>
   );
@@ -52,7 +51,7 @@ const Target = ({ index, word, setTargetWord }) => {
   return (
     <div
       ref={drop}
-      className={`${styles.target} ${word ? '' : styles.targetEmpty} ${isOver ? styles.dropAccepted : ''}`}
+      className={`${styles.target} ${!word ? styles.targetEmpty : ''} ${isOver ? styles.dropAccepted : ''}`}
     >
       {word || <span>&nbsp;&ndash;&nbsp;</span>}
     </div>
@@ -100,40 +99,37 @@ const DragAndDrop = ({ phrase }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="container">
-        
-        {/* Contenedor de la imagen */}
-        <div className={styles.imageContainer}>
-          <img src="/path/to/your/image.png" alt="Character" />
-        </div>
-
-        {/* Palabras para arrastrar */}
-        <div className="d-flex flex-wrap mb-4">
-  {words.map((item, index) => (
-    <Word key={item.id} word={item.word} index={index} moveWord={moveWord} />
-  ))}
-</div>
-
-
-        {/* Espacios de destino */}
-        <div className="d-flex flex-wrap justify-content-center mb-4">
+      <div className="container text-center bg-white text-dark p-4" >
+        <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
+        <div className="mb-4">
+          <img src="/img/humu/humu-happy.png" alt="Character" style={{ maxWidth: "150px" }} />
+        </div>       
+        <div className="d-flex justify-content-center flex-wrap mb-4">
+          {words.map((item, index) => (
+            <Word 
+              key={item.id} 
+              word={item.word} 
+              index={index} 
+              moveWord={moveWord} 
+              className="drag-item text-center d-flex justify-content-center align-items-center m-2"
+            />
+          ))}
+        </div>      
+        <div className="d-flex justify-content-center mb-4">
           {targetWords.map((word, index) => (
             <Target key={index} index={index} word={word} setTargetWord={setTargetWord} />
           ))}
-        </div>
-
-        {/* Botones para revisar y continuar */}
-        <div className={styles.buttonContainer}>
-          <button onClick={checkAnswer}>Revisar</button>
-        </div>
-        
+        </div>        
+        <div className="mb-3">
+          <button onClick={checkAnswer} className="btn btn-primary">Revisar</button>
+        </div>      
         {gameOver && isCorrectGuess && (
-          <div className="alert alert-success mt-3" role="alert">
+          <div className="alert alert-success" role="alert">
             ¡Felicidades! La oración es correcta.
           </div>
         )}
         {gameOver && !isCorrectGuess && (
-          <div className="alert alert-danger mt-3" role="alert">
+          <div className="alert alert-danger" role="alert">
             ¡Lo siento! La oración es incorrecta.
           </div>
         )}

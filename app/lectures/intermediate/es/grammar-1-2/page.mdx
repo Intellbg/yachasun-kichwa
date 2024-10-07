@@ -1,0 +1,59 @@
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: '-pak',
+    headers: ['Pronombre personal', 'Partícula', 'Pronombre posesivo'],
+    rows: [
+      ['ñuka', 'pak', 'ñukapak'],
+      ['kan', 'pak', 'kanpak'],
+      ['kikin', 'pak', 'kikinpak'],
+      ['pay', 'pak', 'paypak'],
+      ['ñukanchik', 'pak', 'ñukanchikpak'],
+      ['kankuna', 'pak', 'kankunapak'],
+      ['kikinkuna', 'pak', 'kikinkunapak'],
+      ['paykuna', 'pak', 'paykunapak'],        
+    ],
+  },
+  {
+    title: 'Ejemplos',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['ñukapak tayta', 'mi padre'],
+      ['paykunapak allku', 'su perro (el perro de ellos)'],
+      ['kanpak wasi', 'tu casa'],
+      ['kikinpak shuti', 'su nombre (el nombre de usted)'],        
+    ],
+  },
+];
+
+export const tablesData2 = [
+  {
+    title: 'Ejemplos',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['ñukaka mikunkapak shamuni', 'vengo a comer'],
+      ['ñukanchik tushunkapak rinchik', 'nos vamos a bailar'],       
+    ],
+  },
+];
+
+# Las Partículas pak y nkapak (Shimikukuna)
+En kichwa existen varios sufijos o partículas que modifican al sustantivo, 
+adjetivo y especialmente al verbo. Estas partículas pueden ir en el medio o al 
+final de la palabra.
+A  continuación veremos los más comunes y posteriormente veremos otros.
+## -pak
+Se utiliza -pak para indicar pertenencia o posición, por esta razón, esta 
+partícula debe ir con sujetos personales.  
+Los pronombres personales, combinados con la partícula -pak, forman los 
+pronombres posesivos.
+<TablesWithTabs tables={tablesData} />
+## -nkapak
+Esta partícula de utiliza para indicar objetivo o razón de una acción. Por esta razón esta partícula va solo con verbos. 
+<TablesWithTabs tables={tablesData2} />
+<hr />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección de las particulas pak y nkapak." character = "humuFeliz"/>
+<hr />
+
