@@ -21,6 +21,26 @@ const SoupLetter = dynamic(() => import('../components/soupletter/SoupLetter'), 
   ssr: false
 });
 
+const wordsArray = [
+  { word: 'ACROPOLIS', row: 0, col: 0, direction: 'across' },
+  { word: 'RIN', row: 0, col: 0, direction: 'down' },
+  { word: 'CITO', row: 1, col: 1, direction: 'down' },
+  { word: 'AS', row: 8, col: 0, direction: 'across' }
+
+];
+
+const clues = {
+  across: [
+    { number: 1, text: 'Sitio más alto y fortificado de las ciudades griegas.' },
+    { number: 3, text: 'Uno de la baraja.' }
+  ],
+  down: [
+    { number: 1, text: 'Río de Suiza que pasa por Berna.' },
+    { number: 2, text: 'Copia genética.' }
+  ]
+};
+
+
 export default function ActivityFlow() {
   const activities = [
     {
@@ -36,7 +56,7 @@ export default function ActivityFlow() {
     {
       id: 'crossword',
       component: Crossword,
-      props: {}
+      props: { words: wordsArray, size: 10, clues: clues}
     },
     {
       id: 'soup-letter',
@@ -58,17 +78,14 @@ export default function ActivityFlow() {
   const currentProps = activities[currentIndex].props;
 
   return (
-    <div className="container-fluid text-center d-flex flex-column justify-content-between" style={{ height: "100vh" }}>
-  {/* Barra superior con X y puntos */}
-  <div className="d-flex align-items-center justify-content-between" style={{ height: "20vh" }}>
+    <div className="container-fluid text-center d-flex flex-column justify-content-between">  
+  <div className="d-flex align-items-center justify-content-between" style={{ height: "5vh" }}>
     <Link href="/intermediate/lecture">
       <button className="btn btn-link text-dark text-decoration-none" aria-label="Volver al menú">
         X
       </button>
     </Link>
-
-    {/* Barra de progreso */}
-    <div className="progress flex-grow-1 mx-3" style={{ height: "10px" }}>
+    <div className="progress flex-grow-1 mx-3" >
       <div
         className="progress-bar bg-warning"
         role="progressbar"
@@ -78,23 +95,17 @@ export default function ActivityFlow() {
         aria-valuemax={activities.length}
       ></div>
     </div>
-
-    {/* Puntos */}
     <div className="points text-warning">
       {points} puntos
     </div>
   </div>
-
-  {/* Actividad principal (ocupa el 60% del espacio) */}
-  <div className="flex-grow-1" style={{ height: "60vh" }}>
+  <div className="flex-grow-1">
     <CurrentActivityComponent {...currentProps} />
   </div>
-
-  {/* Botón de continuar (ocupa el 20% del espacio) */}
-  <div className="d-flex justify-content-center align-items-center" style={{ height: "20vh" }}>
+  <div className="d-flex justify-content-center align-items-center">
     <button
       onClick={handleNextActivity}
-      className="btn btn-primary animate-btn"
+      className="btn btn-success animate-btn"
     >
       Continuar
     </button>

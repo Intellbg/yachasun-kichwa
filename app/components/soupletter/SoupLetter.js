@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import styles from "./style.css";
+import styles from "./style.module.css";
 
 const directions = [
   [0, 1],  // derecha

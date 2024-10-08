@@ -1,53 +1,153 @@
 "use client";
+import React, { useState, useEffect } from 'react';
+import styles from './style.module.css';
 
-import { useRef, useState } from "react";
-import CrosswordComponent from "@jaredreisinger/react-crossword"; // Cambié el nombre aquí
-import styles from './style.css';
+const Crossword = ({ words = [], size = 10, clues = { across: [], down: [] } }) => {
+  const [gridData, setGridData] = useState([]);
+  const [userInput, setUserInput] = useState([]); // Mantiene lo que el usuario escribe
+  const [isCompleted, setIsCompleted] = useState(false); // Indica si el crucigrama se completó correctamente
 
-const data = {
-  across: {
-    1: { clue: "Sitio más alto y fortificado de las ciudades griegas.", answer: "ACROPOLIS", row: 0, col: 0 },
-    8: { clue: "Uno de la baraja.", answer: "AS", row: 2, col: 0 },
-  },
-  down: {
-    1: { clue: "Río de Suiza que pasa por Berna.", answer: "AAR", row: 0, col: 0 },
-    2: { clue: "Copia genética.", answer: "CLON", row: 0, col: 2 },
-  },
-};
+  // Inicializa la cuadrícula con celdas negras.
+  const initializeGrid = () => {
+    const grid = Array(size)
+      .fill(null)
+      .map(() =>
+        Array(size)
+          .fill(null)
+          .map(() => ({ isBlack: true, value: '', number: null }))
+      );
+    return grid;
+  };
 
-const Crossword = () => {
-  const crosswordRef = useRef(null);
-  const [feedback, setFeedback] = useState({ message: "", type: "" });
+  // Coloca las palabras en la cuadrícula y asigna los números donde empiezan las palabras.
+  const placeWordsInGrid = (grid) => {
+    let clueNumber = 1; // Número de pista, empieza desde 1
 
-  const handleCrosswordComplete = (complete) => {
-    if (complete) {
-      setFeedback({ message: "¡Felicidades! Has completado el crucigrama correctamente.", type: "success" });
-    } else {
-      setFeedback({ message: "Algunas palabras no están correctas.", type: "danger" });
+    words.forEach(({ word, row, col, direction }) => {
+      // Coloca la palabra y marca el inicio de cada palabra con un número.
+      for (let i = 0; i < word.length; i++) {
+        if (direction === 'across') {
+          // Si es el inicio de una palabra en "across", asignamos un número
+          if (i === 0 && !grid[row][col].number) {
+            grid[row][col].number = clueNumber;
+            clueNumber++;
+          }
+          grid[row][col + i] = { isBlack: false, value: word[i].toUpperCase(), number: grid[row][col + i].number };
+        } else if (direction === 'down') {
+          // Si es el inicio de una palabra en "down", asignamos un número
+          if (i === 0 && !grid[row][col].number) {
+            grid[row][col].number = clueNumber;
+            clueNumber++;
+          }
+          grid[row + i][col] = { isBlack: false, value: word[i].toUpperCase(), number: grid[row + i][col].number };
+        }
+      }
+    });
+
+    return grid;
+  };
+
+  useEffect(() => {
+    let grid = initializeGrid();
+    grid = placeWordsInGrid(grid);
+    setGridData(grid);
+
+    // Inicializamos el estado para la entrada del usuario
+    const initialInput = grid.map(row =>
+      row.map(cell => (cell.isBlack ? '' : ''))
+    );
+    setUserInput(initialInput);
+  }, [words, size]);
+
+  // Maneja los cambios de cada celda cuando el usuario escribe
+  const handleInputChange = (rowIndex, cellIndex, value) => {
+    const newUserInput = [...userInput];
+    newUserInput[rowIndex][cellIndex] = value.toUpperCase(); // Convertimos todo a mayúsculas
+    setUserInput(newUserInput);
+  };
+
+  // Verifica si el crucigrama se completó correctamente
+  const checkCompletion = () => {
+    let isCorrect = true;
+
+    for (let rowIndex = 0; rowIndex < gridData.length; rowIndex++) {
+      for (let cellIndex = 0; cellIndex < gridData[rowIndex].length; cellIndex++) {
+        if (!gridData[rowIndex][cellIndex].isBlack) {
+          if (userInput[rowIndex][cellIndex] !== gridData[rowIndex][cellIndex].value) {
+            isCorrect = false;
+            break;
+          }
+        }
+      }
+      if (!isCorrect) break;
     }
+
+    setIsCompleted(isCorrect);
   };
 
   return (
     <div className={styles.crosswordContainer}>
-      <CrosswordComponent // Aquí usamos el nuevo nombre
-        data={data}
-        ref={crosswordRef}
-        onCrosswordComplete={handleCrosswordComplete}
-      />
-      {feedback.message && (
-        <div className={`alert alert-${feedback.type} mt-3`} role="alert">
-          {feedback.message}
+      <div className={styles.crossword}>
+        <div className={styles.grid}>
+          {gridData.map((row, rowIndex) => (
+            <div key={rowIndex} className={styles.row}>
+              {row.map((cell, cellIndex) => (
+                <div key={cellIndex} className={styles.cell}>
+                  {cell.isBlack ? (
+                    <div className={styles.blackCell}></div>
+                  ) : (
+                    <div className={styles.cellContent}>
+                      {cell.number && (
+                        <span className={styles.cellNumber}>{cell.number}</span>
+                      )}
+                      <input
+                        type="text"
+                        maxLength="1"
+                        className={styles.inputCell}
+                        value={userInput[rowIndex][cellIndex] || ""}
+                        onChange={(e) => handleInputChange(rowIndex, cellIndex, e.target.value)}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
+
+        {/* Muestra las pistas */}
+        <div className={styles.clues}>
+          <h3>Across</h3>
+          <ul>
+            {clues.across.map((clue, index) => (
+              <li key={index}>
+                <strong>{clue.number}:</strong> {clue.text}
+              </li>
+            ))}
+          </ul>
+          <h3>Down</h3>
+          <ul>
+            {clues.down.map((clue, index) => (
+              <li key={index}>
+                <strong>{clue.number}:</strong> {clue.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Botón para verificar si se completó correctamente */}
+      <button onClick={checkCompletion} className={styles.checkButton}>
+        Check Completion
+      </button>
+
+      {isCompleted !== null && (
+        <p className={styles.completionMessage}>
+          {isCompleted ? "¡Crucigrama completado correctamente!" : "Hay errores en el crucigrama."}
+        </p>
       )}
     </div>
   );
 };
 
 export default Crossword;
-
-
-
-
-
-
-

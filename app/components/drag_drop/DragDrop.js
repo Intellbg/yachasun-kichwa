@@ -99,30 +99,31 @@ const DragAndDrop = ({ phrase }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="container text-center bg-white text-dark p-4" >
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
+      <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
         <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
         <div className="mb-4">
           <img src="/img/humu/humu-happy.png" alt="Character" style={{ maxWidth: "150px" }} />
-        </div>       
-        <div className="d-flex justify-content-center flex-wrap mb-4">
+        </div>
+        <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
           {words.map((item, index) => (
             <Word 
               key={item.id} 
               word={item.word} 
               index={index} 
               moveWord={moveWord} 
-              className="drag-item text-center d-flex justify-content-center align-items-center m-2"
+              className="drag-item text-center d-flex justify-content-center align-items-center"
             />
           ))}
-        </div>      
+        </div>
         <div className="d-flex justify-content-center mb-4">
           {targetWords.map((word, index) => (
             <Target key={index} index={index} word={word} setTargetWord={setTargetWord} />
           ))}
-        </div>        
+        </div>
         <div className="mb-3">
-          <button onClick={checkAnswer} className="btn btn-primary">Revisar</button>
-        </div>      
+          <button onClick={checkAnswer} className="btn btn-success">Revisar</button>
+        </div>
         {gameOver && isCorrectGuess && (
           <div className="alert alert-success" role="alert">
             ¡Felicidades! La oración es correcta.
@@ -134,7 +135,8 @@ const DragAndDrop = ({ phrase }) => {
           </div>
         )}
       </div>
-    </DndProvider>
+    </div>
+  </DndProvider>
   );
 };
 
