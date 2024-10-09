@@ -20,6 +20,8 @@ export default function Game1() {
                 <WordleInstructions />
             </Helper>
             <Navbar />
+
+            <h1 className="text-center">Wordle</h1>
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <Wordle level={level} onSendData={handleChildData} />
             </div>
