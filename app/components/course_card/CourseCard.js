@@ -1,10 +1,17 @@
 import '../lecture_card/style.css'
 
 export default function CourseCard({ data, currentScore }) {
-    const unlocked = currentScore < data.score_required
+    const unlocked = currentScore >= data.score_required; // true si está desbloqueado
+
+    const handleClick = (e) => {
+        if (!unlocked) {
+            e.preventDefault();  // Prevenir el click en caso de estar bloqueado
+        }
+    }
+
     return (
-        <a href={!unlocked ? data.url : ""} className="text-decoration-none">
-            <div className={`card m-3 ${unlocked ? "blocked" : "hover-div"}`}>
+        <div className={`card m-3 ${!unlocked ? "blocked" : "hover-div"}`} onClick={handleClick} style={{ pointerEvents: !unlocked ? 'none' : 'auto' }}>
+            <a href={unlocked ? data.url : "#"} className="text-decoration-none">
                 <div className="d-flex">
                     <img src={data.img} height={"200px"} width={"200px"} alt={data.title + " icono"} />
                     <div className="align-self-center">
@@ -14,7 +21,9 @@ export default function CourseCard({ data, currentScore }) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     )
 }
+
+

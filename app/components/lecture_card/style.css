@@ -35,3 +35,8 @@ a:hover .hover-div {
     padding: 10px;
     border-radius: 5px;
 }
+
+.text-decoration-none {
+    color: black !important;  /* Cambiar el color del enlace a blanco */
+    text-decoration: none;  /* Evitar subrayado */
+}
