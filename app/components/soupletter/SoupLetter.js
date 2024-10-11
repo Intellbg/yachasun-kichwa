@@ -166,21 +166,21 @@ const SoupLetter = ({ words = [] }) => {
   return (
     <div className="d-flex" onMouseUp={handleMouseUp}>
       <div className="container" onMouseLeave={() => isSelecting.current = false} onMouseDown={(e) => e.preventDefault()}>
-        {grid.map((row, rowIndex) => (
-          <div className={styles.row} key={rowIndex}>
-            {row.map((letter, colIndex) => (
-              <div
-                key={colIndex}
-                className={getCellClass(rowIndex, colIndex)}
-                onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
-                onMouseOver={() => handleMouseOver(rowIndex, colIndex)}
-              >
-                {letter}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+  {grid.map((row, rowIndex) => (
+    <div className={styles.row} key={rowIndex}>
+      {row.map((letter, colIndex) => (
+        <div
+          key={colIndex}
+          className={getCellClass(rowIndex, colIndex)}
+          onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
+          onMouseOver={() => handleMouseOver(rowIndex, colIndex)}
+        >
+          {letter}
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
       <div className={styles.wordList}>
         <h4>Palabras que debes encontrar</h4>
         {words.map((word, index) => (
