@@ -3,15 +3,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import activities from "./data";
 import Navbar from "../../components/Navbar"
 import LectureCard from "@/app/components/lecture_card/LectureCard";
-import { useAuthStore } from '@/providers/auth-store-provider.js'
+import { useAuthStore } from '@/providers/auth-store-provider.js';
+import { useRouter } from 'next/navigation';
 import styles from '../animation.module.css'; 
 
 export default function Lectures() {
     const { level } = useAuthStore((state) => state);
     const audioRef = useRef(null);
-    const [loading, setLoading] = useState(false); // Estado para la animación de carga
-  
-    // Precargar el audio al cargar el componente
+    const [loading, setLoading] = useState(false);   
+    const router = useRouter();
+    
     useEffect(() => {
       audioRef.current = new Audio('/sounds/selectMainMenu.mp3');
       
@@ -23,36 +24,32 @@ export default function Lectures() {
       };
     }, []);
   
-    // Función para reproducir el sonido y mostrar la animación de carga
     const playClickSound = (event, href) => {
-      event.preventDefault(); // Prevenir la navegación instantánea
-      setLoading(true); // Mostrar la animación de carga
-  
+      event.preventDefault(); 
+      setLoading(true);   
       if (audioRef.current) {
-        audioRef.current.currentTime = 0; // Reiniciar el audio
+        audioRef.current.currentTime = 0; 
         audioRef.current.play().then(() => {
-          audioRef.current.onended = () => {
-            setLoading(false); // Ocultar la animación de carga
+          audioRef.current.onended = () => {             
             if (href) {
-              window.location.href = href; // Navegar a la nueva página cuando el audio termine
+              router.push(href);  
             }
           };
         }).catch((error) => {
           console.error("Error al reproducir el audio: ", error);
-          setLoading(false); // Ocultar la animación si hay un error
+          setLoading(false); 
           if (href) {
-            window.location.href = href; // Navegar sin esperar si hay un error
+            router.push(href); 
           }
         });
       } else {
         setLoading(false);
         if (href) {
-          window.location.href = href;
+          router.push(href);
         }
       }
     };
-  
-    // Agregar el evento de clic a los elementos que pueden navegar
+      
     useEffect(() => {
       const clickableElements = document.querySelectorAll('a, button, .lecture-card');
   
@@ -75,10 +72,13 @@ export default function Lectures() {
         <>
             <Navbar />
             {loading && (
-                <div className={styles.loadingOverlay}>
-                    <div className={styles.spinner}></div>
-                    <p>Cargando...</p>
+              <div className={styles.loadingOverlay}>
+                <div className={styles.spinnerContainer}>
+                  <img src="/img/humu/humu-fuckup.png" alt="Loading" className={styles.spinnerImage} />
+                  <p className={styles.loadingText}>CARGANDO...</p>
+                  <p className={styles.funFact}>Hay más personas estudiando irlandés en Duolingo que irlandeses nativos que lo hablan.</p>
                 </div>
+              </div>
             )}
             <div className="container d-flex justify-content-center align-items-center vh-100">
                 <div className="row">

@@ -5,14 +5,15 @@ import CourseCard from "../components/course_card/CourseCard";
 import Navbar from "../components/Navbar";
 import { courses } from './data.js';
 import { useAuthStore } from '@/providers/auth-store-provider.js';
+import { useRouter } from 'next/navigation';
 import styles from './animation.module.css';
 
 export default function Courses() {
   const { level } = useAuthStore((state) => state);
   const audioRef = useRef(null);
-  const [loading, setLoading] = useState(false); // Estado para controlar la animación de carga
+  const [loading, setLoading] = useState(false); 
+  const router = useRouter();
 
-  // Precargar el audio al cargar el componente
   useEffect(() => {
     audioRef.current = new Audio('/sounds/selectMainMenu.mp3');
     
@@ -23,39 +24,33 @@ export default function Courses() {
       }
     };
   }, []);
-
-  // Función para reproducir el sonido y retrasar la navegación
+  
   const playClickSound = (event, href) => {
-    event.preventDefault(); // Prevenir la navegación instantánea
-
-    setLoading(true); // Mostrar la animación de carga
-
+    event.preventDefault();
+    setLoading(true); 
     if (audioRef.current) {
-      audioRef.current.currentTime = 0; // Reiniciar el audio
-      audioRef.current.play().then(() => {
-        // Espera a que el audio termine antes de navegar
-        audioRef.current.onended = () => {
-          setLoading(false); // Ocultar la animación de carga
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().then(() => {        
+        audioRef.current.onended = () => {          
           if (href) {
-            window.location.href = href; // Navega a la nueva página una vez que el audio termine
+            router.push(href); 
           }
         };
       }).catch((error) => {
         console.error("Error al reproducir el audio: ", error);
-        setLoading(false); // Ocultar la animación de carga incluso si hay un error
+        setLoading(false); 
         if (href) {
-          window.location.href = href; // Si hay un error, navegamos sin esperar
+          router.push(href);
         }
       });
     } else {
-      setLoading(false); // Ocultar la animación de carga si no hay audio
+      setLoading(false);
       if (href) {
-        window.location.href = href;
+        router.push(href);
       }
     }
   };
-
-  // Agregar el evento de clic a los elementos
+ 
   useEffect(() => {
     const clickableElements = document.querySelectorAll('a, button, .course-card');
 
@@ -80,8 +75,11 @@ export default function Courses() {
       <Navbar />      
       {loading && (
         <div className={styles.loadingOverlay}>
-          <div className={styles.spinner}></div>
-          <p>Cargando...</p>
+          <div className={styles.spinnerContainer}>
+            <img src="/img/humu/humu-fuckup.png" alt="Loading" className={styles.spinnerImage} />
+            <p className={styles.loadingText}>CARGANDO...</p>
+            <p className={styles.funFact}>Hay más personas estudiando irlandés en Duolingo que irlandeses nativos que lo hablan.</p>
+          </div>
         </div>
       )}
       <div className="container d-flex justify-content-center align-items-center h-75">
