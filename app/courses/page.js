@@ -93,7 +93,7 @@ export default function Courses() {
           </div>
         </div>
         <div className="col">
-          <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400} className={`${styles.imgFloat}`} />
+          <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400} className={`${styles.imgFloat}`}/>
         </div>
       </div>
       <div className="container w-100 text-center">
@@ -129,10 +129,3 @@ export default function Courses() {
     </>
   );
 }
-
-
-
-
-
-
-
