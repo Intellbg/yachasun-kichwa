@@ -1,6 +1,13 @@
+"use client"
+import { useRouter } from 'next/navigation';
 import NavBar from '../../../components/Navbar'
 
 export default function MdxLayout({ children }) {
+    const router = useRouter();
+
+    const goBack = () => {
+        router.back();
+    };
     return (
         <>
             <NavBar />
@@ -8,7 +15,13 @@ export default function MdxLayout({ children }) {
                 <div className='card p-5'>
                     {children}
                 </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button className="btn btn-lg text-center m-a w-25" onClick={goBack}>
+                        <i className="bi bi-arrow-left-circle"></i> Retroceder
+                    </button>
+                </div>
             </div>
+
         </>
     )
 }
