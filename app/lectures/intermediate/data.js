@@ -6,7 +6,7 @@ const activities = [
         "descripcion": "En esta lectura vamos a aprender sobre los numeros",
         "slug": "numbers-2",
         "module": 1,
-        "next": "ordinal_numbers",
+        "next": "/lectures/intermediate/es/ordinal_numbers",
     },
     {
         "unlock_score": 1,
@@ -14,7 +14,7 @@ const activities = [
         "name": "Números ordinales",
         "slug": "ordinal_numbers",
         "module": 1,
-        "next": "animals-2",
+        "next": "/lectures/intermediate/es/animals-2",
     },
     {
         "unlock_score": 2,
@@ -22,7 +22,7 @@ const activities = [
         "name": "Animales",
         "module": 1,
         "slug": "animals-2",
-        "next": "food-2",
+        "next": "/lectures/intermediate/es/food-2",
     },
     {
         "unlock_score": 3,
@@ -30,7 +30,7 @@ const activities = [
         "module": 1,
         "name": "Alimentos",
         "slug": "food-2",
-        "next": "grammar-1-2",
+        "next": "/lectures/intermediate/es/grammar-1-2",
     },
     {
         "unlock_score": 4,
@@ -38,7 +38,7 @@ const activities = [
         "name": "Las particulas pak y nkapak",
         "module": 1,
         "slug": "grammar-1-2",
-        "next": "game-1-2",
+        "next": "/lectures/intermediate/es/game-1-2",
     },
     {
         "unlock_score": 5,
@@ -46,7 +46,7 @@ const activities = [
         "name": "Juego B0",
         "module": 1,
         "slug": "game-1-2",
-        "next": "test-1-2",
+        "next": "/lectures/intermediate/es/test-1-2",
     },
     {
         "unlock_score": 9,
@@ -54,7 +54,7 @@ const activities = [
         "name": "Evaluación 1",
         "module": 1,
         "slug": "test-1-2",
-        "next": "grammar-2",
+        "next": "/lectures/intermediate/es/grammar-2",
     },
     {
         "unlock_score": 14,
@@ -62,7 +62,7 @@ const activities = [
         "name": "Partículas de pregunta y respuesta",
         "module": 2,
         "slug": "grammar-2",
-        "next": "grammar-3",
+        "next": "/lectures/intermediate/es/grammar-3",
     },
     {
         "unlock_score": 15,
@@ -70,7 +70,7 @@ const activities = [
         "name": "Las partículas tak y ta",
         "module": 2,
         "slug": "grammar-3",
-        "next": "grammar-4",
+        "next": "/lectures/intermediate/es/grammar-4",
     },
     {
         "unlock_score": 16,
@@ -78,7 +78,7 @@ const activities = [
         "name": "Las partículas manta, kaman y wan",
         "slug": "grammar-4",
         "module": 2,
-        "next": "grammar-5",
+        "next": "/lectures/intermediate/es/grammar-5",
     },
     {
         "unlock_score": 17,
@@ -86,7 +86,7 @@ const activities = [
         "name": "Las partículas pi y man",
         "module": 2,
         "slug": "grammar-5",
-        "next": "grammar-6",
+        "next": "/lectures/intermediate/es/grammar-6",
 
     },
     {
@@ -95,7 +95,7 @@ const activities = [
         "name": "La negación",
         "module": 2,
         "slug": "grammar-6",
-        "next": "game-2",
+        "next": "/lectures/intermediate/es/game-2",
     },
     {
         "unlock_score": 18,
@@ -103,7 +103,7 @@ const activities = [
         "module": 2,
         "name": "Juego B1",
         "slug": "game-2",
-        "next": "test-2",
+        "next": "/lectures/intermediate/es/test-2",
     },
     {
         "unlock_score": 20,
@@ -111,7 +111,7 @@ const activities = [
         "module": 2,
         "name": "Evaluación 2",
         "slug": "test-2",
-        "next": "verbs",
+        "next": "/lectures/intermediate/es/verbs",
     },
     {
         "unlock_score": 35,
@@ -119,7 +119,7 @@ const activities = [
         "module": 3,
         "name": "Los verbos",
         "slug": "verbs",
-        "next": "adjetives",
+        "next": "/lectures/intermediate/es/adjetives",
     },
     {
         "unlock_score": 36,
@@ -127,7 +127,7 @@ const activities = [
         "course": 1,
         "name": "Los adjetivos",
         "slug": "adjetives",
-        "next": "kitchen",
+        "next": "/lectures/intermediate/es/kitchen",
     },
     {
         "unlock_score": 38,
@@ -135,7 +135,7 @@ const activities = [
         "module": 3,
         "name": "La cocina",
         "slug": "kitchen",
-        "next": "city",
+        "next": "/lectures/intermediate/es/city",
     },
     {
         "unlock_score": 40,
@@ -143,7 +143,7 @@ const activities = [
         "module": 3,
         "name": "La ciudad",
         "slug": "city",
-        "next": "room",
+        "next": "/lectures/intermediate/es/room",
     },
     {
         "unlock_score": 40,
@@ -151,7 +151,7 @@ const activities = [
         "module": 3,
         "name": "El dormitorio",
         "slug": "room",
-        "next": "game-3",
+        "next": "/lectures/intermediate/es/game-3",
     },
     {
         "unlock_score": 39,
@@ -159,7 +159,7 @@ const activities = [
         "module": 3,
         "name": "Juego B2",
         "slug": "game-3",
-        "next": "test-3",
+        "next": "/lectures/intermediate/es/test-3",
     },
     {
         "unlock_score": 40,
@@ -167,7 +167,7 @@ const activities = [
         "module": 3,
         "name": "Evaluación 3",
         "slug": "test-3",
-        "next": "location",
+        "next": "/lectures/intermediate/es/location",
     },
     {
         "unlock_score": 40,
@@ -175,7 +175,7 @@ const activities = [
         "course": 1,
         "name": "La ubicación",
         "slug": "location",
-        "next": "time",
+        "next": "/lectures/intermediate/es/time",
     },
     {
         "unlock_score": 40,
@@ -183,7 +183,7 @@ const activities = [
         "course": 1,
         "name": "EL tiempo",
         "slug": "time",
-        "next": "grammar-7",
+        "next": "/lectures/intermediate/es/grammar-7",
     },
     {
         "unlock_score": 40,
@@ -191,7 +191,7 @@ const activities = [
         "course": 1,
         "name": "El pasado progresivo",
         "slug": "grammar-7",
-        "next": "grammar-8",
+        "next": "/lectures/intermediate/es/grammar-8",
     },
     {
         "module": 4,
@@ -199,7 +199,7 @@ const activities = [
         "course": 1,
         "name": "El pasado simple",
         "slug": "grammar-8",
-        "next": "grammar-9",
+        "next": "/lectures/intermediate/es/grammar-9",
     },
     {
         "module": 4,
@@ -207,7 +207,7 @@ const activities = [
         "course": 1,
         "name": "El participio pasado",
         "slug": "grammar-9",
-        "next": "game-4",
+        "next": "/lectures/intermediate/es/game-4",
     },
     {
         "unlock_score": 39,
@@ -215,7 +215,7 @@ const activities = [
         "course": 1,
         "name": "Juego B3",
         "slug": "game-4",
-        "next": "test-4",
+        "next": "/lectures/intermediate/es/test-4",
     },
     {
         "unlock_score": 40,
@@ -223,7 +223,7 @@ const activities = [
         "course": 1,
         "name": "Evaluación 4",
         "slug": "test-4",
-        "next": "grammar-10",
+        "next": "/lectures/intermediate/es/grammar-10",
     },
     {
         "unlock_score": 40,
@@ -231,7 +231,7 @@ const activities = [
         "course": 1,
         "name": "La conjugación en el tiempo presente progresivo",
         "slug": "grammar-10",
-        "next": "grammar-11",
+        "next": "/lectures/intermediate/es/grammar-11",
     },
     {
         "unlock_score": 40,
@@ -239,7 +239,7 @@ const activities = [
         "course": 1,
         "name": "El futuro próximo",
         "slug": "grammar-11",
-        "next": "grammar-12",
+        "next": "/lectures/intermediate/es/grammar-12",
     },
     {
         "unlock_score": 40,
@@ -247,7 +247,7 @@ const activities = [
         "course": 1,
         "name": "El futuro simple",
         "slug": "grammar-12",
-        "next": "game-5",
+        "next": "/lectures/intermediate/es/game-5",
     },
     {
         "module": 5,
@@ -255,7 +255,7 @@ const activities = [
         "course": 1,
         "name": "Juego B4",
         "slug": "game-5",
-        "next": "test-5",
+        "next": "/lectures/intermediate/es/test-5",
     },
     {
         "module": 5,
@@ -263,7 +263,7 @@ const activities = [
         "course": 1,
         "name": "Evaluación 5",
         "slug": "test-5",
-        "next": "/",
+        "next": "/lectures/intermediate/es//",
     },
 
 ]
