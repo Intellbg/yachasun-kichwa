@@ -22,7 +22,6 @@ export default function Game1() {
             const questions = await getQuestions("animals,body,grammar-2");
             const randomQuestion = questions[0]
             setQuestion(randomQuestion);
-            console.log(questions)
         };
         fetchData()
     }, [level]);

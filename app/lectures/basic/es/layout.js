@@ -11,7 +11,7 @@ export default function MdxLayout({ children }) {
                 <div className='card p-5'>
                     {children}
                 </div>
-                <div class="d-flex justify-content-center align-items-center">
+                <div className="d-flex justify-content-center align-items-center">
                     <BackButton></BackButton>
                 </div>
             </div>

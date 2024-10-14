@@ -19,7 +19,9 @@ export default function Quiz({ lecture }) {
     (state) => state,
   )
 
-  const lectureData = lectures.find((element) => (element.slug == lecture))
+  const lectureData = lectures.find((element) => (element.lectures.find(
+    (element) => element.slug == lecture
+  ))).lectures.find((element) => element.slug == lecture)
   const questions = getQuestions(lecture)
 
   const [answers, setAnswers] = useState({});
@@ -49,8 +51,8 @@ export default function Quiz({ lecture }) {
             "authorization": key,
           },
           redirect: "follow",
-          body: JSON.stringify({ "level": level+1 }),
-        }).then((r)=>console.log(r))
+          body: JSON.stringify({ "level": level + 1 }),
+        }).then((r) => console.log(r))
       }
     } else {
       setResult(`Obtuvo ${correctCount} de ${questions.length} correctas`);
@@ -75,7 +77,7 @@ export default function Quiz({ lecture }) {
 
         {result && <p>{result}</p>}
       </div>
-      <a href={`/lectures/basic/es/${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
+      <a href={`${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
     </div>
   );
 };

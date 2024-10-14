@@ -30,7 +30,6 @@ export default function Game({ level, onSendData }) {
   }, [currentGuessIndex, gameOver, correctWord]);
 
   const handleChange = (e, rowIndex, colIndex) => {
-    console.log(correctWord)
     if (gameOver) return;
     const value = e.target.value.toUpperCase();
     if (/^[A-ZÑñ0-9]$/.test(value) || value === '') {
