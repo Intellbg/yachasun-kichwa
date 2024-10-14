@@ -90,7 +90,7 @@ const activities = [
                 "score_required": 12,
                 "name": "Evaluación 2",
                 "slug": "test-2",
-                "next": "/lectures/basic/es/home",
+                "next": "/lectures/basic/es/house",
             },
         ]
     },
@@ -103,7 +103,7 @@ const activities = [
             {
                 "score_required": 12,
                 "name": "Cosas del Hogar",
-                "slug": "home",
+                "slug": "house",
                 "next": "/lectures/basic/es/classroom",
                 "module": 3,
             },
@@ -140,7 +140,7 @@ const activities = [
                 "module": 3,
                 "name": "Evaluación 3",
                 "slug": "test-3",
-                "next": "/lectures/basic/es//",
+                "next": "/lectures/intermediate/",
             },]
     }
 ]

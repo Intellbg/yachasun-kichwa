@@ -32,15 +32,15 @@ export default function Game1() {
             </Helper>
             <Navbar />
 
-            <h1 className="text-center">Crucigrama</h1>
+            <h1 className="text-center">Sopa de letras</h1>
             <div className="container d-flex justify-content-center align-items-center h-75">
                 {/* <Crossword words={questions} onSendData={handleChildData} /> */}
             </div>
-            <a href="/lectures/basic/es/test-2" className='text-center btn btn-success'>Enviar</a>
+            <a href="/lectures/basic/es/test-3" className='text-center btn btn-success'>Enviar</a>
 
             {
                 childData && (
-                    <a href="/lectures/basic/es/test-2" className='text-center btn btn-success'>Enviar</a>
+                    <a href="/lectures/basic/es/test-3" className='text-center btn btn-success'>Enviar</a>
                 )
             }
         </>

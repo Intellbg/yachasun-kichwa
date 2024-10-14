@@ -183,7 +183,26 @@ const lectureQuestions = [
         "answer": "Wakraka hatunmi kan"
     },
     {
-        "slug": "home",
+        "question": "¿Cuál es la traducción de \"cocinar\" en kichwa?",
+        "answer": "yananuna tullapa",
+        "options": [
+            "wasi",
+            "pataku",
+            "yanta",
+            "yananuna tullapa"
+        ],
+        "slug": "house"
+    },
+    {
+        "question": "¿Cuál es la traducción de \"casa\" en kichwa?",
+        "answer": "wasi",
+        "options": [
+            "ishpana uku",
+            "tuku",
+            "yananuna uku",
+            "wasi"
+        ],
+        "slug": "house"
     },
     {
         "slug": "greetings-farewells",
@@ -231,26 +250,24 @@ const lectureQuestions = [
     },
     {
         "slug": "grammar-3",
+        "question": "¿Warmi es prefijo para referirse a femenino?",
+        "options": [
+            "si",
+            "no",
+        ],
+        "answer": "si"
     },
     {
-        "slug": "game-1",
+        "slug": "grammar-3",
+        "question": "¿Cómo se diría coneja en kichwa?",
+        "options": [
+            "warmiwallinku",
+            "kariwallinku",
+            "karikuy",
+            "warmikuy",
+        ],
+        "answer": "warmiwallinku"
     },
-    {
-        "slug": "test-1",
-    },
-    {
-        "slug": "game-2",
-    },
-    {
-        "slug": "test-2",
-    },
-    {
-        "slug": "game-3",
-    },
-    {
-        "slug": "test-3",
-    },
-
 ]
 
 export default lectureQuestions
