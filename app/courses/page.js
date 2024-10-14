@@ -11,12 +11,12 @@ import styles from './animation.module.css';
 export default function Courses() {
   const { level } = useAuthStore((state) => state);
   const audioRef = useRef(null);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     audioRef.current = new Audio('/sounds/selectMainMenu.mp3');
-    
+
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -24,21 +24,21 @@ export default function Courses() {
       }
     };
   }, []);
-  
+
   const playClickSound = (event, href) => {
     event.preventDefault();
-    setLoading(true); 
+    setLoading(true);
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
-      audioRef.current.play().then(() => {        
-        audioRef.current.onended = () => {          
+      audioRef.current.play().then(() => {
+        audioRef.current.onended = () => {
           if (href) {
-            router.push(href); 
+            router.push(href);
           }
         };
       }).catch((error) => {
         console.error("Error al reproducir el audio: ", error);
-        setLoading(false); 
+        setLoading(false);
         if (href) {
           router.push(href);
         }
@@ -50,7 +50,7 @@ export default function Courses() {
       }
     }
   };
- 
+
   useEffect(() => {
     const clickableElements = document.querySelectorAll('a, button, .course-card');
 
@@ -72,7 +72,7 @@ export default function Courses() {
 
   return (
     <>
-      <Navbar />      
+      <Navbar />
       {loading && (
         <div className={styles.loadingOverlay}>
           <div className={styles.spinnerContainer}>
@@ -91,35 +91,15 @@ export default function Courses() {
           </div>
         </div>
         <div className="col">
-          <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400} className={`${styles.imgFloat}`}/>
+          <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400} className={`${styles.imgFloat}`} />
         </div>
       </div>
       <div className="container w-100 text-center">
         <div className="row d-flex justify-content-center">
           <a href="/achievements" className="text-decoration-none col-3" onClick={(e) => playClickSound(e, "/achievements")}>
-            <div className="card hover-div w-100">
-              <div className="d-flex flex-column">
-                <div className="card-body">
-                  <h1 className="display-1">
-                  <img src="/img/iconography/achievements.png" alt="Icono de logros" height={200} />                    
-                  </h1>
-                  <h5 className="card-title">Logros</h5>
-                  <p className="card-text">Revisa tus insignias</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="/games" className="text-decoration-none col-3" onClick={(e) => playClickSound(e, "/games")}>
-            <div className="card hover-div w-100">
-              <div className="d-flex flex-column">
-                <div className="card-body">
-                  <h1 className="display-1">
-                    <img src="/img/iconography/games.png" alt="Icono de logros" height={200} />                      
-                  </h1>
-                  <h5 className="card-title">Juegos</h5>
-                  <p className="card-text">Practica tus habilidades</p>
-                </div>
-              </div>
+            <div className="card-body">
+              <img src="/img/iconography/achievements.png" alt="Icono de logros" height={125} className='hover-div rounded-circle' />
+              <h5 className="card-title">Logros</h5>
             </div>
           </a>
         </div>
