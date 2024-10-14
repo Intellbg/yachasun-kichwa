@@ -1,29 +1,33 @@
 const activities = [
-    {        
+    {
         "unlock_score": 0,
         "course": 1,
         "name": "Numeros",
-        "descripcion":"En esta lectura vamos a aprender sobre los numeros",        
+        "descripcion": "En esta lectura vamos a aprender sobre los numeros",
         "slug": "numbers-2",
+        "module": 1,
         "next": "ordinal_numbers",
     },
     {
         "unlock_score": 1,
         "course": 1,
-        "name": "Números ordinales",        
+        "name": "Números ordinales",
         "slug": "ordinal_numbers",
+        "module": 1,
         "next": "animals-2",
     },
     {
         "unlock_score": 2,
         "course": 1,
-        "name": "Animales",        
+        "name": "Animales",
+        "module": 1,
         "slug": "animals-2",
         "next": "food-2",
     },
     {
         "unlock_score": 3,
         "course": 1,
+        "module": 1,
         "name": "Alimentos",
         "slug": "food-2",
         "next": "grammar-1-2",
@@ -32,6 +36,7 @@ const activities = [
         "unlock_score": 4,
         "course": 1,
         "name": "Las particulas pak y nkapak",
+        "module": 1,
         "slug": "grammar-1-2",
         "next": "game-1-2",
     },
@@ -39,6 +44,7 @@ const activities = [
         "unlock_score": 5,
         "course": 1,
         "name": "Juego B0",
+        "module": 1,
         "slug": "game-1-2",
         "next": "test-1-2",
     },
@@ -46,6 +52,7 @@ const activities = [
         "unlock_score": 9,
         "course": 1,
         "name": "Evaluación 1",
+        "module": 1,
         "slug": "test-1-2",
         "next": "grammar-2",
     },
@@ -53,6 +60,7 @@ const activities = [
         "unlock_score": 14,
         "course": 1,
         "name": "Partículas de pregunta y respuesta",
+        "module": 2,
         "slug": "grammar-2",
         "next": "grammar-3",
     },
@@ -60,6 +68,7 @@ const activities = [
         "unlock_score": 15,
         "course": 1,
         "name": "Las partículas tak y ta",
+        "module": 2,
         "slug": "grammar-3",
         "next": "grammar-4",
     },
@@ -68,12 +77,14 @@ const activities = [
         "course": 1,
         "name": "Las partículas manta, kaman y wan",
         "slug": "grammar-4",
+        "module": 2,
         "next": "grammar-5",
     },
     {
         "unlock_score": 17,
         "course": 1,
         "name": "Las partículas pi y man",
+        "module": 2,
         "slug": "grammar-5",
         "next": "grammar-6",
 
@@ -82,12 +93,14 @@ const activities = [
         "unlock_score": 34,
         "course": 1,
         "name": "La negación",
+        "module": 2,
         "slug": "grammar-6",
         "next": "game-2",
     },
     {
         "unlock_score": 18,
         "course": 1,
+        "module": 2,
         "name": "Juego B1",
         "slug": "game-2",
         "next": "test-2",
@@ -95,6 +108,7 @@ const activities = [
     {
         "unlock_score": 20,
         "course": 1,
+        "module": 2,
         "name": "Evaluación 2",
         "slug": "test-2",
         "next": "verbs",
@@ -102,12 +116,14 @@ const activities = [
     {
         "unlock_score": 35,
         "course": 1,
+        "module": 3,
         "name": "Los verbos",
         "slug": "verbs",
         "next": "adjetives",
     },
     {
         "unlock_score": 36,
+        "module": 3,
         "course": 1,
         "name": "Los adjetivos",
         "slug": "adjetives",
@@ -116,6 +132,7 @@ const activities = [
     {
         "unlock_score": 38,
         "course": 1,
+        "module": 3,
         "name": "La cocina",
         "slug": "kitchen",
         "next": "city",
@@ -123,6 +140,7 @@ const activities = [
     {
         "unlock_score": 40,
         "course": 1,
+        "module": 3,
         "name": "La ciudad",
         "slug": "city",
         "next": "room",
@@ -130,6 +148,7 @@ const activities = [
     {
         "unlock_score": 40,
         "course": 1,
+        "module": 3,
         "name": "El dormitorio",
         "slug": "room",
         "next": "game-3",
@@ -137,6 +156,7 @@ const activities = [
     {
         "unlock_score": 39,
         "course": 1,
+        "module": 3,
         "name": "Juego B2",
         "slug": "game-3",
         "next": "test-3",
@@ -144,12 +164,14 @@ const activities = [
     {
         "unlock_score": 40,
         "course": 1,
+        "module": 3,
         "name": "Evaluación 3",
         "slug": "test-3",
         "next": "location",
     },
     {
         "unlock_score": 40,
+        "module": 4,
         "course": 1,
         "name": "La ubicación",
         "slug": "location",
@@ -157,6 +179,7 @@ const activities = [
     },
     {
         "unlock_score": 40,
+        "module": 4,
         "course": 1,
         "name": "EL tiempo",
         "slug": "time",
@@ -164,12 +187,14 @@ const activities = [
     },
     {
         "unlock_score": 40,
+        "module": 4,
         "course": 1,
         "name": "El pasado progresivo",
         "slug": "grammar-7",
         "next": "grammar-8",
     },
     {
+        "module": 4,
         "unlock_score": 40,
         "course": 1,
         "name": "El pasado simple",
@@ -177,6 +202,7 @@ const activities = [
         "next": "grammar-9",
     },
     {
+        "module": 4,
         "unlock_score": 40,
         "course": 1,
         "name": "El participio pasado",
@@ -185,6 +211,7 @@ const activities = [
     },
     {
         "unlock_score": 39,
+        "module": 4,
         "course": 1,
         "name": "Juego B3",
         "slug": "game-4",
@@ -192,6 +219,7 @@ const activities = [
     },
     {
         "unlock_score": 40,
+        "module": 4,
         "course": 1,
         "name": "Evaluación 4",
         "slug": "test-4",
@@ -199,6 +227,7 @@ const activities = [
     },
     {
         "unlock_score": 40,
+        "module": 5,
         "course": 1,
         "name": "La conjugación en el tiempo presente progresivo",
         "slug": "grammar-10",
@@ -206,6 +235,7 @@ const activities = [
     },
     {
         "unlock_score": 40,
+        "module": 5,
         "course": 1,
         "name": "El futuro próximo",
         "slug": "grammar-11",
@@ -213,12 +243,14 @@ const activities = [
     },
     {
         "unlock_score": 40,
+        "module": 5,
         "course": 1,
         "name": "El futuro simple",
         "slug": "grammar-12",
         "next": "game-5",
     },
     {
+        "module": 5,
         "unlock_score": 39,
         "course": 1,
         "name": "Juego B4",
@@ -226,6 +258,7 @@ const activities = [
         "next": "test-5",
     },
     {
+        "module": 5,
         "unlock_score": 40,
         "course": 1,
         "name": "Evaluación 5",
