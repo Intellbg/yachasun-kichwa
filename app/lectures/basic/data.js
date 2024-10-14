@@ -5,6 +5,7 @@ const activities = [
         "score_required": 0,
         "slug": "alphabet",
         "next": "numbers",
+        "module": 1,
     },
     {
         "course": "Básico",
@@ -13,6 +14,8 @@ const activities = [
         "score_required": 1,
         "slug": "numbers",
         "next": "colors",
+        "module": 1,
+
     },
     {
         "score_required": 2,
@@ -20,6 +23,8 @@ const activities = [
         "name": "Colores",
         "slug": "colors",
         "next": "grammar-1",
+        "module": 1,
+
     },
     {
         "score_required": 3,
@@ -27,13 +32,15 @@ const activities = [
         "name": "Gramática: Pronombres y Estructura Básica de Oraciones",
         "slug": "grammar-1",
         "next": "game-1",
+        "module": 1,
     },
     {
         "score_required": 4,
         "course": 0,
-        "name": "Juego A0",
+        "name": "Juego Wordle",
         "slug": "game-1",
         "next": "test-1",
+        "module": 1,
     },
     {
         "score_required": 9,
@@ -41,12 +48,14 @@ const activities = [
         "name": "Evaluación 1",
         "slug": "test-1",
         "next": "greetings-farewells",
+        "module": 2,
     },
     {
         "score_required": 14,
         "course": 0,
         "name": "Saludos Cortesía y Despedidas",
         "slug": "greetings-farewells",
+        "module": 2,
         "next": "family",
     },
     {
@@ -54,6 +63,7 @@ const activities = [
         "course": 0,
         "name": "La familia",
         "slug": "family",
+        "module": 2,
         "next": "animals",
     },
     {
@@ -61,6 +71,7 @@ const activities = [
         "course": 0,
         "name": "Animales",
         "slug": "animals",
+        "module": 2,
         "next": "body",
     },
     {
@@ -68,6 +79,7 @@ const activities = [
         "course": 0,
         "name": "Partes del Cuerpo",
         "slug": "body",
+        "module": 2,
         "next": "grammar-2",
 
     },
@@ -76,19 +88,22 @@ const activities = [
         "course": 0,
         "name": "Gramática: género, plural, tamaño, cantidad",
         "slug": "grammar-2",
+        "module": 2,
         "next": "game-2",
     },
     {
         "score_required": 19,
         "course": 0,
-        "name": "Juego A1",
+        "name": "Juego Crucigrama",
         "slug": "game-2",
+        "module": 2,
         "next": "test-2",
     },
     {
         "score_required": 20,
         "course": 0,
         "name": "Evaluación 2",
+        "module": 3,
         "slug": "test-2",
         "next": "home",
     },
@@ -98,11 +113,13 @@ const activities = [
         "name": "Cosas del Hogar",
         "slug": "home",
         "next": "classroom",
+        "module": 3,
     },
     {
         "score_required": 35,
         "course": 0,
         "name": "El Aula",
+        "module": 3,
         "slug": "classroom",
         "next": "food",
     },
@@ -110,6 +127,7 @@ const activities = [
         "score_required": 36,
         "course": 0,
         "name": "Alimentos",
+        "module": 3,
         "slug": "food",
         "next": "grammar-3",
     },
@@ -117,12 +135,14 @@ const activities = [
         "score_required": 38,
         "course": 0,
         "name": "Gramática: Imperativo, Tiempo Presente",
+        "module": 3,
         "slug": "grammar-3",
         "next": "game-3",
     },
     {
         "score_required": 39,
         "course": 0,
+        "module": 3,
         "name": "Juego C3",
         "slug": "game-3",
         "next": "test-3",
@@ -130,6 +150,7 @@ const activities = [
     {
         "score_required": 40,
         "course": 0,
+        "module": 3,
         "name": "Evaluación 3",
         "slug": "test-3",
         "next": "/",
