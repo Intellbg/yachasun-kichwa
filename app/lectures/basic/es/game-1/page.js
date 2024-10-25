@@ -27,7 +27,7 @@ export default function Game1() {
             </div>
             {
                 childData && (
-                    <a href="/lectures/basic/es/test-2" className='text-center btn btn-success'>Enviar</a>
+                    <a href="/lectures/basic/es/test-1" className='text-center btn btn-success'>Enviar</a>
                 )
             }
         </>
