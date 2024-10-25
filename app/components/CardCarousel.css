@@ -1,0 +1,24 @@
+.blocked {
+  background-color: #9E9E9E;
+  color: #FFFFFF;
+  border: 2px solid #9E9E9E;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #003011;
+  font-size: 20px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #aaa; 
+  opacity: 0.5;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #003011 !important;
+  opacity: 1;
+}

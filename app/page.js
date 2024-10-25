@@ -1,8 +1,12 @@
+"use client"
 import SlideInItem from "./components/slide-in/SlideInItem";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { useAuthStore } from '@/providers/auth-store-provider.js';
 
 export default function Home() {
+  const { username } = useAuthStore((state) => state);
+
   return (
     <>
       <Navbar />
@@ -18,16 +22,33 @@ export default function Home() {
             <SlideInItem direction="left" className="col">
               <img src="/img/dancing-huma-devil.gif" className='img-fluid' alt='Inti Raymi Cover photo'></img>
             </SlideInItem>
-            <SlideInItem direction="left" className="col">
-              <div className='h-100 text-center d-flex flex-column justify-content-center'>
-                <h2>Descubre un nuevo mundo</h2>
-                <p>Nuestra aplicación está diseñada para hacer que el aprendizaje de Kichwa sea divertido, atractivo y efectivo.</p>
-                <p>Ya seas principiante o estés buscando perfeccionar tus habilidades.Yachasun Kichwa ofrece una experiencia adaptada a tus necesidades.</p>
-                <a className='btn btn-success w-25 my-2 mx-auto' href="/signup">Crear una cuenta</a>
-                <span>o</span>
-                <a className='btn btn-warning w-25 my-2 mx-auto' href="/login">Iniciar Sesión</a>
-              </div>
-            </SlideInItem>
+            {!username ?
+              <SlideInItem direction="left" className="col">
+                <div className='h-100 text-center d-flex flex-column justify-content-center'>
+                  <h2>Descubre un nuevo mundo</h2>
+                  <p>Nuestra aplicación está diseñada para hacer que el aprendizaje de Kichwa sea divertido, atractivo y efectivo.</p>
+                  <p>Ya seas principiante o estés buscando perfeccionar tus habilidades.Yachasun Kichwa ofrece una experiencia adaptada a tus necesidades.</p>
+                  <a className='btn btn-success w-25 my-2 mx-auto' href="/signup">Crear una cuenta</a>
+                  <span>o</span>
+                  <a className='btn btn-warning w-25 my-2 mx-auto' href="/login">Iniciar Sesión</a>
+                </div>
+              </SlideInItem>
+              : <SlideInItem direction="left" className="col">
+                <div className="h-100 text-center d-flex flex-column justify-content-center align-items-center">
+                  <h2 className="mb-3">Descubre un nuevo mundo</h2>
+                  <p className="lead mb-4">Accede al curso</p>
+                  <a
+                    className="btn btn-success px-4 py-2 text-white fw-bold"
+                    href="/courses"
+                    role="button"
+                    aria-label="Accede al curso"
+                  >
+                    Curso
+                  </a>
+                </div>
+              </SlideInItem>
+
+            }
           </div>
         </div>
         <div className="hero position-relative">

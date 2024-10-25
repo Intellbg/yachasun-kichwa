@@ -1,32 +1,31 @@
 "use client"
 
 import React, { useState } from "react";
-import Question from "./Question";
-import lectureQuestions from '../lectures/basic/lectureQuestions'
-import lectures from '../lectures/basic/data'
+import Question from "@/app/components/Question";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
+import { getQuestions } from "@/app/lib/getQuestions.js";
+import { useRef, useEffect } from 'react';
 
 
-function getQuestions(lecture) {
-  var questions = lectureQuestions.filter((element) => (element.slug == lecture))
-  return questions
-}
-
-
-export default function Quiz({ lecture }) {
+export default function Test1() {
   const { level, addLevel, id, key } = useAuthStore(
     (state) => state,
   )
-
-  const lectureData = lectures.find((element) => (element.lectures.find(
-    (element) => element.slug == lecture
-  ))).lectures.find((element) => element.slug == lecture)
-  const questions = getQuestions(lecture)
+  const [questions, setQuestions] = useState([]);
 
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const questions = await await getQuestions("numbers,alphabet,grammar-1,colors", 10, 4)
+      console.log(questions)
+      setQuestions(questions);
+    };
+    fetchData()
+  }, [level]);
 
   const handleSelectAnswer = (questionIndex, answer) => {
     setAnswers({ ...answers, [questionIndex]: answer });
@@ -42,13 +41,13 @@ export default function Quiz({ lecture }) {
     if (correctCount == questions.length) {
       setIsAnswerCorrect(true)
       setResult(`Felicitaciones puede continuar a la siguiente lección`);
-      if (lectureData.score_required >= level) {
+      if (5 >= level) {
         addLevel();
         fetch(USER_ENDPOINT + `${id}/level`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
-            "authorization": key,
+            "authorilectureDatazation": key,
           },
           redirect: "follow",
           body: JSON.stringify({ "level": level + 1 }),
@@ -61,9 +60,8 @@ export default function Quiz({ lecture }) {
 
   return (
     <div className="container">
-      <div className={`${(lectureData.score_required < level) | isAnswerCorrect ? "d-none" : ""}`}>
-        <h3>Evaluación</h3>
-
+      <h1 className="text-center">Evaluación 1</h1>
+      <div className={`${(5 < level) | isAnswerCorrect ? "d-none" : ""}`}>
         {questions.map((questionData, index) => (
           <Question
             key={index}
@@ -77,7 +75,7 @@ export default function Quiz({ lecture }) {
 
         {result && <p>{result}</p>}
       </div>
-      <a href={`${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
+      <a href={`/lectures/basic/es/greetings-farewells`} className={`text-center btn btn-success ${(5 < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
     </div>
   );
 };

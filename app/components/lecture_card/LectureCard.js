@@ -6,7 +6,7 @@ export default function LectureCard({ data, currentScore }) {
     return (        
             <div className={`card m-3 py-4 d-flex flex-row align-items-center justify-content-between ${unlocked ? "blocked" : current ? "current hover-div" : "passed hover-div"}`}>
                 <div className="mx-3">
-                    <h2 className="fw-bold mb-1">Lectura:{data.name}</h2>
+                    <h2 className="fw-bold mb-1">{data.name}</h2>
                     <p className="mb-0">{data.descripcion}</p>
                 </div>
                 <div className="me-3">

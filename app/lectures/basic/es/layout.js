@@ -1,6 +1,9 @@
+"use client"
 import NavBar from '../../../components/Navbar'
+import BackButton from "@/app/components/BackButton"
 
 export default function MdxLayout({ children }) {
+
     return (
         <>
             <NavBar />
@@ -8,7 +11,11 @@ export default function MdxLayout({ children }) {
                 <div className='card p-5'>
                     {children}
                 </div>
+                <div className="d-flex justify-content-center align-items-center">
+                    <BackButton></BackButton>
+                </div>
             </div>
+
         </>
     )
 }
