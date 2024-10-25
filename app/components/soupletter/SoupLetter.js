@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect, useRef } from "react";
 import styles from "./style.module.css";
 
@@ -11,7 +10,7 @@ const directions = [
   [0, -1], // izquierda
   [-1, 0], // arriba
   [-1, -1], // diagonal arriba-izquierda
-  [-1, 1] // diagonal arriba-derecha
+  [-1, 1]  // diagonal arriba-derecha
 ];
 
 const generateGrid = (words, size) => {
@@ -35,7 +34,6 @@ const generateGrid = (words, size) => {
     }
   });
 
-  // Llenar el resto con letras aleatorias
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
@@ -65,7 +63,7 @@ const canPlaceWord = (grid, word, row, col, direction, size) => {
   return true;
 };
 
-const SoupLetter = ({ words = [] }) => {
+const SoupLetter = ({ words = [], onResolve }) => {
   const size = 10;
   const [grid, setGrid] = useState([]);
   const [selectedCells, setSelectedCells] = useState([]);
@@ -137,6 +135,9 @@ const SoupLetter = ({ words = [] }) => {
     if (words.includes(selectedWord)) {
       setFoundWords((prevFound) => [...prevFound, selectedWord]);
       setFoundPositions((prevPositions) => [...prevPositions, ...selectedCells]);
+      if ([...foundWords, selectedWord].length === words.length) {
+        onResolve(true); // Notificar que se completaron todas las palabras
+      }
     }
     setSelectedCells([]);
   };
@@ -166,21 +167,21 @@ const SoupLetter = ({ words = [] }) => {
   return (
     <div className="d-flex" onMouseUp={handleMouseUp}>
       <div className="container" onMouseLeave={() => isSelecting.current = false} onMouseDown={(e) => e.preventDefault()}>
-  {grid.map((row, rowIndex) => (
-    <div className={styles.row} key={rowIndex}>
-      {row.map((letter, colIndex) => (
-        <div
-          key={colIndex}
-          className={getCellClass(rowIndex, colIndex)}
-          onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
-          onMouseOver={() => handleMouseOver(rowIndex, colIndex)}
-        >
-          {letter}
-        </div>
-      ))}
-    </div>
-  ))}
-</div>
+        {grid.map((row, rowIndex) => (
+          <div className={styles.row} key={rowIndex}>
+            {row.map((letter, colIndex) => (
+              <div
+                key={colIndex}
+                className={getCellClass(rowIndex, colIndex)}
+                onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
+                onMouseOver={() => handleMouseOver(rowIndex, colIndex)}
+              >
+                {letter}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
       <div className={styles.wordList}>
         <h4>Palabras que debes encontrar</h4>
         {words.map((word, index) => (
@@ -194,9 +195,3 @@ const SoupLetter = ({ words = [] }) => {
 };
 
 export default SoupLetter;
-
-
-
-
-
-

@@ -9,31 +9,31 @@ export default function Game({ level, onSendData }) {
   const [guesses, setGuesses] = useState(Array(6).fill(''));
   const [currentGuessIndex, setCurrentGuessIndex] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const [isCorrectGuess, setIsCorrectGuess] = useState(false);
+  const [isCorrectGuess, setIsCorrectGuess] = useState(null);
   const inputRefs = useRef([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const questions = await getQuestions("alphabet,colors,grammar-1");
-      const randomQuestion = questions[0]
+      const randomQuestion = questions[0];
       setQuestion(randomQuestion);
       setCorrectWord(randomQuestion.answer.toUpperCase());
+      resetGame(); // Reiniciar el juego con cada nueva pregunta
     };
-    fetchData()
+    fetchData();
   }, [level]);
 
-  useEffect(() => {
-    if (!gameOver) {
-      const nextInput = inputRefs.current[currentGuessIndex * correctWord.length];
-      if (nextInput) nextInput.focus();
-    }
-  }, [currentGuessIndex, gameOver, correctWord]);
+  const resetGame = () => {
+    setGuesses(Array(6).fill(''));
+    setCurrentGuessIndex(0);
+    setGameOver(false);
+    setIsCorrectGuess(null);
+  };
 
   const handleChange = (e, rowIndex, colIndex) => {
-    console.log(correctWord)
     if (gameOver) return;
     const value = e.target.value.toUpperCase();
-    if (/^[A-ZÑñ0-9]$/.test(value) || value === '') {
+    if (/^[A-ZÑ0-9]$/.test(value) || value === '') {
       const newGuesses = [...guesses];
       const currentGuess = newGuesses[rowIndex].split('');
       currentGuess[colIndex] = value;
@@ -48,13 +48,13 @@ export default function Game({ level, onSendData }) {
           if (newGuesses[rowIndex] === correctWord) {
             setGameOver(true);
             setIsCorrectGuess(true);
-            onSendData(true);
+            onSendData(true); // Notificar que se resolvió correctamente
           } else if (rowIndex < 5) {
             setCurrentGuessIndex(rowIndex + 1);
           } else {
             setGameOver(true);
+            setIsCorrectGuess(false);
             onSendData(false);
-
           }
         }
       }
@@ -62,19 +62,18 @@ export default function Game({ level, onSendData }) {
   };
 
   const getCellStyle = (letter, index, rowIndex) => {
-    if (isCorrectGuess && rowIndex === currentGuessIndex) return 'bg-success text-white';
+    if (isCorrectGuess === true && rowIndex === currentGuessIndex) return 'bg-success text-white';
     if (rowIndex >= currentGuessIndex) return '';
     if (correctWord[index] === letter) return 'bg-success text-white';
     if (correctWord.includes(letter)) return 'bg-warning text-white';
     return 'bg-secondary text-white';
   };
+
   if (!question) return null;
-  const reloadPage = () => {
-    window.location.reload();
-  };
+
   return (
     <div className="container">
-      <h1 className='text-center'>{question.question}</h1>
+      <h1 className="text-center">{question.question}</h1>
       {guesses.map((guess, rowIndex) => (
         <div className="d-flex justify-content-center mb-2" key={rowIndex}>
           {Array.from({ length: correctWord.length }).map((_, colIndex) => {
@@ -82,7 +81,7 @@ export default function Game({ level, onSendData }) {
             return (
               <input
                 key={colIndex}
-                ref={el => inputRefs.current[rowIndex * correctWord.length + colIndex] = el}
+                ref={(el) => (inputRefs.current[rowIndex * correctWord.length + colIndex] = el)}
                 type="text"
                 maxLength="1"
                 value={letter}
@@ -94,35 +93,20 @@ export default function Game({ level, onSendData }) {
           })}
         </div>
       ))}
-      <div className='w-50 text-center m-auto'>
-        {gameOver && isCorrectGuess && (
-          <>
-            <div className="alert alert-success mt-3" role="alert">
-              ¡Felicidades! Has adivinado la palabra correcta.
-            </div>
-          </>
+      <div className="w-50 text-center m-auto">
+        {gameOver && isCorrectGuess === true && (
+          <div className="alert alert-success mt-3" role="alert">
+            ¡Felicidades! Has adivinado la palabra correcta.
+          </div>
         )}
-        {gameOver && !isCorrectGuess && (
-          <>
-            <div className="alert alert-danger mt-3" role="alert">
-              ¡Lo siento! No has adivinado la palabra correcta. {question.answer}
-            </div>
-            <button className='text-center btn btn-warning' onClick={reloadPage}>Re intentar</button>
-          </>
-
+        {gameOver && isCorrectGuess === false && (
+          <div className="alert alert-danger mt-3" role="alert">
+            ¡Lo siento! No has adivinado la palabra correcta.
+          </div>
         )}
       </div>
     </div>
   );
-};
-
-
-
-
-
-
-
-
-
+}
 
 
