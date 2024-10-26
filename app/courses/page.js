@@ -1,20 +1,25 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CourseCard from "../components/course_card/CourseCard";
 import Navbar from "../components/Navbar";
 import Helper from "../components/helper/Helper.js";
 import { courses } from './data.js';
 import { useAuthStore } from '@/providers/auth-store-provider.js';
-import styles from './animation.module.css';
+import styles from '@/app/animation.module.css';
 
 export default function Courses() {
   const { level } = useAuthStore((state) => state);
-  const [openModal, setOpenModal] = useState(level == 0);
+  const [openModal, setOpenModal] = useState(false);
   const [step, setStep] = useState(1)
   const nextStep = () => {
     setStep((prev) => prev + 1);
   };
+
+    useEffect(() => {
+      setOpenModal(level)
+    }, []);
+
 
   const getImageByStep = () => {
     switch (step) {
@@ -43,6 +48,7 @@ export default function Courses() {
         return '/humu-excited.png';
     }
   };
+
 
 
   return (
