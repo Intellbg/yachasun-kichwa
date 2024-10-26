@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Navbar from "../components/Navbar";
-import styles from './Logros.module.css'; 
+import styles from './achievements.module.css'; 
 import { Modal, Button } from 'react-bootstrap';
 
 export default function Logros() {
