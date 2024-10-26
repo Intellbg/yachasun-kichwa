@@ -14,62 +14,6 @@ export default function Courses() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    audioRef.current = new Audio('/sounds/selectMainMenu.mp3');
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
-  const playClickSound = (event, href) => {
-    event.preventDefault();
-    setLoading(true);
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().then(() => {
-        audioRef.current.onended = () => {
-          if (href) {
-            router.push(href);
-          }
-        };
-      }).catch((error) => {
-        console.error("Error al reproducir el audio: ", error);
-        setLoading(false);
-        if (href) {
-          router.push(href);
-        }
-      });
-    } else {
-      setLoading(false);
-      if (href) {
-        router.push(href);
-      }
-    }
-  };
-
-  useEffect(() => {
-    const clickableElements = document.querySelectorAll('a, button, .course-card');
-
-    if (clickableElements.length > 0) {
-      clickableElements.forEach((element) => {
-        element.addEventListener('click', (e) => {
-          const href = element.tagName === 'A' ? element.href : null;
-          playClickSound(e, href);
-        });
-      });
-
-      return () => {
-        clickableElements.forEach((element) => {
-          element.removeEventListener('click', playClickSound);
-        });
-      };
-    }
-  }, []);
-
   return (
     <>
       <Navbar />
