@@ -81,7 +81,7 @@ export default function Test1() {
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
       </div>
       <div className={`${(18 >= level) ? "d-none" : ""} text-center`}>
-        <h1>Felicitaciones ya ha completado el módulo 2 del nivel básico!</h1>
+        <h1>Felicitaciones ya ha completado el módulo 3 del nivel básico!</h1>
         <img
           src="/img/humu/humu-talking.png"
           height={300}
