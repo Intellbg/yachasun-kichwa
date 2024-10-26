@@ -31,19 +31,19 @@ export default function Login() {
             },
             body: JSON.stringify(data),
         })
-        if (res.ok) {
-            const info = await res.json()
-            setAuth(info)
-            router.push('/courses')
-        } else {
+        if (!res.ok) {
             await res.json().then((data) => {
-                if (data['message'] == 'unverified') {
+                if (data['message'] == 'Unverified') {
                     setApiError("Correo no verificado")
                 } else {
                     setApiError("Error al autenticar")
                 }
             });
+            return
         }
+        const info = await res.json()
+        setAuth(info)
+        router.push('/courses')
     }
 
     return (
