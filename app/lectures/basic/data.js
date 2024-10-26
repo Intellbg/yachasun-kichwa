@@ -31,7 +31,7 @@ const activities = [
             },
             {
                 "score_required": 4,
-                "name": "Juego Wordle",
+                "name": "Juego Palabrando",
                 "slug": "game-1",
                 "next": "/lectures/basic/es/test-1",
             },
@@ -82,7 +82,7 @@ const activities = [
             },
             {
                 "score_required": 11,
-                "name": "Juego Crucigrama",
+                "name": "Juego Sopa de Letras",
                 "slug": "game-2",
                 "next": "/lectures/basic/es/test-2",
             },
@@ -131,7 +131,7 @@ const activities = [
             {
                 "score_required": 17,
                 "module": 3,
-                "name": "Juego C3",
+                "name": "Juego Relacionar",
                 "slug": "game-3",
                 "next": "/lectures/basic/es/test-3",
             },

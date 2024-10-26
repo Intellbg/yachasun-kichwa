@@ -65,8 +65,7 @@ const canPlaceWord = (grid, word, row, col, direction, size) => {
   return true;
 };
 
-const SoupLetter = ({ words = [] }) => {
-  const size = 10;
+const SoupLetter = ({ words = [], size = 10 , spanish=[]}) => {
   const [grid, setGrid] = useState([]);
   const [selectedCells, setSelectedCells] = useState([]);
   const [foundWords, setFoundWords] = useState([]);
@@ -182,8 +181,8 @@ const SoupLetter = ({ words = [] }) => {
   ))}
 </div>
       <div className={styles.wordList}>
-        <h4>Palabras que debes encontrar</h4>
-        {words.map((word, index) => (
+        <h4>Palabras que debes encontrar en kichwa</h4>
+        {spanish.map((word, index) => (
           <div key={index} className={foundWords.includes(word) ? styles.foundWord : ""}>
             {word}
           </div>
