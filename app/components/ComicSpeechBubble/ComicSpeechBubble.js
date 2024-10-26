@@ -4,6 +4,7 @@ import styles from './ComicSpeechBubble.module.css';
 const imageMap = {
   humu: '/img/Humu.jpeg',
   humuFeliz: '/img/humu-fuckup.png',  
+  humuSad: '/img/humu/humu-disappointed.png',  
 };
 
 const ComicSpeechBubble = ({ text, character }) => {  

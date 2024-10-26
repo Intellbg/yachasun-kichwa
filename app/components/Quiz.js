@@ -1,31 +1,30 @@
 "use client"
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Question from "./Question";
 import lectureQuestions from '../lectures/basic/lectureQuestions'
 import lectures from '../lectures/basic/data'
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
-
+import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 
 function getQuestions(lecture) {
   var questions = lectureQuestions.filter((element) => (element.slug == lecture))
   return questions
 }
 
-
 export default function Quiz({ lecture }) {
   const { level, addLevel, id, key } = useAuthStore(
     (state) => state,
   )
-
   const lectureData = lectures.find((element) => (element.lectures.find(
     (element) => element.slug == lecture
   ))).lectures.find((element) => element.slug == lecture)
-  const questions = getQuestions(lecture)
 
-  const [answers, setAnswers] = useState({});
+  const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState([]);
+  const [isCorrect, setIsCorrect] = useState([]);
   const [result, setResult] = useState(null);
+  const [humuExpression, setHumuExpression] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
 
   const handleSelectAnswer = (questionIndex, answer) => {
@@ -33,15 +32,16 @@ export default function Quiz({ lecture }) {
   };
 
   const checkAnswers = () => {
-    const correctCount = questions.reduce((count, question, index) => {
-      if (answers[index] === question.answer) {
-        return count + 1;
-      }
-      return count;
-    }, 0);
+    const correctnessArray = questions.map((question, index) =>
+      answers[index] === question.answer
+    );
+    setIsCorrect(correctnessArray)
+    console.log(isCorrect)
+    const correctCount = correctnessArray.filter(Boolean).length
     if (correctCount == questions.length) {
       setIsAnswerCorrect(true)
       setResult(`Felicitaciones puede continuar a la siguiente lección`);
+      setHumuExpression(`humu`);
       if (lectureData.score_required >= level) {
         addLevel();
         fetch(USER_ENDPOINT + `${id}/level`, {
@@ -52,12 +52,20 @@ export default function Quiz({ lecture }) {
           },
           redirect: "follow",
           body: JSON.stringify({ "level": level + 1 }),
-        }).then((r) => console.log(r))
+        })
       }
     } else {
       setResult(`Obtuvo ${correctCount} de ${questions.length} correctas`);
+      setHumuExpression(`humuSad`);
     }
   };
+  
+  useEffect(() => {
+    setQuestions(getQuestions(lecture))
+  }, []);
+  useEffect(() => {
+    setIsCorrect(Array(questions.length).fill(true))
+  }, [questions]);
 
   return (
     <div className="container">
@@ -70,12 +78,13 @@ export default function Quiz({ lecture }) {
             index={index}
             questionData={questionData}
             selectedAnswer={answers[index]}
+            incorrect={isCorrect[index]}
             onSelectAnswer={handleSelectAnswer}
           />
         ))}
         <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
+        {result && <ComicSpeechBubble text={result} character={humuExpression} />}
 
-        {result && <p>{result}</p>}
       </div>
       <a href={`${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
     </div>
