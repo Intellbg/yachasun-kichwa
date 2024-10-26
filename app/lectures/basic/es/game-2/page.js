@@ -98,7 +98,7 @@ export default function Game2() {
             </div>
             {send && (
                 <div className="m-auto">
-                    <a href="/lectures/basic/es/house" className="btn btn-success">Continuar</a>
+                    <a href="/lectures/basic/es/test-2" className="btn btn-success">Continuar</a>
                 </div>
             )}
         </>

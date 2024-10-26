@@ -90,7 +90,7 @@ export default function Test1() {
         <br />
         <h3 s><a href="/achievements">Revisa tus Logros</a></h3>
         <div className="m-auto text-center">
-          <a href={`/lectures/basic/es/greetings-farewells`} className={`text-center btn btn-success ${(12 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
+          <a href={`/lectures/basic/es/house`} className={`text-center btn btn-success ${(12 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
         </div>
       </div>
     </div>
