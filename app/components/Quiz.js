@@ -36,7 +36,6 @@ export default function Quiz({ lecture }) {
       answers[index] === question.answer
     );
     setIsCorrect(correctnessArray)
-    console.log(isCorrect)
     const correctCount = correctnessArray.filter(Boolean).length
     if (correctCount == questions.length) {
       setIsAnswerCorrect(true)
