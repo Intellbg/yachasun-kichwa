@@ -103,7 +103,7 @@ export default function Logros() {
                     </div>
                 </main>
                 <div className="d-flex justify-content-center align-items-center">
-                    <BackButton></BackButton>
+                    <BackButton href='/courses'></BackButton>
                 </div>
             </div>
 
