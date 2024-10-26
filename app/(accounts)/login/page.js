@@ -75,6 +75,7 @@ export default function Login() {
                     <div className="text-center mt-3">
                         <p>¿Todavía no tienes cuenta? <a href='/signup' className="text-decoration-none">Regístrate Aquí</a></p>
                         <a href="/forgot-password" className="text-decoration-none">¿Olvidaste tu contraseña?</a>
+                        <p><a href="/" className="text-decoration-none small text-muted">Volver al inicio</a></p>
                     </div>
                 </form>
             </div>
