@@ -20,6 +20,10 @@ const SoupLetter = dynamic(() => import('../components/soupletter/SoupLetter'), 
   loading: () => <p>Cargando la actividad...</p>,
   ssr: false
 });
+const Completesentence = dynamic(() => import('../components/CompleteSentences/CompleteSentence'), {
+  loading: () => <p>Cargando la actividad...</p>,
+  ssr: false
+});
 
 const wordsArray = [
   { word: 'ACROPOLIS', row: 0, col: 0, direction: 'across' },
@@ -46,7 +50,7 @@ export default function ActivityFlow() {
     {
       id: 'drag-drop',
       component: DragDrop,
-      props: { phrase: "ñukanchik tushunkapak rinchik" }
+      props: { phrase: "ñukanchik tushunkapak rinchik"}
     },
     {
       id: 'wordle',
@@ -62,6 +66,11 @@ export default function ActivityFlow() {
       id: 'soup-letter',
       component: SoupLetter,
       props: { words: ["ALLKU", "OTHER", "WORDS"] }
+    },    
+    {
+      id: 'CompleteSentence',
+      component: Completesentence,
+      props: { sentence: "El sol brilla", missingWordIndex: 2, options:["brilla", "sol", "El"]}
     },
   ];
 
