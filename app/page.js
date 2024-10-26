@@ -19,11 +19,11 @@ export default function Home() {
         </div>
         <div className='container'>
           <div className='row h-100'>
-            <SlideInItem direction="left" className="col">
+            <SlideInItem direction="left" className="col-lg-6 col-sm-12">
               <img src="/img/dancing-huma-devil.gif" className='img-fluid' alt='Inti Raymi Cover photo'></img>
             </SlideInItem>
             {!username ?
-              <SlideInItem direction="left" className="col">
+              <SlideInItem direction="left" className="col-lg-6 col-sm-12">
                 <div className='h-100 text-center d-flex flex-column justify-content-center'>
                   <h2>Descubre un nuevo mundo</h2>
                   <p>Nuestra aplicación está diseñada para hacer que el aprendizaje de Kichwa sea divertido, atractivo y efectivo.</p>
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
         <div className='container'>
           <div className='row py-5'>
-            <SlideInItem direction="right" className="col d-flex flex-column align-self-center text-center">
+            <SlideInItem direction="right" className="col-lg-6 col-sm-12 d-flex flex-column align-self-center text-center">
               <h2>
                 ¡Para Pequeños Aventureros del Idioma!
               </h2>
@@ -89,7 +89,7 @@ export default function Home() {
               </div>
             </SlideInItem>
             <SlideInItem direction="right" className="col h-100 text-center ">
-              <img src="/img/andes_kids.jpg" className='img-fluid w-75' alt='Andes kids'></img>
+              <img src="/img/andes_kids.jpg"  alt='Andes kids'></img>
             </SlideInItem>
           </div>
         </div>
