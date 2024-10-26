@@ -12,17 +12,18 @@ export default function Courses() {
   const { level } = useAuthStore((state) => state);
   const [openModal, setOpenModal] = useState(false);
   const [step, setStep] = useState(1)
+
   const nextStep = () => {
-    setStep((prev) => prev + 1);
+    setStep((prev) => (prev >= 3 ? 1 : prev + 1));
   };
 
-    useEffect(() => {
-      setOpenModal(level)
-    }, []);
+  useEffect(() => {
+    setOpenModal(level)
+  }, []);
 
 
   const getImageByStep = () => {
-    switch (step) {
+    switch ((step%3)+1) {
       case 1:
         return <img
           src='/img/humu/humu-talking.png'
@@ -44,8 +45,6 @@ export default function Courses() {
           alt="Humu"
           height={150}
         />;
-      default:
-        return '/humu-excited.png';
     }
   };
 
@@ -70,10 +69,17 @@ export default function Courses() {
                 {getImageByStep(step)}
                 <div>
                   {step === 1 && (
-                    <p className="lead fs-4">
-                      ¡Hola! Soy <strong>Humu</strong>, tu amigo emocionado de acompañarte
-                      en este curso para aprender Kichwa. ¡Espero que disfrutes cada momento!
-                    </p>
+                    <>
+                      <p className="lead fs-4">
+                        ¡Hola! Soy <strong>Humu</strong>, tu amigo emocionado de acompañarte
+                        en este curso para aprender Kichwa. ¡Espero que disfrutes cada momento!
+                      </p>
+                      <p className='lead fs-3'>
+                        <strong>
+                          Siempre que necesites ayuda puedes dar click sobre mi imagen y yo estaré listo para ayudar
+                        </strong>
+                      </p>
+                    </>
                   )}
                   {step === 2 && (
                     <p className="lead fs-4">
@@ -94,12 +100,9 @@ export default function Courses() {
               </div>
               <div className='d-flex justify-content-center'>
 
-                {step < 3 ? (
-                  <button className="btn bg-primary-custom ma-auto btn-lg" onClick={nextStep}>
-                    Continuar
-                  </button>
-                ) : <></>
-                }
+                <button className="btn bg-primary-custom ma-auto btn-lg" onClick={nextStep}>
+                  Continuar
+                </button>
               </div>
             </div>
 
