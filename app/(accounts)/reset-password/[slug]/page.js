@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { AUTH_ENDPOINT } from '@/constants';
 import { useState } from 'react';
-import "./styles.css";
+import "../../styles.css";
 
 const ResetPasswordSchema = yup.object().shape({
     password: yup.string()
