@@ -118,7 +118,7 @@ export default function Signup() {
                         <div className="text-center">
                             <a href="/login" className="text-decoration-none">¿Ya tienes una cuenta? Iniciar sesión</a>
                             <br />
-                            <a href="/" className="text-decoration-none">Regresar</a>
+                            <p><a href="/" className="text-decoration-none small text-muted">Volver al inicio</a></p>
                         </div>
                     </>
                 )
