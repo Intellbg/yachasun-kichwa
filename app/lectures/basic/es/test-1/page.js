@@ -6,7 +6,6 @@ import { USER_ENDPOINT } from "@/constants.js"
 import { getQuestions } from "@/app/lib/getQuestions.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 
-
 export default function Test1() {
   const { level, addLevel, id, key } = useAuthStore(
     (state) => state,
@@ -79,7 +78,6 @@ export default function Test1() {
         ))}
         <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
-
       </div>
       <a href={`/lectures/basic/es/greetings-farewells`} className={`text-center btn btn-success ${(5 < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
     </div>
