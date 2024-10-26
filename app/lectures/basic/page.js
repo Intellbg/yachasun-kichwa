@@ -1,86 +1,19 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react';
+import React, { } from 'react';
 import activities from "./data";
 import Navbar from "../../components/Navbar"
 import CardCarousel from "@/app/components/CardCarousel";
 import BackButton from "@/app/components/BackButton";
 import { useAuthStore } from '@/providers/auth-store-provider.js';
-import { useRouter } from 'next/navigation';
-import styles from '../animation.module.css';
+import animation from '../animation.module.css';
+import Helper from "@/app/components/helper/Helper.js";
 
 export default function Lectures() {
   const { level } = useAuthStore((state) => state);
-  const audioRef = useRef(null);
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-  useEffect(() => {
-    audioRef.current = new Audio('/sounds/selectMainMenu.mp3');
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
-  const playClickSound = (event, href) => {
-    event.preventDefault();
-    setLoading(true);
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().then(() => {
-        audioRef.current.onended = () => {
-          if (href) {
-            router.push(href);
-          }
-        };
-      }).catch((error) => {
-        console.error("Error al reproducir el audio: ", error);
-        setLoading(false);
-        if (href) {
-          router.push(href);
-        }
-      });
-    } else {
-      setLoading(false);
-      if (href) {
-        router.push(href);
-      }
-    }
-  };
-
-  useEffect(() => {
-    const clickableElements = document.querySelectorAll('a, button, .lecture-card');
-
-    if (clickableElements.length > 0) {
-      clickableElements.forEach((element) => {
-        element.addEventListener('click', (e) => {
-          const href = element.tagName === 'A' ? element.href : null;
-          playClickSound(e, href);
-        });
-      });
-
-      return () => {
-        clickableElements.forEach((element) => {
-          element.removeEventListener('click', playClickSound);
-        });
-      };
-    }
-  }, []);
   return (
     <>
       <Navbar />
-      {loading && (
-        <div className={styles.loadingOverlay}>
-          <div className={styles.spinnerContainer}>
-            <img src="/img/humu/humu-fuckup.png" alt="Loading" className={styles.spinnerImage} />
-            <p className={styles.loadingText}>CARGANDO...</p>
-            <p className={styles.funFact}>Hay más personas estudiando irlandés en Duolingo que irlandeses nativos que lo hablan.</p>
-          </div>
-        </div>
-      )}
       <h1 className='text-center m-2 p-5'>Curso Básico</h1>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="row" style={{ minHeight: "500px" }}>
@@ -88,7 +21,37 @@ export default function Lectures() {
             <CardCarousel data={activities} level={level} />
           </div>
           <div className="col-md-4">
-            <img src="/img/humu/humu-happy.png" alt="Humu Happy" className={`${styles.imgFloat} w-100`} />
+            <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${animation.imgFloat} d-block`} h={400} style={{}}>
+              <h2 className="text-center display-5">Acceso a lecciones</h2>
+              <div className="modal-body d-flex align-items-center text-start">
+                <img
+                  src="/img/humu/humu-talking.png"
+                  height={300}
+                  className={`humu-mascot me-4 ${animation.spinnerImage}`}
+                />
+                <div>
+                  <p className="lead fs-4">
+                    En esta página, debes <strong>seleccionar el módulo</strong> correspondiente, usando las <strong>fechas en el carrusel</strong>.
+                    Los módulos se irán desbloqueando progresivamente a medida que avances en tus lecciones.
+                  </p>
+                  <p className="lead fs-4">
+                    Un <strong>módulo disponible</strong> se mostrará con un fondo <span className="bg-white text-dark px-2 rounded">blanco</span>.
+                    Por el contrario, los módulos bloqueados permanecerán inaccesibles hasta que completes las lecciones requeridas.
+                  </p>
+                  <p className="lead fs-4">
+                    Las <strong>lecciones también cambian de color</strong> según tu progreso:
+                    <ul className="list-unstyled">
+                      <li>🔒 Lecciones bloqueadas: <span className="bg-secondary text-white px-2 rounded">gris</span></li>
+                      <li>✅ Lecciones superadas: <span className="bg-success text-white px-2 rounded">verde</span></li>
+                      <li>⭐ Lección actual: <span className="bg-warning text-dark px-2 rounded">amarilla</span></li>
+                    </ul>
+                  </p>
+                  <p className="lead fs-4">
+                    Si alguna vez necesitas repasar conceptos anteriores, <strong>puedes volver a cualquier lección</strong> ya completada en cualquier momento.
+                  </p>
+                </div>
+              </div>
+            </Helper>
           </div>
         </div>
       </div >
