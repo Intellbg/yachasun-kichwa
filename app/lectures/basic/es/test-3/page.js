@@ -7,7 +7,7 @@ import { getQuestions } from "@/app/lib/getQuestions.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 import animation from "@/app/animation.module.css"
 
-export default function Test1() {
+export default function Test3() {
   const { level, addLevel, id, key } = useAuthStore(
     (state) => state,
   )
@@ -88,11 +88,11 @@ export default function Test1() {
           className={`humu-mascot me-4 ${animation.spinnerImage}`}
         />
         <br />
-        <h3 s><a href="/achievements">Revisa tus Logros</a></h3>
+        <h3><a href="/achievements">Revisa tus Logros</a></h3>
         <div className="m-auto text-center">
           <a href={`/courses`} className={`text-center btn btn-success ${(18 < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
         </div>
-    </div>
+      </div>
     </div>
   );
 };
