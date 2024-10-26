@@ -131,7 +131,7 @@ const activities = [
             {
                 "score_required": 17,
                 "module": 3,
-                "name": "Juego Relacionar",
+                "name": "Juego Crucigrama",
                 "slug": "game-3",
                 "next": "/lectures/basic/es/test-3",
             },
