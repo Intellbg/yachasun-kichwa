@@ -1,134 +1,54 @@
-import MiniTestForm from "../../../components/MiniTestForm_intermedio"
+import ImageFlipContainer from "../../../../components/ImageFlipContainer"
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import Quiz from "../../../../components/Quiz"
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
 
-import ImageFlipContainer from "../../../components/ImageFlipContainer"
+export const tablesData = [
+  {
+    title: 'Los días de la semana (Hunkay punchakuna)',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['awaki', 'lunes'],
+      ['awkarik', 'martes'],
+      ['chillay', 'miércoles'],
+      ['kullka', 'jueves'],
+      ['chaska', 'viernes'],
+      ['wacha', 'sábado'],
+      ['inti', 'domingo'],            
+    ],
+  },
+  {
+    title: 'Los meses (Killakuna)',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['kulla', 'enero'],
+      ['panchi', 'febrero'],
+      ['pawkar', 'marzo'],
+      ['ayriwa', 'abril'],
+      ['aymuray', 'mayo'],
+      ['raymi', 'junio'],
+      ['situwa', 'julio'],
+      ['karwa', 'agosto'],
+      ['kuski', 'septiembre'],
+      ['wayra', 'octubre'],
+      ['sasi', 'noviembre'],
+      ['kapak', 'diciembre'],        
+    ],
+  },
+];
 
 # El tiempo (Pacha)
-
 <ImageFlipContainer lecture="time" tag="time"/>
-
-
-# Los días de la semana (Hunkay punchakuna)
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Kichwa</th>
-
-                <th className='text-center'>Español</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>awaki</td>
-
-                <td className='text-center align-middle'>lunes</td>                           
-
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>awaki</td>
-                <td className='text-center align-middle'>lunes</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>awkarik</td>
-                <td className='text-center align-middle'>martes</td>                              
-            </tr>  
-            <tr>
-                <td className='text-center align-middle'>chillay</td>
-                <td className='text-center align-middle'>miércoles</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>kullka</td>
-                <td className='text-center align-middle'>jueves</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>chaska</td>
-                <td className='text-center align-middle'>viernes</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>wacha</td>
-                <td className='text-center align-middle'>sábado</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>inti</td>
-                <td className='text-center align-middle'>domingo</td>                              
-            </tr>                               
-        </tbody>
-    </table>
-
-# Los meses (Killakuna)
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Kichwa</th>
-
-                <th className='text-center'>Español</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>kulla</td>
-
-                <td className='text-center align-middle'>enero</td>                           
-
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>panchi</td>
-                <td className='text-center align-middle'>febrero</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>pawkar</td>
-                <td className='text-center align-middle'>marzo</td>                              
-            </tr>  
-            <tr>
-                <td className='text-center align-middle'>ayriwa</td>
-                <td className='text-center align-middle'>abril</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>aymuray</td>
-                <td className='text-center align-middle'>mayo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>raymi</td>
-                <td className='text-center align-middle'>junio</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>situwa</td>
-                <td className='text-center align-middle'>julio</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>karwa</td>
-                <td className='text-center align-middle'>agosto</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>kuski</td>
-                <td className='text-center align-middle'>septiembre</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>wayra</td>
-                <td className='text-center align-middle'>octubre</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>sasi</td>
-                <td className='text-center align-middle'>noviembre</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>kapak</td>
-                <td className='text-center align-middle'>diciembre</td>                              
-            </tr>                                
-        </tbody>
-    </table>    
-
+<hr />
+<TablesWithTabs tables={tablesData} />   
 <hr />
 ## Espacio cultural
-
 ### El calendario indígena: el nuevo año
-En el mundo indígena, el inicio del año, el 1 de enero, no tiene significado especial. El calendario indígena es guiado por el calendario agrícola que utilizaron los antepasados. Según este calendario, el mushuk wata, el nuevo año, se celebraba el 21 de marzo. El calendario indígena tiene relación con la siembra, la poda, la cosecha y la presencia de las aves en ciertas temporadas del año. 
+<ComicSpeechBubble text="En el mundo indígena, el inicio del año, el 1 de enero, no tiene significado especial. El calendario indígena es guiado por el calendario agrícola que utilizaron los antepasados. Según este calendario, el mushuk wata, el nuevo año, se celebraba el 21 de marzo. El calendario indígena tiene relación con la siembra, la poda, la cosecha y la presencia de las aves en ciertas temporadas del año. 
 En marzo la semilla germina y está en periodo de floración. Por eso, en Marzo se celebra el kapak raymi, cuando se festeja a Diós, al hombre y a la naturaleza. A través de cantos y danzas se representa el amor a la Pacha Mama. 
-
-!Excelente trabajo! Esto concluye la lección del tiempo.
-
+"/>
 <hr />
-<MiniTestForm lecture="time" />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección del tiempo." character = "humuFeliz"/>
+<hr />
+<Quiz lecture="time" />
+

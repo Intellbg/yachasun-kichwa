@@ -2,7 +2,7 @@ const activities = [
     {
         "name": "Módulo 1",
         "score_required": 18,
-        "imagen": "/img/cover/intermediate-m1.jpg",
+        "imagen": "/img/cover/basic-m1.jpg",
         "description": "En este modulo aprenderás más números, alimentos, animales y particulas para hacer oraciones.",
         "lectures": [
             {
@@ -53,7 +53,7 @@ const activities = [
     {
         "name": "Módulo 2",
         "score_required": 25,
-        "imagen": "/img/cover/intermediate-m2.jpg",
+        "imagen": "/img/cover/basic-m2.jpg",
         "description": "En este módulo aprenderás ha hacer preguntas y a aprender a hacer más oraciones.",
         "lectures": [
             {
@@ -85,12 +85,12 @@ const activities = [
                 "score_required": 29,
                 "name": "La negación",
                 "slug": "grammar-6",
-                "next": "/lectures/intermediate/es/game-2",
+                "next": "/lectures/intermediate/es/game-2-2",
             },
             {
                 "score_required": 30,
                 "name": "Juego B1",
-                "slug": "game-2",
+                "slug": "game-2-2",
                 "next": "/lectures/intermediate/es/test-2",
             },
             {
@@ -104,7 +104,7 @@ const activities = [
     {
         "name": "Módulo 3",
         "score_required": 32,
-        "imagen": "/img/cover/intermediate-m3.jpg",
+        "imagen": "/img/cover/basic-m3.jpg",
         "description": "En este módulo aprenderás verbos, adjetivos, palabras de la ciudad, cocina y dormitorio",
         "lectures": [
             {
@@ -135,12 +135,12 @@ const activities = [
                 "score_required": 36,
                 "name": "El dormitorio",
                 "slug": "room",
-                "next": "/lectures/intermediate/es/game-3",
+                "next": "/lectures/intermediate/es/game-3-3",
             },
             {
                 "score_required": 37,
                 "name": "Juego B2",
-                "slug": "game-3",
+                "slug": "game-3-3",
                 "next": "/lectures/intermediate/es/test-3",
             },
             {
@@ -154,7 +154,7 @@ const activities = [
     {
         "name": "Módulo 4",
         "score_required": 39,
-        "imagen": "/img/cover/intermediate-m4.jpg",
+        "imagen": "/img/cover/basic-m1.jpg",
         "description": "En este módulo vamos a apreder más gramatica, y vocabulario de ubicación y tiempo.",
         "lectures": [
 
@@ -204,7 +204,7 @@ const activities = [
     {
         "name": "Módulo 5",
         "score_required": 41,
-        "imagen": "/img/cover/intermediate-m5.jpg",
+        "imagen": "/img/cover/basic-m1.jpg",
         "description": "En este modulo vamos a aprender más gramatica.",
         "lectures": [
             {

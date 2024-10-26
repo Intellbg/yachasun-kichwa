@@ -1,4 +1,50 @@
-import MiniTestForm from "../../../components/MiniTestForm_intermedio"
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import Quiz from "../../../../components/Quiz"
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: 'Ejemplo',
+    headers: ['Uso', 'Kichwa', 'Español'],
+    rows: [
+      ['Procedencia', 'San Pablo Urku llaktamanta', 'de San Pablo Urku'], 
+      ['Procedencia', 'Ñukaka chay urkumantami kani', 'Yo soy de ese cerro'],
+      ['Tiempo', 'Kunanmanta', 'Por mí'],            
+    ],
+  },
+];
+
+export const tablesData2 = [
+  {
+    title: 'Ejemplo',
+    headers: ['Uso', 'Kichwa', 'Español'],
+    rows: [
+      ['Lugar', 'Ñukaka washakamanmi rini', 'yo voy hasta atrás'], 
+      ['Tiempo', 'Ñukaka kayakamanmi shamusha', 'vendré mañana'],
+      ['Acción', 'Antawa shamunkakaman shuyasha', 'Hasta que venga el carro esperaré'],            
+    ],
+  },
+];
+
+export const tablesData3 = [
+  {
+    title: 'Ejemplo',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['Ñukapa mamawanmi shamurkani', 'Yo vine con mi mamá'],                 
+    ],
+  },
+];
+
+export const tablesData4 = [
+  {
+    title: 'Ejemplo',
+    headers: ['Pregunta en kichwa', 'Pregunta en español', 'Oración positiva en kichwa', 'Oración positiva en español', 'Oración negativa en kichwa', 'Oración negativa en español'],
+    rows: [
+      ['Misiwanchu pukllarkanki', '¿Jugaste con el gato?', 'Ari, misiwanmi pukllarkani', 'Sí, jugué con el gato', 'Mana, ñukaka mana misiwan pukllarkanichu', 'No, no jugué con el gato'],                 
+    ],
+  },
+];
 
 # Las Partículas manta, kaman y wan (Shimikukuna)
 
@@ -6,125 +52,23 @@ import MiniTestForm from "../../../components/MiniTestForm_intermedio"
 
 La partícula -manta indica origen o procedencia, iniciación de tiempo, o inicio de lugar. También es causativo, indicando el motivo, causa o razón de algo, y puede significar por o a causa de. 
 
-### Ejemplo
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Uso</th>
-                <th className='text-center'>Kichwa</th>
-                <th className='text-center'>Español</th>                               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Procedencia</td>                
-                <td className='text-center align-middle'>San Pablo Urku llaktamanta</td>
-                <td className='text-center align-middle'>de San Pablo Urku</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Procedencia</td>                
-                <td className='text-center align-middle'>Ñukaka chay urkumantami kani</td>
-                <td className='text-center align-middle'>Yo soy de ese cerro</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Tiempo</td>
-                <td className='text-center align-middle'>Kunanmanta</td>
-                <td className='text-center align-middle'>Desde ahora</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Causativo</td>
-                <td className='text-center align-middle'>Ñukamanta</td>
-                <td className='text-center align-middle'>Por mí</td>                              
-            </tr>                                    
-        </tbody>
-    </table>
+<TablesWithTabs tables={tablesData} />  
 
 # - kaman
 
 La partícula -kaman indica limite de lugar, tiempo o acción.
 
-### Ejemplo
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Uso</th>
-                <th className='text-center'>Kichwa</th>
-                <th className='text-center'>Español</th>                               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Lugar</td>
-                <td className='text-center align-middle'>Ñukaka washakamanmi rini</td>
-                <td className='text-center align-middle'>yo voy hasta atrás</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Tiempo</td>
-                <td className='text-center align-middle'>Ñukaka kayakamanmi shamusha</td>
-                <td className='text-center align-middle'>vendré mañana</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Acción</td>
-                <td className='text-center align-middle'>Antawa shamunkakaman shuyasha</td>
-                <td className='text-center align-middle'>Hasta que venga el carro esperaré</td>                               
-            </tr>                                   
-        </tbody>
-    </table>
+<TablesWithTabs tables={tablesData2} />  
 
 # - wan
 
 Esta partícula nos índica compañía, y va con sujetos personales.
 
-### Ejemplo
+<TablesWithTabs tables={tablesData3} /> 
 
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>                
-                <th className='text-center'>Kichwa</th>
-                <th className='text-center'>Español</th>                               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Ñukapa mamawanmi shamurkani</td>
-                <td className='text-center align-middle'>Yo vine con mi mamá</td>                                            
-            </tr>                                            
-        </tbody>
-    </table>
-
-     <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>                
-                <th className='text-center'>Pregunta en kichwa</th>    
-
-                <th className='text-center'>Pregunta en español</th>
-
-                <th className='text-center'>Oración positiva en kichwa</th>
-
-                <th className='text-center'>Oración positiva en español</th>
-                
-                <th className='text-center'>Oración negativa en kichwa</th>       
-
-                <th className='text-center'>Oración negativa en español</th>    
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Misiwanchu pukllarkanki</td>
-                <td className='text-center align-middle'>¿Jugaste con el gato?</td>
-                <td className='text-center align-middle'>Ari, misiwanmi pukllarkani</td>
-                <td className='text-center align-middle'>Sí, jugué con el gato</td>
-                <td className='text-center align-middle'>Mana, ñukaka mana misiwan pukllarkanichu</td>
-                <td className='text-center align-middle'>No, no jugué con el gato</td>                                            
-            </tr>                                            
-        </tbody>
-    </table>
-
-
-!Excelente trabajo! Esto concluye la lección de las particulas manta, kaman y wan.
+<TablesWithTabs tables={tablesData4} />
 
 <hr />
-<MiniTestForm lecture="grammar-4" />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección de las particulas manta, kaman y wan." character = "humuFeliz"/>
+<hr />
+<Quiz lecture="grammar-4" />
