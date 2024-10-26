@@ -46,7 +46,7 @@ export default function Game1() {
                 <Wordle lectures="alphabet,colors,numbers,grammar-1" onSendData={handleChildData} />
             </div>
             {
-                (send || level > 5) && (
+                (send || level >= 5) && (
                     <div className="m-auto">
                         <a href="/lectures/basic/es/test-1" className='text-center btn btn-success'>Continuar</a>
                     </div>
