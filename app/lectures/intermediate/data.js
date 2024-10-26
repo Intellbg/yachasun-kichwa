@@ -3,7 +3,7 @@ const activities = [
         "name": "Módulo 1",
         "score_required": 18,
         "imagen": "/img/cover/intermediate-m1.jpg",
-        "description": "",
+        "description": "En este modulo aprenderás más números, alimentos, animales y particulas para hacer oraciones.",
         "lectures": [
             {
                 "score_required": 18,
@@ -54,7 +54,7 @@ const activities = [
         "name": "Módulo 2",
         "score_required": 25,
         "imagen": "/img/cover/intermediate-m2.jpg",
-        "description": "",
+        "description": "En este módulo aprenderás ha hacer preguntas y a aprender a hacer más oraciones.",
         "lectures": [
             {
                 "score_required": 25,
@@ -105,7 +105,7 @@ const activities = [
         "name": "Módulo 3",
         "score_required": 32,
         "imagen": "/img/cover/intermediate-m3.jpg",
-        "description": "",
+        "description": "En este módulo aprenderás verbos, adjetivos, palabras de la ciudad, cocina y dormitorio",
         "lectures": [
             {
                 "score_required": 32,
@@ -155,7 +155,7 @@ const activities = [
         "name": "Módulo 4",
         "score_required": 39,
         "imagen": "/img/cover/intermediate-m4.jpg",
-        "description": "",
+        "description": "En este módulo vamos a apreder más gramatica, y vocabulario de ubicación y tiempo.",
         "lectures": [
 
             {
@@ -205,7 +205,7 @@ const activities = [
         "name": "Módulo 5",
         "score_required": 41,
         "imagen": "/img/cover/intermediate-m5.jpg",
-        "description": "",
+        "description": "En este modulo vamos a aprender más gramatica.",
         "lectures": [
             {
                 "score_required": 41,
