@@ -51,28 +51,31 @@ export default function Signup() {
     const [apiError, setApiError] = useState("")
     const [success, setSuccess] = useState(false)
 
-
-
     const onSubmit = async (data) => {
         data['device'] = 'web'
-        const res = await fetch(AUTH_ENDPOINT + "register/", {
+        fetch(AUTH_ENDPOINT + "signup/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
-        })
-        if (res.ok) {
-            setSuccess(true)
-        } else {
-            await res.json().then((data) => {
-                if (data['error'].includes("E11000")) {
-                    setApiError("Correo ya utilizado")
-                } else {
-                    setApiError("Error al crear cuenta")
-                }
-            });
-        }
+        }).then((res) => {
+            if (!res.ok) {
+                return res.json().then((errorData) => {
+                    if (errorData?.error?.includes("E11000")) {
+                        setApiError("Correo ya utilizado");
+                    } else {
+                        setApiError("Error al crear cuenta");
+                    }
+                });
+            }
+            return res.json();
+        }).then(() => {
+            setSuccess(true);
+        }).catch((error) => {
+            console.error("Error:", error);
+            setApiError("Ocurrió un error inesperado. Inténtalo nuevamente.");
+        });
     }
 
     return (
