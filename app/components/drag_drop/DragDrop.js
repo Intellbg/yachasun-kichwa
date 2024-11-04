@@ -58,13 +58,13 @@ const Target = ({ index, word, setTargetWord }) => {
   );
 };
 
-const DragAndDrop = ({ phrase }) => {
+const DragAndDrop = ({ phrase, onSendData }) => {
   const initialWords = (phrase ? phrase.split(' ') : []).map((word, index) => ({ id: index, word }));
   
   const [words, setWords] = useState([]);
   const [targetWords, setTargetWords] = useState([]);
-  const [gameOver, setGameOver] = useState(false);
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     const shuffledWords = shuffleArray(initialWords);
@@ -93,63 +93,58 @@ const DragAndDrop = ({ phrase }) => {
   const checkAnswer = () => {
     const correctOrder = initialWords.map(word => word.word);
     const isCorrect = JSON.stringify(targetWords) === JSON.stringify(correctOrder);
+        
+   setIsCorrectGuess(isCorrect);
+   if (isCorrect){
     setGameOver(true);
     setIsCorrectGuess(isCorrect);
+    onSendData(isCorrect);
+   }  // Llama a onResolve solo si la oración es correcta
   };
+
+  
+
+
+  useEffect(() => {
+    if (targetWords.every(word => word !== '')) {
+      checkAnswer();
+    }
+  }, [targetWords]);
 
   return (
     <DndProvider backend={HTML5Backend}>
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
-      <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
-        <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
-        <div className="mb-4">
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
+        <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
+          <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
+          <div className="mb-4">
           <img src="/img/humu/humu-happy.png" alt="Character" style={{ maxWidth: "150px" }} />
         </div>
-        <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
-          {words.map((item, index) => (
-            <Word 
-              key={item.id} 
-              word={item.word} 
-              index={index} 
-              moveWord={moveWord} 
-              className="drag-item text-center d-flex justify-content-center align-items-center"
-            />
-          ))}
-        </div>
-        <div className="d-flex justify-content-center mb-4">
-          {targetWords.map((word, index) => (
-            <Target key={index} index={index} word={word} setTargetWord={setTargetWord} />
-          ))}
-        </div>
-        <div className="mb-3">
-          <button onClick={checkAnswer} className="btn btn-success">Revisar</button>
-        </div>
-        {gameOver && isCorrectGuess && (
-          <div className="alert alert-success" role="alert">
-            ¡Felicidades! La oración es correcta.
+          <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
+            {words.map((item, index) => (
+              <Word key={item.id} word={item.word} index={index} moveWord={moveWord} />
+            ))}
           </div>
-        )}
-        {gameOver && !isCorrectGuess && (
-          <div className="alert alert-danger" role="alert">
-            ¡Lo siento! La oración es incorrecta.
+          <div className="d-flex justify-content-center mb-4">
+            {targetWords.map((word, index) => (
+              <Target key={index} index={index} word={word} setTargetWord={setTargetWord} />
+            ))}
           </div>
-        )}
+          {gameOver && isCorrectGuess && (
+            <div className="alert alert-success" role="alert">
+              ¡Felicidades! La oración es correcta.
+            </div>
+          )}
+          {gameOver && !isCorrectGuess && (
+            <div className="alert alert-danger" role="alert">
+              ¡Lo siento! La oración es incorrecta.
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  </DndProvider>
+    </DndProvider>
   );
 };
 
 export default DragAndDrop;
-
-
-
-
-
-
-
-
-
-
 
 

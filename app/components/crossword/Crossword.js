@@ -89,6 +89,7 @@ const Crossword = ({ data, onComplete }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Crossword;
+

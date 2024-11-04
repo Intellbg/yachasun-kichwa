@@ -1,209 +1,45 @@
-import MiniTestForm from "../../../components/MiniTestForm_intermedio"
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import Quiz from "../../../../components/Quiz"
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: 'Karana',
+    headers: ['Sujeto', 'Raíz', 'Partícula 1', 'Partícula 2', 'Terminación', 'Verbo conjugado', 'Traducción'],
+    rows: [
+      ['Ñuka', 'kara', 'ku', 'rka', 'ni', 'karakurkani', 'Yo estaba dando'],
+      ['Kan', 'kara', 'ku', 'rka', 'nki', 'karakurkanki', 'Tú estabas dando'],
+      ['Kikin',	'kara',	'ku',	'rka',	'nki',	'karakurkanki',	'Usted estaba dando'],
+      ['Pay',	'kara',	'ku',	'rka',	'n',	'karakurka',	'Él/Ella estaba dando'],
+      ['Ñukanchik',	'kara',	'ku',	'rka',	'nchik',	'karakurkanchik',	'Nosotros estábamos dando'],
+      ['Kankuna',	'kara',	'ku',	'rka',	'nkichik',	'karakurkankichik',	'Ustedes estaban dando'],
+      ['Kikinkuna',	'kara',	'ku',	'rka',	'nkichik',	'karakurkankichik',	'Ustedes estaban dando'],
+      ['Paykuna',	'kara',	'ku',	'rka',	'nkuna',	'karakurkakuna',	'Ellos/ellas estaban dando'],        
+    ],
+  },
+  {
+    title: 'Mikuna',
+    headers: ['Sujeto', 'Raíz', 'Partícula 1', 'Partícula 2', 'Terminación', 'Verbo conjugado', 'Traducción'],
+    rows: [
+      ['Ñuka', 'miku', 'ku', 'rka', 'ni', 'mikukurkani', 'Yo estaba dando'],
+      ['Kan', 'miku', 'ku', 'rka', 'nki', 'mikukurkanki', 'Tú estabas dando'],
+      ['Kikin',	'miku',	'ku',	'rka',	'nki',	'mikukurkanki',	'Usted estaba dando'],
+      ['Pay',	'miku',	'ku',	'rka',	'n',	'mikukurka',	'Él/Ella estaba dando'],
+      ['Ñukanchik',	'miku',	'ku',	'rka',	'nchik',	'mikukurkanchik',	'Nosotros estábamos dando'],
+      ['Kankuna',	'miku',	'ku',	'rka',	'nkichik',	'mikukurkankichik',	'Ustedes estaban dando'],
+      ['Kikinkuna',	'miku',	'ku',	'rka',	'nkichik',	'mikukurkankichik',	'Ustedes estaban dando'],
+      ['Paykuna',	'miku',	'ku',	'rka',	'nkuna',	'mikukurkakuna',	'Ellos/ellas estaban dando'],        
+    ],
+  },
+];
+
 
 # El pasado progresivo (Yallirka katiy pacha)
-
 ## -kurka
-
 Con esta manera de tiempo vamos a ver que la aglutinación continúa, ahora son dos partículas (ku - del progresivo, y -rka - del pasado) que intervienen en el medio del verbo, manteniendo las terminaciones de los verbos del presente.
-
 ## Ejemplos
-
-### Karana
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Sujeto</th>
-
-                <th className='text-center'>Raíz</th>
-
-                <th className='text-center'>Partícula 1</th>
-
-                <th className='text-center'>Partícula 2</th>
-
-                <th className='text-center'>Terminación</th>
-
-                <th className='text-center'>Verbo conjugado</th>
-
-                <th className='text-center'>Traducción</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Ñuka</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>ni</td> 
-                <td className='text-center align-middle'>karakurkani</td>
-                <td className='text-center align-middle'>Yo estaba dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kan</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>karakurkanki</td>
-                <td className='text-center align-middle'>Tú estabas dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikin</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>karakurkanki</td>
-                <td className='text-center align-middle'>Usted estaba dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Pay</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>n</td> 
-                <td className='text-center align-middle'>karakurka</td>
-                <td className='text-center align-middle'>Él/Ella estaba dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Ñukanchik</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nchik</td> 
-                <td className='text-center align-middle'>karakurkanchik</td>
-                <td className='text-center align-middle'>Nosotros estábamos dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kankuna</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>karakurkankichik</td>
-                <td className='text-center align-middle'>Ustedes estaban dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikinkuna</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>karakurkankichik</td>
-                <td className='text-center align-middle'>Ustedes estaban dando</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Paykuna</td>
-                <td className='text-center align-middle'>kara</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nkuna</td> 
-                <td className='text-center align-middle'>karakurkakuna</td>
-                <td className='text-center align-middle'>Ellos/ellas estaban dando</td>                              
-            </tr>                                 
-        </tbody>
-    </table>
-
-### Mikuna
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Sujeto</th>
-
-                <th className='text-center'>Raíz</th>
-
-                <th className='text-center'>Partícula 1</th>
-
-                <th className='text-center'>Partícula 2</th>
-
-                <th className='text-center'>Terminación</th>
-
-                <th className='text-center'>Verbo conjugado</th>
-
-                <th className='text-center'>Traducción</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Ñuka</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>ni</td> 
-                <td className='text-center align-middle'>mikukurkani</td>
-                <td className='text-center align-middle'>Yo estaba comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kan</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>mikukurkanki</td>
-                <td className='text-center align-middle'>Tú estabas comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikin</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>mikukurkanki</td>
-                <td className='text-center align-middle'>Usted estaba comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Pay</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>n</td> 
-                <td className='text-center align-middle'>mikukurka</td>
-                <td className='text-center align-middle'>Él/Ella estaba comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Ñukanchik</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nchik</td> 
-                <td className='text-center align-middle'>mikukurkanchik</td>
-                <td className='text-center align-middle'>Nosotros estábamos comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kankuna</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>mikukurkankichik</td>
-                <td className='text-center align-middle'>Ustedes estaban comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikinkuna</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>mikukurkankichik</td>
-                <td className='text-center align-middle'>Ustedes estaban comiendo</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Paykuna</td>
-                <td className='text-center align-middle'>miku</td> 
-                <td className='text-center align-middle'>ku</td>
-                <td className='text-center align-middle'>rka</td>
-                <td className='text-center align-middle'>nkuna</td> 
-                <td className='text-center align-middle'>mikukurkakuna</td>
-                <td className='text-center align-middle'>Ellos/ellas estaban comiendo</td>                              
-            </tr>                                 
-        </tbody>
-    </table>  
-    
-
-!Excelente trabajo! Esto concluye la lección del pasado progresivo.
-
+<TablesWithTabs tables={tablesData} /> 
 <hr />
-<MiniTestForm lecture="grammar-7" />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección del pasado progresivo." character = "humuFeliz"/>
+<hr />
+<Quiz lecture="grammar-7" />

@@ -1,242 +1,58 @@
-import MiniTestForm from "../../../components/MiniTestForm_intermedio"
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import Quiz from "../../../../components/Quiz"
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: 'Las terminaciones',
+    headers: ['Sujeto', 'Terminación'],
+    rows: [
+      ['Ñuka', 'krini'],
+      ['Kan', 'krinki'],
+      ['Kikin', 'krinki'],
+      ['Pay', 'krin'],
+      ['Ñukanchik',	'krinchik'],
+      ['Kankuna',	'krinkichik'],
+      ['Kikinkuna', 'krinkichik'],
+      ['Paykuna',	'krinkuna'],           
+    ],
+  },
+  {
+    title: 'Ejemplo - Mikuna',
+    headers: ['Sujeto', 'Raíz', 'Partícula', 'Terminación', 'Verbo conjugado', 'Traducción'],
+    rows: [
+      ['Ñuka', 'miku', 'kri', 'ni', 'mikukrini', 'Yo voy a comer'],
+      ['Kan', 'miku', 'kri', 'nki', 'mikukrinki', 'Tú vas a comer'],
+      ['Kikin',	'miku',	'kri',	'nki',	'mikukrinki',	'Usted va a comer'],
+      ['Pay',	'miku',	'kri',	'n',	'mikukrin',	'Él/Ella va a comer'],
+      ['Ñukanchik',	'miku',	'kri',	'nchik',	'mikukrinchik',	'Nosotros vamos a comer'],
+      ['Kankuna',	'miku',	'kri',	'nkichik',	'mikukrinkichik',	'Ustedes van a comer'],
+      ['Kikinkuna',	'miku',	'kri',	'nkichik',	'mikukrinkichik',	'Ustedes van a comer'],
+      ['Paykuna',	'miku',	'kri',	'nkuna',	'mikukrinkuna',	'Ellos/ellas van a comer'],        
+    ],
+  },
+  {
+    title: 'Ejemplo - Rimana',
+    headers: ['Sujeto', 'Raíz', 'Partícula', 'Terminación', 'Verbo conjugado', 'Traducción'],
+    rows: [
+      ['Ñuka', 'rima', 'kri', 'ni', 'rimakrini', 'Yo voy a hablar'],
+      ['Kan', 'rima', 'kri', 'nki', 'rimakrinki', 'Tú vas a hablar'],
+      ['Kikin',	'rima', 'kri',	'nki',	'rimakrinki',	'Usted va a hablar'],
+      ['Pay',	'rima',	'kri',	'n',	'rimakrin',	'Él/Ella va a hablar'],
+      ['Ñukanchik',	'rima', 'kri',	'nchik',	'rimakrinchik',	'Nosotros vamos a hablar'],
+      ['Kankuna',	'rima', 'kri',	'nkichik',	'rimakrinkichik',	'Ustedes van a hablar'],
+      ['Kikinkuna',	'rima', 'kri',	'nkichik',	'rimakrinkichik',	'Ustedes van a hablar'],
+      ['Paykuna',	'rima', 'kri',	'nkuna',	'rimakrinkuna',	'Ellos/ellas van a hablar'],        
+    ],
+  },
+];
 
 # El futuro próximo (Ña shamuk pacha)
-
 ## -kri
-
 Para formar el futuro próximo, tomamos la raíz del verbo, añadimos la partícula -kri, y al final, ponemos las terminaciones del presente.
-
-## Las terminaciones
-
-    <table className="table table-bordered">        
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Ñuka</td>
-
-                <td className='text-center align-middle'>krini</td>                                
-               
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kan</td>
-                <td className='text-center align-middle'>krinki</td>
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikin</td>
-                <td className='text-center align-middle'>krinki</td>                                     
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Pay</td>
-                <td className='text-center align-middle'>krin</td>                
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Ñukanchik</td>
-                <td className='text-center align-middle'>krinchik</td>                     
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kankuna</td>
-                <td className='text-center align-middle'>krinkichik</td>                                          
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikinkuna</td>
-                <td className='text-center align-middle'>krinkichik</td>                                         
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Paykuna</td>
-                <td className='text-center align-middle'>krinkuna</td>               
-            </tr>                                 
-        </tbody>
-    </table>
-
-## Ejemplos
-
-### Mikuna
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Sujeto</th>
-
-                <th className='text-center'>Raíz</th>
-
-                <th className='text-center'>Partícula</th>              
-
-                <th className='text-center'>Terminación</th>
-
-                <th className='text-center'>Verbo conjugado</th>
-
-                <th className='text-center'>Traducción</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Ñuka</td>
-
-                <td className='text-center align-middle'>miku</td>                
-
-                <td className='text-center align-middle'>kri</td>
-
-                <td className='text-center align-middle'>ni</td> 
-
-                <td className='text-center align-middle'>mikukrini</td>
-
-                <td className='text-center align-middle'>Yo voy a comer</td>                              
-                
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kan</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>mikukrinki</td>
-                <td className='text-center align-middle'>Tú vas a comer</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikin</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>mikukrinki</td>
-                <td className='text-center align-middle'>Usted va a comer</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Pay</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>n</td> 
-                <td className='text-center align-middle'>mikukrin</td>
-                <td className='text-center align-middle'>Él/Ella va a comer</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Ñukanchik</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nchik</td> 
-                <td className='text-center align-middle'>mikukrinchik</td>
-                <td className='text-center align-middle'>Nosotros vamos a comer</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kankuna</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>mikukrinkichik</td>
-                <td className='text-center align-middle'>Ustedes van a comer</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikinkuna</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>bri</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>mikukrinkichik</td>
-                <td className='text-center align-middle'>Ustedes van a comer</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Paykuna</td>
-                <td className='text-center align-middle'>miku</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nkuna</td> 
-                <td className='text-center align-middle'>mikukrinkuna</td>
-                <td className='text-center align-middle'>Ellos/ellas van a comer</td>                              
-            </tr>                                 
-        </tbody>
-    </table>
-
-### Rimana
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Sujeto</th>
-
-                <th className='text-center'>Raíz</th>
-
-                <th className='text-center'>Partícula</th>              
-
-                <th className='text-center'>Terminación</th>
-
-                <th className='text-center'>Verbo conjugado</th>
-
-                <th className='text-center'>Traducción</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>Ñuka</td>
-
-                <td className='text-center align-middle'>rima</td>                
-
-                <td className='text-center align-middle'>kri</td>
-
-                <td className='text-center align-middle'>ni</td> 
-
-                <td className='text-center align-middle'>rimakrini</td>
-
-                <td className='text-center align-middle'>Yo voy a hablar</td>                              
-                
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kan</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>rimakrinki</td>
-                <td className='text-center align-middle'>Tú vas a hablar</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikin</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nki</td> 
-                <td className='text-center align-middle'>rimakrinki</td>
-                <td className='text-center align-middle'>Usted va a hablar</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Pay</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>n</td> 
-                <td className='text-center align-middle'>rimakrin</td>
-                <td className='text-center align-middle'>Él o Ella va a hablar</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Ñukanchik</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nchik</td> 
-                <td className='text-center align-middle'>rimakrinchik</td>
-                <td className='text-center align-middle'>Nosotros vamos a hablar</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kankuna</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>rimakrinkichik</td>
-                <td className='text-center align-middle'>Ustedes van a hablar</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Kikinkuna</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nkichik</td> 
-                <td className='text-center align-middle'>rimakrinkichik</td>
-                <td className='text-center align-middle'>Ustedes van a hablar</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>Paykuna</td>
-                <td className='text-center align-middle'>rima</td>
-                <td className='text-center align-middle'>kri</td>
-                <td className='text-center align-middle'>nkuna</td> 
-                <td className='text-center align-middle'>rimakrinkuna</td>
-                <td className='text-center align-middle'>Ellos o ellas van a hablar</td>                              
-            </tr>                                 
-        </tbody>
-    </table>  
-    
-
-!Excelente trabajo! Esto concluye la lección del futuro próximo.
-
+<TablesWithTabs tables={tablesData} />  
 <hr />
-<MiniTestForm lecture="grammar-11" />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección del futuro próximo." character = "humuFeliz"/>
+<hr />
+<Quiz lecture="grammar-11" />
+

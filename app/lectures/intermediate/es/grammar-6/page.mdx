@@ -1,86 +1,48 @@
-import MiniTestForm from "../../../components/MiniTestForm_intermedio"
+import TablesWithTabs from '../../../../components/TableswithTabs'
+import Quiz from "../../../../components/Quiz"
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: 'Ejemplo',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['mana alli', 'No bien, no bueno (malo)'], 
+      ['mana sumak', 'No es bonito'],          
+    ],
+  },
+];
+
+export const tablesData2 = [
+  {
+    title: 'Forma presente',
+    headers: ['Positivo', 'Negativo'],
+    rows: [
+      ['mikuni', 'mana mikunichu'], 
+      ['llamkanki', 'mana llamkankichu'],
+      ['pallan', 'mana pallanchu'], 
+    ],
+  },
+  {
+    title: 'Forma progresiva',
+    headers: ['Positivo', 'Negativo'],
+    rows: [
+      ['mikukuni', 'mana mikukunichu'],
+      ['llamkakunki', 'mana llamkakunkichu'], 
+      ['pallankun', 'mana pallakunchu'],           
+    ],
+  },
+];
 
 # La negación (Mana ninkapak)
-
 En kichwa para transformar un adjetivo al negativo anteponemos la palabra de negación mana.
 
-
-### Ejemplo
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Kichwa</th>
-                <th className='text-center'>Español</th>                               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>mana alli</td>
-                <td className='text-center align-middle'>No bien, no bueno (malo)</td>                              
-            </tr>                    
-            <tr>
-                <td className='text-center align-middle'>mana sumak</td>
-                <td className='text-center align-middle'>No es bonito</td>                              
-            </tr> 
-        </tbody>
-    </table>
+<TablesWithTabs tables={tablesData} />
 
 Para transformar un verbo al negativo anteponemos la palabra de negación mana seguido del verbo con la partícula chu.
 
-
-### Ejemplo
-### Forma presente
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Positivo</th>
-                <th className='text-center'>Negativo</th>                               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>mikuni</td>
-                <td className='text-center align-middle'>mana mikunichu</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>llamkanki</td>
-                <td className='text-center align-middle'>mana llamkankichu</td>                              
-            </tr> 
-            <tr>
-                <td className='text-center align-middle'>pallan</td>
-                <td className='text-center align-middle'>mana pallanchu</td>                              
-            </tr>                     
-        </tbody>
-    </table>
-
-### Forma progresiva
-
-    <table className="table table-bordered">
-        <thead className="thead-light">
-            <tr>
-                <th className='text-center'>Positivo</th>
-                <th className='text-center'>Negativo</th>                               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className='text-center align-middle'>mikukuni</td>
-                <td className='text-center align-middle'>mana mikukunichu</td>                              
-            </tr>
-            <tr>
-                <td className='text-center align-middle'>llamkakunki</td>
-                <td className='text-center align-middle'>mana llamkakunkichu</td>                              
-            </tr> 
-            <tr>
-                <td className='text-center align-middle'>pallankun</td>
-                <td className='text-center align-middle'>mana pallakunchu</td>                              
-            </tr>                     
-        </tbody>
-    </table>
-
-!Excelente trabajo! Esto concluye la lección de la negación.
-
+<TablesWithTabs tables={tablesData2} />  
 <hr />
-<MiniTestForm lecture="grammar-6" />
+<ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección de la negación." character = "humuFeliz"/>
+<hr />
+<Quiz lecture="grammar-6" />

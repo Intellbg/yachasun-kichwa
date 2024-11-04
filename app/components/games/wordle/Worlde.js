@@ -9,7 +9,7 @@ export default function Game({ lectures, onSendData }) {
   const [guesses, setGuesses] = useState(Array(6).fill(''));
   const [currentGuessIndex, setCurrentGuessIndex] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const [isCorrectGuess, setIsCorrectGuess] = useState(false);
+  const [isCorrectGuess, setIsCorrectGuess] = useState(null);
   const inputRefs = useRef([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function Game({ lectures, onSendData }) {
       const questions = await getQuestions(lectures);
       const randomQuestion = questions[0];
       setQuestion(randomQuestion);
-      setCorrectWord(randomQuestion.answer.toUpperCase());
+      setCorrectWord(randomQuestion.answer.toUpperCase());      
     };
     fetchData();
   }, [lectures]);
@@ -70,7 +70,7 @@ export default function Game({ lectures, onSendData }) {
   };
 
   const getCellStyle = (letter, index, rowIndex) => {
-    if (isCorrectGuess && rowIndex === currentGuessIndex) return 'bg-success text-white';
+    if (isCorrectGuess === true && rowIndex === currentGuessIndex) return 'bg-success text-white';
     if (rowIndex >= currentGuessIndex) return '';
     if (correctWord[index] === letter) return 'bg-success text-white';
     if (correctWord.includes(letter)) return 'bg-warning text-white';
@@ -89,7 +89,7 @@ export default function Game({ lectures, onSendData }) {
             return (
               <input
                 key={colIndex}
-                ref={el => inputRefs.current[rowIndex * correctWord.length + colIndex] = el}
+                ref={(el) => (inputRefs.current[rowIndex * correctWord.length + colIndex] = el)}
                 type="text"
                 maxLength="1"
                 value={letter}
@@ -127,15 +127,6 @@ export default function Game({ lectures, onSendData }) {
 
     </div>
   );
-};
-
-
-
-
-
-
-
-
-
+}
 
 

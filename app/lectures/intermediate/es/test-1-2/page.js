@@ -1,31 +1,31 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import Question from "./Question";
-import lectureQuestions from '../lectures/intermediate/lectureQuestions'
-import lectures from '../lectures/intermediate/data'
+import Question from "@/app/components/Question";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
+import { getQuestions } from "@/app/lib/getQuestions.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
+import animation from "@/app/animation.module.css"
 
-function getQuestions(lecture) {
-  var questions = lectureQuestions.filter((element) => (element.slug == lecture))
-  return questions
-}
-
-export default function Quiz({ lecture }) {
+export default function Test1() {
   const { level, addLevel, id, key } = useAuthStore(
     (state) => state,
   )
-  const lectureData = lectures.find((element) => (element.lectures.find(
-    (element) => element.slug == lecture
-  ))).lectures.find((element) => element.slug == lecture)
-
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
-  const [isCorrect, setIsCorrect] = useState([]);
   const [result, setResult] = useState(null);
+  const [isCorrect, setIsCorrect] = useState([]);
   const [humuExpression, setHumuExpression] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const questions = await await getQuestions("animals-2", 10, 4)
+      console.log(questions)
+      setQuestions(questions);
+    };
+    fetchData()
+  }, []);
 
   const handleSelectAnswer = (questionIndex, answer) => {
     setAnswers({ ...answers, [questionIndex]: answer });
@@ -41,7 +41,7 @@ export default function Quiz({ lecture }) {
       setIsAnswerCorrect(true)
       setResult(`Felicitaciones puede continuar a la siguiente lección`);
       setHumuExpression(`humu`);
-      if (lectureData.score_required >= level) {
+      if (25 >= level) {
         addLevel();
         fetch(USER_ENDPOINT + `${id}/level`, {
           method: "PATCH",
@@ -58,19 +58,15 @@ export default function Quiz({ lecture }) {
       setHumuExpression(`humuSad`);
     }
   };
-  
-  useEffect(() => {
-    setQuestions(getQuestions(lecture))
-  }, []);
+
   useEffect(() => {
     setIsCorrect(Array(questions.length).fill(true))
   }, [questions]);
 
   return (
     <div className="container">
-      <div className={`${(lectureData.score_required < level) | isAnswerCorrect ? "d-none" : ""}`}>
-        <h3>Evaluación</h3>
-
+      <div className={`${(25 < level) | isAnswerCorrect ? "d-none" : ""}`}>
+        <h1 className="text-center">Evaluación 1</h1>
         {questions.map((questionData, index) => (
           <Question
             key={index}
@@ -83,9 +79,20 @@ export default function Quiz({ lecture }) {
         ))}
         <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
-
       </div>
-      <a href={`${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
+      <div className={`${!((25 < level)) ? "d-none" : ""} text-center`}>
+        <h1>Felicitaciones ya ha completado el módulo 1 del nivel intermedio!</h1>
+        <img
+          src="/img/humu/humu-talking.png"
+          height={300}
+          className={`humu-mascot me-4 ${animation.spinnerImage}`}
+        />
+        <br />
+        <h3><a href="/achievements">Revisa tus Logros</a></h3>
+        <div className="m-auto text-center">
+          <a href={`/lectures/intermediate/es/grammar-2`} className={`text-center btn btn-success ${(25 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
+        </div>
+      </div>
     </div>
   );
 };

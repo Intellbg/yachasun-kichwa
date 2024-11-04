@@ -37,7 +37,7 @@ export const cards = [
         significado: "Anka, ñanpi y yawati",            
         imgSrc: "/img/achievements/Anka_Nanpi_Yawati.png",
         descripcion: "El diseño de aves y animales son representadas en el rostro de las personas para adquirir sus poderes y destrezas en la cotidianidad.",            
-        unlockLevel: 33,
+        unlockLevel: 36,
     },
     {
         titulo: "Sabemos Kichwa",
@@ -45,6 +45,6 @@ export const cards = [
         significado: "Charapa",            
         imgSrc: "/img/achievements/Charapa.png",
         descripcion: "Es de uso exclusivo del varón. Se diseñan en ocasiones de singular importancia comunitaria, dirigidas a la solución de los problemas.",            
-        unlockLevel: 41,
+        unlockLevel: 52,
     }
 ];

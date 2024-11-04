@@ -1,43 +1,44 @@
+// Table with tabs.js
 'use client'
 import React, { useState } from 'react';
 import DinamicTable from './DinamicTable';
 
 const TablesWithTabs = ({ tables }) => {
-  const [activeTab, setActiveTab] = useState(1);
+  // Estado para la pestaña activa, comenzando con la primera
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = (tabIndex) => {
+    setActiveTab(tabIndex);
+  };
 
   return (
-    <div>      
-      <ul className="nav nav-tabs" id="myTab" role="tablist">
+    <div>
+      {/* Renderiza las pestañas con los títulos de cada tabla */}
+      <ul className="nav nav-tabs" role="tablist">
         {tables.map((table, index) => (
-          <li className="nav-item" role="presentation" key={index}>
+          <li className="nav-item" key={index} role="presentation">
             <button
-              className={`nav-link ${activeTab === index + 1 ? 'active' : ''}`}
-              id={`table${index + 1}-tab`}
-              data-bs-toggle="tab"
-              data-bs-target={`#table${index + 1}`}
+              className={`nav-link ${activeTab === index ? 'active' : ''}`}
               type="button"
-              role="tab"
-              aria-controls={`table${index + 1}`}
-              aria-selected={activeTab === index + 1}
-              onClick={() => setActiveTab(index + 1)}
+              onClick={() => handleTabClick(index)}
             >
               {table.title}
             </button>
           </li>
         ))}
       </ul>
-      
-      <div className="tab-content" id="myTabContent">
+
+      {/* Renderiza el contenido de la tabla seleccionada */}
+      <div className="tab-content">
         {tables.map((table, index) => (
-          <DinamicTable
-            key={index}
-            headers={table.headers}
-            rows={table.rows}
-            title={table.title}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            tabIndex={index + 1}
-          />
+          activeTab === index && ( // Solo muestra la tabla activa
+            <DinamicTable
+              key={index}
+              headers={table.headers}
+              rows={table.rows}
+              title={table.title}
+            />
+          )
         ))}
       </div>
     </div>
@@ -45,3 +46,12 @@ const TablesWithTabs = ({ tables }) => {
 };
 
 export default TablesWithTabs;
+
+
+
+
+
+
+
+
+

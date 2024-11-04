@@ -81,7 +81,7 @@ export default function Lectures() {
           </div>
         </div>
       )}
-      <h1 className='text-center m-2 p-5'>Curso Básico</h1>
+      <h1 className='text-center m-2 p-5'>Curso Intermedio</h1>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="row" style={{ minHeight: "500px" }}>
           <div className="col-md-8">
