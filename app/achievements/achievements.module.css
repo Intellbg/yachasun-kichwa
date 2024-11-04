@@ -1,0 +1,148 @@
+.container-fluid {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+
+.card {
+  border: 2px solid transparent;
+  background-color: #4cab20;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.selected {
+  border: 2px solid #198754;
+}
+
+.card-img {
+  transform: scale(0.2); /* Reduce el tamaño al 20% de su tamaño original */
+  transform-origin: top left; /* Mantén la imagen alineada en la esquina superior izquierda */
+  object-fit: contain; /* Mantiene la proporción sin recortar */
+  border-radius: 8px;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  text-align: left;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.pointsAndTrophies {
+  font-size: 14px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.trofeos {
+  margin-left: 10px;
+  color: #ffcc00;
+  font-size: 40px; /* Aumentar tamaño del emoji */
+}
+
+.progress {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.cardDetail {
+  background-color: #175c05;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  color: white;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.cardDetail.collapsed {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* Animación de humu */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.imgFloat {
+  animation: float 3s ease-in-out infinite;
+}
+
+.d-flex.align-items-center.justify-content-between {
+  width: 100%;
+}
+
+/* Estilos del modal */
+
+.cardModal .modal-content {  
+  border-radius: 8px; /* Mismo borde redondeado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */  
+}
+
+.cardModalHeader, .cardModalFooter {
+  color: White; 
+  background-color: #4cab20;
+}
+
+.cardModalBody {
+  color: Black; /* Mismo color de texto que las tarjetas */
+  text-align: center;
+  background-color: White;
+}
+
+.cardModalBody img {
+  margin-bottom: 20px;
+  max-width: 200px;
+}
+
+.cardModalBody strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  

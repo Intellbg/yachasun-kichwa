@@ -4,7 +4,7 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import styles from './style.module.css';
 
-const CompleteSentence = ({ sentence, missingWordIndex, options, onResolve }) => {
+export default function CompleteSentence ({ sentence, missingWordIndex, options, onSendData }) {
   // Inicializar la oración con el espacio vacío
   const initialWords = sentence.split(' ').map((word, index) => 
     index === missingWordIndex ? '' : word
@@ -13,6 +13,7 @@ const CompleteSentence = ({ sentence, missingWordIndex, options, onResolve }) =>
   const [completedSentence, setCompletedSentence] = useState(initialWords);
   const [isCorrect, setIsCorrect] = useState(null); // Estado para el mensaje de corrección
   const [interacted, setInteracted] = useState(false); // Estado para verificar si el usuario interactuó
+  const [gameOver, setGameOver] = useState(false);
 
   // Función para manejar cuando se suelta la palabra
   const handleDrop = (item) => {
@@ -27,10 +28,19 @@ const CompleteSentence = ({ sentence, missingWordIndex, options, onResolve }) =>
   const checkSentence = (newSentence) => {
     const correctWord = sentence.split(' ')[missingWordIndex]; // Palabra correcta
     const isSentenceCorrect = newSentence[missingWordIndex] === correctWord;
-    setIsCorrect(isSentenceCorrect); // Estado de corrección
-    onResolve(isSentenceCorrect); // Notificación del resultado
+    if(newSentence[missingWordIndex] === correctWord){
+      endGame(true);
+    } else{
+      endGame(false);
+    }    
   };
 
+  const endGame = (isCorrect) => {
+    setGameOver(true);
+    setIsCorrect(isCorrect);
+    onSendData(isCorrect);
+  };
+  
   return (
     <DndProvider backend={HTML5Backend}>
       <div>
@@ -45,6 +55,7 @@ const CompleteSentence = ({ sentence, missingWordIndex, options, onResolve }) =>
               word={word} 
               isMissing={index === missingWordIndex} 
               onDrop={handleDrop} 
+              disabled={gameOver}
             />
           ))}
         </div>
@@ -115,7 +126,7 @@ const Word = ({ word, isMissing, onDrop }) => {
   );
 };
 
-export default CompleteSentence;
+
 
 
 

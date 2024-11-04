@@ -3,20 +3,18 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./style.module.css";
 
 const directions = [
-  [0, 1],  // derecha
-  [1, 0],  // abajo
-  [1, 1],  // diagonal abajo-derecha
-  [1, -1], // diagonal abajo-izquierda
-  [0, -1], // izquierda
-  [-1, 0], // arriba
+  [0, 1],   // derecha
+  [1, 0],   // abajo
+  [1, 1],   // diagonal abajo-derecha
+  [1, -1],  // diagonal abajo-izquierda
+  [0, -1],  // izquierda
+  [-1, 0],  // arriba
   [-1, -1], // diagonal arriba-izquierda
-  [-1, 1]  // diagonal arriba-derecha
+  [-1, 1]   // diagonal arriba-derecha
 ];
 
 const generateGrid = (words, size) => {
-  const grid = Array(size)
-    .fill()
-    .map(() => Array(size).fill(""));
+  const grid = Array(size).fill().map(() => Array(size).fill(""));
 
   words.forEach((word) => {
     let placed = false;
@@ -27,7 +25,7 @@ const generateGrid = (words, size) => {
 
       if (canPlaceWord(grid, word, row, col, direction, size)) {
         for (let i = 0; i < word.length; i++) {
-          grid[row + i * direction[0]][col + i * direction[1]] = word[i];
+          grid[row + i * direction[0]][col + i * direction[1]] = word[i].toUpperCase();
         }
         placed = true;
       }
@@ -55,7 +53,7 @@ const canPlaceWord = (grid, word, row, col, direction, size) => {
       newRow >= size ||
       newCol < 0 ||
       newCol >= size ||
-      (grid[newRow][newCol] && grid[newRow][newCol] !== word[i])
+      (grid[newRow][newCol] && grid[newRow][newCol] !== word[i].toUpperCase())
     ) {
       return false;
     }
@@ -63,21 +61,57 @@ const canPlaceWord = (grid, word, row, col, direction, size) => {
   return true;
 };
 
-const SoupLetter = ({ words = [], onResolve }) => {
-  const size = 10;
+const determineDirection = (start, end) => {
+  const [startRow, startCol] = start;
+  const [endRow, endCol] = end;
+
+  const rowDiff = Math.sign(endRow - startRow);
+  const colDiff = Math.sign(endCol - startCol);
+
+  return [rowDiff, colDiff];
+};
+
+const generateSelectedCells = (start, end, direction) => {
+  const [startRow, startCol] = start;
+  const [rowDir, colDir] = direction;
+
+  const length = Math.max(
+    Math.abs(end[0] - startRow),
+    Math.abs(end[1] - startCol)
+  ) + 1;
+
+  const cells = [];
+  for (let i = 0; i < length; i++) {
+    const newRow = startRow + i * rowDir;
+    const newCol = startCol + i * colDir;
+    cells.push([newRow, newCol]);
+  }
+  return cells;
+};
+const SoupLetter = ({ words = [], size = 10, spanish = [], onSendData }) => {
   const [grid, setGrid] = useState([]);
   const [selectedCells, setSelectedCells] = useState([]);
   const [foundWords, setFoundWords] = useState([]);
-  const [foundPositions, setFoundPositions] = useState([]);
+  const [foundPositions, setFoundPositions] = useState(new Set());
+  const [isLoaded, setIsLoaded] = useState(false); // Track loading state
+
   const isSelecting = useRef(false);
   const startCell = useRef(null);
   const selectedDirection = useRef(null);
 
   useEffect(() => {
     if (words.length > 0) {
-      setGrid(generateGrid(words, size));
+      setGrid(generateGrid(words.map((w) => w.toUpperCase()), size));
+      setIsLoaded(true); 
     }
   }, [words]);
+
+  useEffect(() => {
+    if (isLoaded && foundWords.length === words.length) {
+      console.log("Game completed");
+      onSendData(true); 
+    }
+  }, [foundWords, words, isLoaded, onSendData]);
 
   const handleMouseDown = (rowIndex, colIndex) => {
     isSelecting.current = true;
@@ -91,7 +125,11 @@ const SoupLetter = ({ words = [], onResolve }) => {
       if (!selectedDirection.current) {
         selectedDirection.current = determineDirection(startCell.current, [rowIndex, colIndex]);
       }
-      const newSelectedCells = generateSelectedCells(startCell.current, [rowIndex, colIndex], selectedDirection.current);
+      const newSelectedCells = generateSelectedCells(
+        startCell.current,
+        [rowIndex, colIndex],
+        selectedDirection.current
+      );
       setSelectedCells(newSelectedCells);
     }
   };
@@ -101,72 +139,44 @@ const SoupLetter = ({ words = [], onResolve }) => {
     checkWord();
   };
 
-  const determineDirection = (start, end) => {
-    const [startRow, startCol] = start;
-    const [endRow, endCol] = end;
-    const rowDiff = endRow - startRow;
-    const colDiff = endCol - startCol;
-
-    if (rowDiff === 0) {
-      return [0, colDiff > 0 ? 1 : -1];
-    } else if (colDiff === 0) {
-      return [rowDiff > 0 ? 1 : -1, 0];
-    } else if (Math.abs(rowDiff) === Math.abs(colDiff)) {
-      return [rowDiff > 0 ? 1 : -1, colDiff > 0 ? 1 : -1];
-    }
-    return null;
-  };
-
-  const generateSelectedCells = (start, end, direction) => {
-    const [startRow, startCol] = start;
-    const [endRow, endCol] = end;
-    const [rowDir, colDir] = direction;
-    const length = Math.max(Math.abs(endRow - startRow), Math.abs(endCol - startCol)) + 1;
-
-    const cells = [];
-    for (let i = 0; i < length; i++) {
-      cells.push([startRow + i * rowDir, startCol + i * colDir]);
-    }
-    return cells;
-  };
-
   const checkWord = () => {
-    const selectedWord = selectedCells.map(([row, col]) => grid[row][col]).join("");
-    if (words.includes(selectedWord)) {
-      setFoundWords((prevFound) => [...prevFound, selectedWord]);
-      setFoundPositions((prevPositions) => [...prevPositions, ...selectedCells]);
-      if ([...foundWords, selectedWord].length === words.length) {
-        onResolve(true); // Notificar que se completaron todas las palabras
-      }
+    const selectedWord = selectedCells
+      .map(([row, col]) => grid[row][col])
+      .join("")
+      .toUpperCase();
+
+    const wordIndex = words.map((w) => w.toUpperCase()).indexOf(selectedWord);
+
+    if (wordIndex !== -1 && !foundWords.includes(selectedWord)) {
+      const correspondingLabel = spanish[wordIndex].toUpperCase();
+      setFoundWords((prev) => [...prev, correspondingLabel]);
+      setFoundPositions(
+        (prev) => new Set([...prev, ...selectedCells.map((cell) => cell.join(","))])
+      );
     }
     setSelectedCells([]);
   };
 
-  const isWordCell = (rowIndex, colIndex) => {
-    return foundPositions.some(([r, c]) => r === rowIndex && c === colIndex);
-  };
+  const isWordCell = (rowIndex, colIndex) =>
+    foundPositions.has(`${rowIndex},${colIndex}`);
 
-  const isCurrentlySelectedCell = (rowIndex, colIndex) => {
-    return selectedCells.some(([r, c]) => r === rowIndex && c === colIndex);
-  };
+  const isCurrentlySelectedCell = (rowIndex, colIndex) =>
+    selectedCells.some(([r, c]) => r === rowIndex && c === colIndex);
 
   const getCellClass = (rowIndex, colIndex) => {
     const isSelected = isCurrentlySelectedCell(rowIndex, colIndex);
     const isFound = isWordCell(rowIndex, colIndex);
-    const cellClasses = [styles.cell];
-
-    if (isSelected) {
-      cellClasses.push(styles.selected);
-    }
-    if (isFound) {
-      cellClasses.push(styles.found);
-    }
-    return cellClasses.join(' ');
+    return `${styles.cell} ${isSelected ? styles.selected : ""} ${
+      isFound ? styles.found : ""
+    }`;
   };
 
   return (
     <div className="d-flex" onMouseUp={handleMouseUp}>
-      <div className="container" onMouseLeave={() => isSelecting.current = false} onMouseDown={(e) => e.preventDefault()}>
+      <div
+        className="container"
+        onMouseLeave={() => (isSelecting.current = false)}
+      >
         {grid.map((row, rowIndex) => (
           <div className={styles.row} key={rowIndex}>
             {row.map((letter, colIndex) => (
@@ -183,9 +193,14 @@ const SoupLetter = ({ words = [], onResolve }) => {
         ))}
       </div>
       <div className={styles.wordList}>
-        <h4>Palabras que debes encontrar</h4>
-        {words.map((word, index) => (
-          <div key={index} className={foundWords.includes(word) ? styles.foundWord : ""}>
+        <h4>Palabras que debes encontrar en Kichwa</h4>
+        {spanish.map((word, index) => (
+          <div
+            key={index}
+            className={
+              foundWords.includes(word.toUpperCase()) ? styles.foundWord : ""
+            }
+          >
             {word}
           </div>
         ))}

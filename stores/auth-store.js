@@ -1,5 +1,7 @@
+'use-client'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import Cookies from 'js-cookie';
 
 const defaultInitState = {
   key: "",
@@ -13,12 +15,18 @@ export const createAuthStore = (initState = defaultInitState) => {
     persist(
       (set) => ({
         ...initState,
-        setAuth: (info) => set((state) => ({ key: info.key, username: info.username, level: info.level, id: info.id })),
+        setAuth: (info) => {
+          set((state) => ({ key: info.key, username: info.username, level: info.level, id: info.id }))
+          Cookies.set('authToken', info.key, { expires: 1 });
+        },
         addLevel: () => set((state) => ({ level: state.level + 1 })),
-        resetStore: () => set(defaultInitState),
+        resetStore: () => {
+          set(defaultInitState)
+          Cookies.remove('authToken');
+        },
       }),
       {
-        "name": "user-storage"
+        "name": "user-storage",
       }
     )
   )

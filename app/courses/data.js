@@ -10,7 +10,7 @@ export const courses = [
         "title": "Curso Intermedio",
         "img": "/img/iconography/condor.png",
         "description": "Continúa con tu aprendizaje del lenguaje, con más vocabulario y gramática",
-        "score_required": 40,
+        "score_required": 19,
         'url': "/lectures/intermediate"
     }
 ]

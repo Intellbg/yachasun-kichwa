@@ -1,6 +1,6 @@
 'use client'
 import bg from '@/public/img/backgrounds/cloth.webp'
-import "./styles.css";
+import "../styles.css";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -8,7 +8,6 @@ import { AUTH_ENDPOINT } from '@/constants';
 import { useState } from 'react';
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { useRouter } from 'next/navigation'
-import Cookies from 'js-cookie';
 
 const LoginSchema = yup.object().shape({
     email: yup.string().required('Email requerido'),
@@ -32,20 +31,19 @@ export default function Login() {
             },
             body: JSON.stringify(data),
         })
-        if (res.ok) {
-            const info = await res.json()
-            setAuth(info)
-            Cookies.set('authToken', info["key"], { expires: 1 });
-            router.push('/courses')
-        } else {
+        if (!res.ok) {
             await res.json().then((data) => {
-                if (data['message'] == 'unverified') {
+                if (data['message'] == 'Unverified') {
                     setApiError("Correo no verificado")
                 } else {
                     setApiError("Error al autenticar")
                 }
             });
+            return
         }
+        const info = await res.json()
+        setAuth(info)
+        router.push('/courses')
     }
 
     return (
@@ -75,6 +73,7 @@ export default function Login() {
                     <div className="text-center mt-3">
                         <p>¿Todavía no tienes cuenta? <a href='/signup' className="text-decoration-none">Regístrate Aquí</a></p>
                         <a href="/forgot-password" className="text-decoration-none">¿Olvidaste tu contraseña?</a>
+                        <p><a href="/" className="text-decoration-none small text-muted">Volver al inicio</a></p>
                     </div>
                 </form>
             </div>

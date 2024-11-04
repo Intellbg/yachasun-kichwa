@@ -1,87 +1,58 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CourseCard from "../components/course_card/CourseCard";
 import Navbar from "../components/Navbar";
+import Helper from "../components/helper/Helper.js";
 import { courses } from './data.js';
 import { useAuthStore } from '@/providers/auth-store-provider.js';
-import { useRouter } from 'next/navigation';
-import styles from './animation.module.css';
+import styles from '@/app/animation.module.css';
 
 export default function Courses() {
   const { level } = useAuthStore((state) => state);
-  const audioRef = useRef(null);
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [openModal, setOpenModal] = useState(false);
+  const [step, setStep] = useState(1)
 
-  useEffect(() => {
-    audioRef.current = new Audio('/sounds/selectMainMenu.mp3');
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
-  const playClickSound = (event, href) => {
-    event.preventDefault();
-    setLoading(true);
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().then(() => {
-        audioRef.current.onended = () => {
-          if (href) {
-            router.push(href);
-          }
-        };
-      }).catch((error) => {
-        console.error("Error al reproducir el audio: ", error);
-        setLoading(false);
-        if (href) {
-          router.push(href);
-        }
-      });
-    } else {
-      setLoading(false);
-      if (href) {
-        router.push(href);
-      }
-    }
+  const nextStep = () => {
+    setStep((prev) => (prev >= 3 ? 1 : prev + 1));
   };
 
   useEffect(() => {
-    const clickableElements = document.querySelectorAll('a, button, .course-card');
-
-    if (clickableElements.length > 0) {
-      clickableElements.forEach((element) => {
-        element.addEventListener('click', (e) => {
-          const href = element.tagName === 'A' ? element.href : null;
-          playClickSound(e, href);
-        });
-      });
-
-      return () => {
-        clickableElements.forEach((element) => {
-          element.removeEventListener('click', playClickSound);
-        });
-      };
-    }
+    setOpenModal(level)
   }, []);
+
+
+  const getImageByStep = () => {
+    switch ((step%3)+1) {
+      case 1:
+        return <img
+          src='/img/humu/humu-talking.png'
+          alt="Humu"
+          height={150}
+          className={`${styles.imgFloat} me-4`}
+        />;
+      case 2:
+        return <img
+          src='/img/humu/humu-happy.png'
+          alt="Humu"
+          height={150}
+          className={`${styles.spinnerImage} me-4`}
+        />;
+      case 3:
+        return <img
+          src='/img/humu/humu-talking.png'
+          className={`${styles.imgFloat} me-4`}
+          alt="Humu"
+          height={150}
+        />;
+    }
+  };
+
+
 
   return (
     <>
       <Navbar />
-      {loading && (
-        <div className={styles.loadingOverlay}>
-          <div className={styles.spinnerContainer}>
-            <img src="/img/humu/humu-fuckup.png" alt="Loading" className={styles.spinnerImage} />
-            <p className={styles.loadingText}>CARGANDO...</p>
-            <p className={styles.funFact}>Hay más personas estudiando irlandés en Duolingo que irlandeses nativos que lo hablan.</p>
-          </div>
-        </div>
-      )}
       <div className="container d-flex justify-content-center align-items-center h-75">
         <div className="row">
           <div className="col">
@@ -90,8 +61,52 @@ export default function Courses() {
             ))}
           </div>
         </div>
-        <div className="col">
-          <img src="/img/humu/humu-happy.png" alt="Humu Happy" height={400} className={`${styles.imgFloat}`} />
+        <div className="col pe-auto">
+          <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${styles.imgFloat}`} h={400} style={{}} isOpen={openModal}>
+            <div className='container'>
+              <h2 className='text-center'>IMANALLA! 👋</h2>
+              <div className=' d-flex align-items-center text-start'>
+                {getImageByStep(step)}
+                <div>
+                  {step === 1 && (
+                    <>
+                      <p className="lead fs-4">
+                        ¡Hola! Soy <strong>Humu</strong>, tu amigo emocionado de acompañarte
+                        en este curso para aprender Kichwa. ¡Espero que disfrutes cada momento!
+                      </p>
+                      <p className='lead fs-3'>
+                        <strong>
+                          Siempre que necesites ayuda puedes dar click sobre mi imagen y yo estaré listo para ayudar
+                        </strong>
+                      </p>
+                    </>
+                  )}
+                  {step === 2 && (
+                    <p className="lead fs-4">
+                      Aquí podrás <strong>seleccionar el curso</strong> que deseas tomar.
+                      Los <span className="unlocked">cursos desbloqueados</span> tienen fondo
+                      blanco, mientras que los <span className="locked">bloqueados</span> tienen fondo gris.
+                      Debes completar cada curso para avanzar.
+                    </p>
+                  )}
+                  {step === 3 && (
+                    <p className="lead fs-4">
+                      En la parte inferior encontrarás un <strong>icono de trofeo 🏆</strong>.
+                      Haz clic en él para ver los logros obtenidos durante tu estudio.
+                      ¡Estoy seguro de que alcanzarás muchos logros!
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className='d-flex justify-content-center'>
+
+                <button className="btn bg-primary-custom ma-auto btn-lg" onClick={nextStep}>
+                  Continuar
+                </button>
+              </div>
+            </div>
+
+          </Helper>
         </div>
       </div>
       <div className="container w-100 text-center">

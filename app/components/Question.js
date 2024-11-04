@@ -1,14 +1,9 @@
 "use client"
 import React, { useState, useEffect } from "react";
+import {shuffleArray} from "@/app/lib/randomize"
+import style from "./Question.module.css"
 
-export const shuffleArray = (array) => {
-    return array
-        .map((value) => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
-};
-
-export default function Question({ questionData, index, selectedAnswer, onSelectAnswer }){
+export default function Question({ questionData, index, selectedAnswer, onSelectAnswer, incorrect=false }){
     const [shuffledOptions, setShuffledOptions] = useState([]);
     useEffect(() => {
         setShuffledOptions(shuffleArray(questionData.options));
@@ -16,7 +11,7 @@ export default function Question({ questionData, index, selectedAnswer, onSelect
 
     return (
         <div className="mb-3" key={questionData.question}>
-            <label className="form-label">{questionData.question}</label>
+            <label className={`form-label ${incorrect?"":style.incorrect}`}>{questionData.question}</label>
             {
                 shuffledOptions.map((option) => (
                     <div className="form-check custom-radio" key={option}>

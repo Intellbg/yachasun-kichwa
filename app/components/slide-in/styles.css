@@ -43,7 +43,14 @@
 }
 
 .slide-in {
-  opacity: 0; /* Hide initially */
+  opacity: 0; 
+}
+
+.slide-in img{
+  max-height: 450px;
+  width: auto;
+  margin: auto; 
+  display: block;
 }
 
 .slide-in-left {

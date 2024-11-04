@@ -58,7 +58,7 @@ const Target = ({ index, word, setTargetWord }) => {
   );
 };
 
-const DragAndDrop = ({ phrase, onResolve }) => {
+const DragAndDrop = ({ phrase, onSendData }) => {
   const initialWords = (phrase ? phrase.split(' ') : []).map((word, index) => ({ id: index, word }));
   
   const [words, setWords] = useState([]);
@@ -93,10 +93,17 @@ const DragAndDrop = ({ phrase, onResolve }) => {
   const checkAnswer = () => {
     const correctOrder = initialWords.map(word => word.word);
     const isCorrect = JSON.stringify(targetWords) === JSON.stringify(correctOrder);
+        
+   setIsCorrectGuess(isCorrect);
+   if (isCorrect){
     setGameOver(true);
     setIsCorrectGuess(isCorrect);
-    if (isCorrect) onResolve(); // Llama a onResolve solo si la oración es correcta
+    onSendData(isCorrect);
+   }  // Llama a onResolve solo si la oración es correcta
   };
+
+  
+
 
   useEffect(() => {
     if (targetWords.every(word => word !== '')) {

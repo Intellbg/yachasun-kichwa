@@ -1,10 +1,11 @@
 "use client"
 import { useRouter } from 'next/navigation';
 
-function BootstrapClient() {
+function BootstrapClient({href}) {
     const router = useRouter();
 
     const goBack = () => {
+        if (href) router.push(href)
         router.back();
     };
 
