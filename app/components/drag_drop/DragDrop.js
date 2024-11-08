@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import Helper from "@/app/components/helper/Helper.js";
+import DragDropInstructions from "@/app/components/instructions/drag_drop/DragDropInstruction.js";
 import update from 'immutability-helper';
 import styles from './style.module.css'; 
 
@@ -117,7 +119,9 @@ const DragAndDrop = ({ phrase, onSendData }) => {
         <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
           <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
           <div className="mb-4">
-          <img src="/img/humu/humu-happy.png" alt="Character" style={{ maxWidth: "150px" }} />
+          <Helper imageSrc="/img/humu/humu-happy.png">
+                <DragDropInstructions />
+            </Helper>          
         </div>
           <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
             {words.map((item, index) => (

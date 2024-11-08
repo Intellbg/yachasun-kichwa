@@ -1,10 +1,53 @@
 import Quiz from "../../../../components/Quiz"
+import TablesWithTabs from '../../../../components/TableswithTabs'
 import ImageFlipContainer from "../../../../components/ImageFlipContainer"
 import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
 
-# El dormitorio (Puñuna uku)
+export const tablesData = [
+  {
+    title: 'Puñuna',
+    headers: ['Sujeto', 'Presente', 'Presente progresivo', 'Imperativo', 'Pasado simple', 'Pasado progresivo', 'Pasado perfecto'],
+    rows: [
+      ['Ñuka', 'puñuni', 'puñukuni', '-', 'puñurkani', 'puñukurkani','puñushkani'],
+      ['Kan', 'puñunki', 'puñukunki', 'puñuy', 'puñurkanki', 'puñukurkanki', 'puñushkanki'],
+      ['Kikin', 'puñunki', 'puñukunki', 'puñupay', 'puñurkanki', 'puñukurkanki', 'puñushkanki'],
+      ['Pay', 'puñun', 'puñukun', '-', 'puñurka', 'puñukurka', 'puñushka'],
+      ['Ñukanchik', 'puñunchik', 'puñukunchik', 'puñushun', 'puñurkanchik', 'puñukurkanchik', 'puñushkanchik'],
+      ['Kankuna', 'puñunkichik', 'puñukunkichik', 'puñuychik','puñurkankichik','puñukurkankichik', 'puñushkankichik'],
+      ['Kikinkuna', 'puñunkichik', 'puñukunkichik','puñupaychik','puñurkankichik','puñukurkankichik','puñushkankichik'],
+      ['Paykuna', 'puñunkuna', 'puñukunkuna', '-','puñurkakuna','puñukurkakuna', 'puñushkakuna'],        
+    ],
+  },
+  {
+    title: 'Muskuna',
+    headers: ['Sujeto', 'Presente', 'Presente progresivo', 'Imperativo', 'Pasado simple', 'Pasado progresivo', 'Pasado perfecto'],
+    rows: [
+      ['Ñuka', 'muskuni', 'muskukuni', '-', 'muskurkani', 'muskukurkani','muskushkani'],
+      ['Kan', 'muskunki', 'muskukunki', 'muskuy', 'muskurkanki', 'muskukurkanki', 'muskukurkanki'],
+      ['Kikin', 'muskunki', 'musukunki', 'muskupay', 'muskurkanki', 'muskukurkanki', 'muskushkanki'],
+      ['Pay', 'muskun', 'muskukun', '-', 'muskurka', 'muskukurka', 'muskushka'],
+      ['Ñukanchik', 'muskunchik', 'muskukunchik', 'muskushun', 'muskurkanchik', 'muskukurkanchik', 'muskushkanchik'],
+      ['Kankuna', 'muskunkichik', 'muskukunkichik', 'muskuychik','muskurkankichik','muskukurkankichik', 'muskushkankichik'],
+      ['Kikinkuna', 'muskunkichik', 'muskukunkichik','muskupaychik','muskurkankichik','muskukurkankichik','muskushkankichik'],
+      ['Paykuna', 'muskunkuna', 'muskukunkuna', '-','muskurkakuna','muskukurkakuna', 'muskushkakuna'],        
+    ],
+  },
+  {
+    title: 'Oraciones',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['Ñukaka ñukapak kawitupimi puñuni', 'Yo duermo en mi cama '],
+      ['Ñukapak churanaka churana wakaychinapimi', 'Mi ropa está en ese armario'],
+      ['Ñukapak katanaka kunukllami ', 'Mi cobija es abrigada '],
+      ['Ñukapak puñuna ukuka uchillami kan', 'Mi dormitorio es pequeño '],
+    ],
+  },
+];
+
+# **El dormitorio (Puñuna uku)**
 <ImageFlipContainer lecture="room" tag="room"/> 
-FALTAN LAS CONJUGACIONES
+## ***La conjugación de los verbos***
+<TablesWithTabs tables={tablesData} />
 <hr />
 <ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección del dormitorio." character = "humuFeliz"/>
 <hr />

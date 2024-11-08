@@ -1,10 +1,9 @@
-// Table with tabs.js
+// TablesWithTabs.js
 'use client'
 import React, { useState } from 'react';
 import DinamicTable from './DinamicTable';
 
 const TablesWithTabs = ({ tables }) => {
-  // Estado para la pestaña activa, comenzando con la primera
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (tabIndex) => {
@@ -13,14 +12,19 @@ const TablesWithTabs = ({ tables }) => {
 
   return (
     <div>
-      {/* Renderiza las pestañas con los títulos de cada tabla */}
       <ul className="nav nav-tabs" role="tablist">
         {tables.map((table, index) => (
           <li className="nav-item" key={index} role="presentation">
             <button
-              className={`nav-link ${activeTab === index ? 'active' : ''}`}
+              className={`nav-link ${activeTab === index ? 'activetab' : ''}`}
               type="button"
               onClick={() => handleTabClick(index)}
+              style={{
+                backgroundColor: activeTab === index ? '#003011' : 'white',
+                color: activeTab === index ? 'white' : '#003011',                
+                borderColor: activeTab === index ? '#003011' : '',
+                border: '1px solid transparent',
+              }}
             >
               {table.title}
             </button>
@@ -28,15 +32,16 @@ const TablesWithTabs = ({ tables }) => {
         ))}
       </ul>
 
-      {/* Renderiza el contenido de la tabla seleccionada */}
       <div className="tab-content">
         {tables.map((table, index) => (
-          activeTab === index && ( // Solo muestra la tabla activa
+          activeTab === index && (
             <DinamicTable
               key={index}
               headers={table.headers}
               rows={table.rows}
               title={table.title}
+              activeTab={activeTab}
+              tabIndex={index}
             />
           )
         ))}
@@ -46,6 +51,7 @@ const TablesWithTabs = ({ tables }) => {
 };
 
 export default TablesWithTabs;
+
 
 
 

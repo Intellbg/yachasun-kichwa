@@ -11,7 +11,7 @@ export default function LectureCard({ data, currentScore }) {
                 </div>
                 <div className="me-3">
                     {!unlocked ? (
-                        <a href={`/lectures/basic/es/${data.slug}`} className="text-decoration-none">
+                        <a href={`/lectures/intermediate/es/${data.slug}`} className="text-decoration-none">
                         <button 
                             className="btn btn-warning text-dark fw-bold" 
                             style={{ borderRadius: "10px" }}

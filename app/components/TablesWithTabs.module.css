@@ -1,0 +1,13 @@
+/* TablesWithTabs.css */
+
+/* Clase para las pestañas inactivas */
+.nav-tabs .nav-link.inactive-tab {
+    color: #003011 !important; /* Texto verde oscuro */
+  }
+  
+  .nav-tabs .nav-link.active-tab {
+    background-color: #003011 !important;
+    color: white !important;
+  }
+  
+  

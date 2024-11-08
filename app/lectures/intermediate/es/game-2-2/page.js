@@ -20,7 +20,7 @@ export default function Game1() {
     }, [childData]);
 
     useEffect(() => {
-        if (31 >=send) {
+        if (31 >=level && send) {
             fetch(USER_ENDPOINT + `${id}/level`, {
                 method: "PATCH",
                 headers: {
@@ -36,9 +36,9 @@ export default function Game1() {
 
     return (
         <>
-            <Helper imageSrc="/img/humu/humu-happy.png">
+            {/* <Helper imageSrc="/img/humu/humu-happy.png">
                 <WordleInstructions />
-            </Helper>
+            </Helper> */}
             <Navbar />
 
             <h1 className="text-center">Arrastra y ordena</h1>
