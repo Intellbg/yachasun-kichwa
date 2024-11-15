@@ -21,7 +21,7 @@ export const cards = [
         significado: "Kuyllur y Duziru",            
         imgSrc: "/img/achievements/Kuyllur_Duziru.png",
         descripcion: "Este diseño representa el poder, la fuerza, la valentía y la sabiduría. Esta figura se utiliza cuando una persona va a la guerra, a la cacería, o participa en los rituales y ceremonias.",            
-        unlockLevel: 19,
+        unlockLevel: 18,
     },
     {
         titulo: "Vamos por el siguiente nivel",
