@@ -6,7 +6,7 @@ const WordleInstructions = () => {
         <div className="container">
             <h1 className={styles.header}>Cómo Jugar Wordle</h1>
             <p className={styles.paragraph}>
-                Wordle es un juego donde tienes que adivinar una palabra de en 6 intentos o menos.
+                Palabrando es un juego donde tienes que adivinar una palabra de en 6 intentos o menos.
                 Cada vez que adivines, las letras cambiarán de color para mostrar qué tan cerca estás de acertar.
             </p>
 

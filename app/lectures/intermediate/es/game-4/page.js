@@ -1,8 +1,6 @@
 "use client";
 import Navbar from "@/app/components/Navbar.js";
 import CompleteSentence from "@/app/components/CompleteSentences/CompleteSentence.js";
-import Helper from "@/app/components/helper/Helper.js";
-import WordleInstructions from "@/app/components/instructions/wordle/WordleInstructions.js";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import { useState, useCallback, useEffect } from 'react';
@@ -41,7 +39,7 @@ export default function Game1() {
             </Helper> */}
             <Navbar />
 
-            <h1 className="text-center">Wordle</h1>
+            <h1 className="text-center">Palabrando</h1>
             <div className="container d-flex justify-content-center align-items-center h-75">
             <CompleteSentence sentence="Paykuna	rima shka kuna" missingWordIndex= {0} options={["Ñuka", "Kan","Paykuna"]} onSendData={handleChildData}  />
             </div>
