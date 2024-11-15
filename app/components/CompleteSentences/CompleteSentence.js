@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import Helper from "@/app/components/helper/Helper.js";
+import CompleteSentenceInstructions from "@/app/components/instructions/completesentence/CompleteSentenceInstructions.js";
 import styles from './style.module.css';
 
 export default function CompleteSentence ({ sentence, missingWordIndex, options, onSendData }) {
@@ -46,7 +48,9 @@ export default function CompleteSentence ({ sentence, missingWordIndex, options,
       <div>
         <h2 className="text-uppercase mb-4">Arrastra la palabra correcta para completar la oración</h2>
         <div className="mb-4">
-          <img src="/img/humu/humu-happy.png" alt="Character" style={{ maxWidth: "150px" }} />
+        <Helper imageSrc="/img/humu/humu-happy.png">
+                <CompleteSentenceInstructions />
+            </Helper> 
         </div>
         <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
           {completedSentence.map((word, index) => (

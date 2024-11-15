@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Question from "@/app/components/Question";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
-import { getQuestions } from "@/app/lib/getQuestions.js";
+import { getQuestionsSentence } from "@/app/lib/getQuestionsSentence.js";
+import { getQuestionTime } from "@/app/lib/getQuestionTime.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 import animation from "@/app/animation.module.css"
 
@@ -20,9 +21,11 @@ export default function Test1() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const questions = await await getQuestions("animals-2", 10, 4)
-      console.log(questions)
-      setQuestions(questions);
+      const questions = await await getQuestionTime("grammar-10,grammar-11,grammar-12",5,2);
+      const questions1 = await await getQuestionsSentence("grammar-10,grammar-11,grammar-12",5,4);
+      var combinedQuestions = questions.concat(questions1);       
+      console.log(combinedQuestions)
+      setQuestions(combinedQuestions);
     };
     fetchData()
   }, []);
@@ -88,10 +91,7 @@ export default function Test1() {
           className={`humu-mascot me-4 ${animation.spinnerImage}`}
         />
         <br />
-        <h3><a href="/achievements">Revisa tus Logros</a></h3>
-        <div className="m-auto text-center">
-          <a href={`/lectures/intermediate/`} className={`text-center btn btn-success ${(51 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
-        </div>
+        <h3><a href="/achievements">Revisa tus Logros</a></h3>        
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import Question from "@/app/components/Question";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import { getQuestions } from "@/app/lib/getQuestions.js";
+import { getQuestionsSentence } from "@/app/lib/getQuestionsSentence.js";
+import { getQuestionTime } from "@/app/lib/getQuestionTime.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 import animation from "@/app/animation.module.css"
 
@@ -20,9 +22,13 @@ export default function Test1() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const questions = await await getQuestions("location,time", 10, 4)
-      console.log(questions)
-      setQuestions(questions);
+      const questions = await await getQuestions("location,time", 4, 4)
+      const questions2 = await await getQuestionTime("grammar-7,grammar-8,grammar-9",3,2);
+      const questions3 = await await getQuestionsSentence("grammar-7,grammar-8,grammar-9",3,4);
+      var combinedQuestions = questions.concat(questions2); 
+      combinedQuestions = combinedQuestions.concat(questions3);  
+      console.log(combinedQuestions)
+      setQuestions(combinedQuestions);
     };
     fetchData()
   }, []);

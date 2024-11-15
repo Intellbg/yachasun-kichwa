@@ -4,7 +4,7 @@ import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpe
 
 export const tablesData = [
   {
-    title: 'Las terminaciones',
+    title: 'Terminaciones (Puchukay shiikukuna)',
     headers: ['Sujeto', 'Terminación'],
     rows: [
       ['Ñuka', 'sha'],
@@ -17,8 +17,11 @@ export const tablesData = [
       ['Paykuna',	'nkakuna'],           
     ],
   },
+];
+
+export const tablesData2 = [  
   {
-    title: 'Ejemplo - Llamkana',
+    title: 'Llamkana',
     headers: ['Sujeto', 'Raíz', 'Terminación', 'Verbo conjugado', 'Traducción'],
     rows: [
       ['Ñuka', 'llamka', 'sha', 'llamkasha', 'Yo trabajaré'],
@@ -32,7 +35,7 @@ export const tablesData = [
     ],
   },
   {
-    title: 'Ejemplo - Shamuna',
+    title: 'Shamuna',
     headers: ['Sujeto', 'Raíz', 'Terminación', 'Verbo conjugado', 'Traducción'],
     rows: [
       ['Ñuka', 'shamu', 'sha', 'shamusha', 'Yo vendré'],
@@ -47,10 +50,12 @@ export const tablesData = [
   },
 ];
 
-# El futuro simple (Shamuk pacha)
-
+# **El futuro simple (Shamuk pacha)**
 Para formar el futuro simple, tomamos la raíz del verbo y añadimos las terminaciones del futuro simple.
 <TablesWithTabs tables={tablesData} />   
+<ComicSpeechBubble text="El uso de sha demuestra inseguridad, como haya, tal vez, quizá. " character = "humu"/>
+## **Ejemplos (Shinakuna)**
+<TablesWithTabs tables={tablesData2} /> 
 <hr />
 <ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección del futuro simple." character = "humuFeliz"/>
 <hr />

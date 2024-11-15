@@ -1,8 +1,8 @@
+// DinamicTable.js
 'use client'
 import React from 'react';
 
 const DinamicTable = ({ headers, rows, title, activeTab, tabIndex }) => {
-  // Solo muestra el contenido si la pestaña activa coincide con el índice de esta tabla.
   if (activeTab !== tabIndex) return null;
 
   return (
@@ -11,7 +11,7 @@ const DinamicTable = ({ headers, rows, title, activeTab, tabIndex }) => {
         <thead className="table-primary">
           <tr>
             {headers.map((header, index) => (
-              <th key={index}>{header}</th>
+              <th key={index} style={{ color: 'white' , backgroundColor: '#003011'}}>{header}</th>
             ))}
           </tr>
         </thead>
@@ -30,6 +30,7 @@ const DinamicTable = ({ headers, rows, title, activeTab, tabIndex }) => {
 };
 
 export default DinamicTable;
+
 
 
 

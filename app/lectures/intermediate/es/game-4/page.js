@@ -36,9 +36,9 @@ export default function Game1() {
 
     return (
         <>
-            <Helper imageSrc="/img/humu/humu-happy.png">
+            {/* <Helper imageSrc="/img/humu/humu-happy.png">
                 <WordleInstructions />
-            </Helper>
+            </Helper> */}
             <Navbar />
 
             <h1 className="text-center">Wordle</h1>

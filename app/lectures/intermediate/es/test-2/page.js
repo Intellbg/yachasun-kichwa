@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Question from "@/app/components/Question";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
-import { getQuestions } from "@/app/lib/getQuestions.js";
+import { getQuestionsSentence } from "@/app/lib/getQuestionsSentence.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 import animation from "@/app/animation.module.css"
 
@@ -19,8 +19,8 @@ export default function Test1() {
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const questions = await await getQuestions("animals-2", 10, 4)
+    const fetchData = async () => {      
+      const questions = await await getQuestionsSentence("grammar-2-2,grammar-3-2,grammar-4,grammar-5,grammar-6",10,4);      
       console.log(questions)
       setQuestions(questions);
     };
@@ -66,7 +66,7 @@ export default function Test1() {
   return (
     <div className="container">
       <div className={`${(32 < level) | isAnswerCorrect ? "d-none" : ""}`}>
-        <h1 className="text-center">Evaluación 1</h1>
+        <h1 className="text-center">Evaluación 2</h1>
         {questions.map((questionData, index) => (
           <Question
             key={index}

@@ -23,7 +23,7 @@ const lectureQuestions = [
     },
     {
         "slug": "ordinal_numbers",
-        "question": "¿Comó se escribe en kichwa Tercero?",
+        "question": "¿Cómo se escribe en kichwa Tercero?",
         "options": [
             "Chuskuniki",
             "Kimsaniki",
