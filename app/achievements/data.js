@@ -38,6 +38,7 @@ export const cards = [
         imgSrc: "/img/achievements/Kuyllur_Duziru.png",
         descripcion: "Este diseño es usado por los/as niños/as, para recibir el poder, el conocimiento y la inteligencia del Amazanka, a fin de resistir las caminatas por la selva, por donde ha caminado el Amazanka",            
         unlockLevel: 26,
+
     },
     {
         titulo: "Preguntar y conectar",

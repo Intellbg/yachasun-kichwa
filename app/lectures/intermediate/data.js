@@ -3,10 +3,10 @@ const activities = [
         "name": "Módulo 1",
         "score_required": 19,
         "imagen": "/img/cover/basic-m1.jpg",
-        "description": "En este modulo aprenderás más números, alimentos, animales y particulas para hacer oraciones.",
+        "description": "En este modulo aprenderás más números, alimentos, animales y partículas para hacer oraciones.",
         "lectures": [
             {
-                "score_required": 19,
+                "score_required": 18,
                 "name": "Numeros",
                 "descripcion": "En esta lectura vamos a aprender sobre los números",
                 "slug": "numbers-2",

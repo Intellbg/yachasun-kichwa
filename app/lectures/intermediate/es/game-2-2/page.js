@@ -1,8 +1,6 @@
 "use client";
 import Navbar from "@/app/components/Navbar.js";
 import DragDrop from "@/app/components/drag_drop/DragDrop.js";
-import Helper from "@/app/components/helper/Helper.js";
-import WordleInstructions from "@/app/components/instructions/wordle/WordleInstructions.js";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import { useState, useCallback, useEffect } from 'react';
