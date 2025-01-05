@@ -3,12 +3,11 @@ const activities = [
         "name": "Módulo 1",
         "score_required": 19,
         "imagen": "/img/cover/basic-m1.jpg",
-        "description": "En este modulo aprenderás más números, alimentos, animales y partículas para hacer oraciones.",
+        "description": "En este módulo aprenderás sobre números, números ordinales, animales, alimentos y las partículas pak y nkapak",
         "lectures": [
             {
                 "score_required": 18,
-                "name": "Numeros",
-                "descripcion": "En esta lectura vamos a aprender sobre los números",
+                "name": "Números",                
                 "slug": "numbers-2",
                 "next": "/lectures/intermediate/es/ordinal_numbers",
             },
@@ -32,7 +31,7 @@ const activities = [
             },
             {
                 "score_required": 23,
-                "name": "Las particulas pak y nkapak",
+                "name": "Las partículas pak y nkapak",
                 "slug": "grammar-1-2",
                 "next": "/lectures/intermediate/es/game-1-2",
             },
@@ -54,7 +53,7 @@ const activities = [
         "name": "Módulo 2",
         "score_required": 26,
         "imagen": "/img/cover/basic-m2.jpg",
-        "description": "En este módulo aprenderás ha hacer preguntas y a aprender a hacer más oraciones.",
+        "description": "En este módulo aprenderás a formular preguntas, utilizar partículas de respuesta y construir oraciones más complejas",
         "lectures": [
             {
                 "score_required": 26,
@@ -105,7 +104,7 @@ const activities = [
         "name": "Módulo 3",
         "score_required": 33,
         "imagen": "/img/cover/basic-m3.jpg",
-        "description": "En este módulo aprenderás verbos, adjetivos, palabras de la ciudad, cocina y dormitorio",
+        "description": "En este módulo aprenderás sobre los verbos, los adjetivos y vocabulario relacionado con la cocina, la ciudad y el dormitorio",
         "lectures": [
             {
                 "score_required": 33,
@@ -155,7 +154,7 @@ const activities = [
         "name": "Módulo 4",
         "score_required": 40,
         "imagen": "/img/cover/basic-m1.jpg",
-        "description": "En este módulo vamos a apreder más gramatica, y vocabulario de ubicación y tiempo.",
+        "description": "En este módulo aprenderemos más sobre gramática y vocabulario relacionado con la ubicación, el tiempo, el pasado progresivo, el pasado simple y el participio pasado",
         "lectures": [
 
             {
@@ -205,7 +204,7 @@ const activities = [
         "name": "Módulo 5",
         "score_required": 47,
         "imagen": "/img/cover/basic-m1.jpg",
-        "description": "En este modulo vamos a aprender más gramatica.",
+        "description": "En este módulo aprenderemos más sobre gramática, enfocándonos en la conjugación en el tiempo presente progresivo, el futuro próximo y el futuro simple",
         "lectures": [
             {
                 "score_required": 47,
