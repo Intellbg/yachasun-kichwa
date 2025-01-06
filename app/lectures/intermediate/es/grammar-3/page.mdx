@@ -2,27 +2,8 @@ import TablesWithTabs from '../../../../components/TableswithTabs'
 import Quiz from "../../../../components/Quiz"
 import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
 
-export const tablesData = [
-  {
-    title: 'Ejemplo (Shina)',
-    headers: ['Kichwa', 'Español'],
-    rows: [
-      ['Imatatak mikunki', '¿Qué comes?'],           
-    ],
-  }  
-];
 
-export const tablesData1 = [  
-  {
-    title: 'Ejemplo (Shina)',
-    headers: ['Kichwa', 'Español'],
-    rows: [
-      ['Tantata mikuna', 'Como pan'],           
-    ],
-  }  
-];
-
-export const tablesData2 = [  
+export const tablesData = [  
    {
     title: 'Ejemplos (Shikuna)',
     headers: ['Kichwa', 'Español'],
@@ -31,6 +12,8 @@ export const tablesData2 = [
       ['Ñukaka aychata yanuni', 'Cocino carne'],
       ['Imatatak apamunki', '¿Qué traes?'],
       ['Ñukaka misita apamuni', 'Traigo el gato'],
+      ['Imatatak mikunki', '¿Qué comes?'], 
+      ['Tantata mikuna', 'Como pan'],  
     ],
   },
 ];
@@ -41,12 +24,10 @@ Por el momento vamos a estudiar las partículas de pregunta y afirmación.
 <ComicSpeechBubble text="En kichwa no utilizamos signo de pregunta, la partícula lo remplaza." character = "humuFeliz"/>
 # ***-tak***
 Para preguntar se utiliza la particula ***-tak***.
-<TablesWithTabs tables={tablesData} />
 # ***-ta***
 Para afirmar o dar énfasis se utiliza la particula ***-ta***.
-<TablesWithTabs tables={tablesData1} />
 <hr />
-<TablesWithTabs tables={tablesData2} />  
+<TablesWithTabs tables={tablesData} />  
 <hr />
 <ComicSpeechBubble text="!Excelente trabajo! Esto concluye la lección de las particulas tak y ta." character = "humuFeliz"/>
 <hr />
