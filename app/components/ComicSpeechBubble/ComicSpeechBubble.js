@@ -1,26 +1,36 @@
 import React from 'react';
-import styles from './ComicSpeechBubble.module.css'; 
+import styles from './ComicSpeechBubble.module.css';
 
 const imageMap = {
   humu: '/img/Humu.jpeg',
-  humuFeliz: '/img/humu-fuckup.png',  
-  humuSad: '/img/humu/humu-disappointed.png',  
+  humuFeliz: '/img/humu-fuckup.png',
+  humuSad: '/img/humu/humu-disappointed.png',
 };
 
-const ComicSpeechBubble = ({ text, character }) => {  
+const ComicSpeechBubble = ({ text, character, alignment = 'left' }) => {
   const imageSrc = imageMap[character] || imageMap['humu'];
+
   return (
-    <div className={styles.container}>
-      <div className={styles.character}>        
+    <div
+      className={`${styles.container} ${
+        alignment === 'right' ? styles.rightAlign : styles.leftAlign
+      }`}
+    >
+      <div className={styles.character}>
         <img
           src={imageSrc}
           alt="Personaje"
-          className={`${styles.characterImage} ${styles.imgFloat}`} 
+          className={`${styles.characterImage} ${styles.imgFloat}`}
         />
       </div>
       <div className={styles.speechBubble}>
         <p>{text}</p>
-      </div>    
+        <div
+          className={`${styles.speechArrow} ${
+            alignment === 'right' ? styles.arrowRight : styles.arrowLeft
+          }`}
+        />
+      </div>
     </div>
   );
 };
