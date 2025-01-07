@@ -1,7 +1,9 @@
 "use client";
+import Helper from "@/app/components/helper/Helper.js";
 import { useState, useRef, useEffect } from 'react';
 import styles from './Game.module.css';
 import { getQuestions } from "@/app/lib/getQuestions.js";
+import WordleInstructions from '../../instructions/wordle/WordleInstructions';
 
 export default function Game({ lectures, onSendData }) {
   const [question, setQuestion] = useState({});
@@ -80,8 +82,17 @@ export default function Game({ lectures, onSendData }) {
     window.location.reload();
   };
   return (
-    <div className="container">
-      <h1 className='text-center'>{question?.question}</h1>
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}> 
+    <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '700px' }}>
+      <div className="d-flex align-items-center justify-content-between my-4">
+          <h1 className="me-3">Palabrando</h1>
+          <div>
+            <Helper imageSrc="/img/humu/humu-happy.png">
+                <WordleInstructions />
+            </Helper>               
+            </div>                    
+        </div>
+      <h2 className='text-center'>{question?.question}</h2>
       {guesses.map((guess, rowIndex) => (
         <div className="d-flex justify-content-center mb-2" key={rowIndex}>
           {Array.from({ length: correctWord.length }).map((_, colIndex) => {
@@ -125,6 +136,7 @@ export default function Game({ lectures, onSendData }) {
         )}
       </div>
 
+    </div>
     </div>
   );
 }
