@@ -7,6 +7,7 @@ import { useAuthStore } from '@/providers/auth-store-provider.js';
 import { USER_ENDPOINT } from "@/constants.js";
 import { useState, useCallback, useEffect } from 'react';
 import { getWords } from "@/app/lib/getWords";
+import animation from '@/app/animation.module.css';
 
 export default function Game2() {
     const { level, addLevel, id, key } = useAuthStore((state) => state);
@@ -75,14 +76,15 @@ export default function Game2() {
         <>
             <Navbar />            
             <div className="container text-center bg-white text-dark" style={{ maxWidth: '1200px' }}>
-            <div class="d-flex align-items-center justify-content-center my-4">
+            <div class="d-flex align-items-center justify-content-center mb-4">
                 <h1 class="me-3">Sopa de Letras</h1>
                 <div>
-                    <Helper imageSrc="/img/humu/humu-happy.png">
+                    <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
                         <SoupLetterInstructions />
                     </Helper>               
                 </div>                    
             </div> 
+            <h2 className="text my-4"> Busca, encuentra y señala las palabras de la lista </h2>
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
             </div>
