@@ -2,7 +2,7 @@ const activities = [
     {
         "name": "Módulo 1",
         "score_required": 19,
-        "imagen": "/img/cover/basic-m1.jpg",
+        "imagen": "/img/cover/intermediate-m1-2.jpg",
         "description": "En este módulo aprenderás sobre números, números ordinales, animales, alimentos y las partículas pak y nkapak",
         "lectures": [
             {
@@ -52,7 +52,7 @@ const activities = [
     {
         "name": "Módulo 2",
         "score_required": 26,
-        "imagen": "/img/cover/basic-m2.jpg",
+        "imagen": "/img/cover/intermediate-m2-2.jpg",
         "description": "En este módulo aprenderás a formular preguntas, utilizar partículas de respuesta y construir oraciones más complejas",
         "lectures": [
             {
@@ -103,7 +103,7 @@ const activities = [
     {
         "name": "Módulo 3",
         "score_required": 33,
-        "imagen": "/img/cover/basic-m3.jpg",
+        "imagen": "/img/cover/intermediate-m3-2.jpg",
         "description": "En este módulo aprenderás sobre los verbos, los adjetivos y vocabulario relacionado con la cocina, la ciudad y el dormitorio",
         "lectures": [
             {
@@ -153,7 +153,7 @@ const activities = [
     {
         "name": "Módulo 4",
         "score_required": 40,
-        "imagen": "/img/cover/basic-m1.jpg",
+        "imagen": "/img/cover/intermediate-m4-2.jpg",
         "description": "En este módulo aprenderemos más sobre gramática y vocabulario relacionado con la ubicación, el tiempo, el pasado progresivo, el pasado simple y el participio pasado",
         "lectures": [
 
@@ -203,7 +203,7 @@ const activities = [
     {
         "name": "Módulo 5",
         "score_required": 47,
-        "imagen": "/img/cover/basic-m1.jpg",
+        "imagen": "/img/cover/intermediate-m5-2.jpg",
         "description": "En este módulo aprenderemos más sobre gramática, enfocándonos en la conjugación en el tiempo presente progresivo, el futuro próximo y el futuro simple",
         "lectures": [
             {

@@ -9,6 +9,7 @@ import BackButton from "@/app/components/BackButton";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import Helper from '../components/helper/Helper';
 import animation from '@/app/animation.module.css';
+import AchievementsInstructions from '../components/instructions/achievements/AchievementsInstructions';
 
 export default function Logros() {
     const { level } = useAuthStore(
@@ -42,29 +43,7 @@ export default function Logros() {
                     </section>                    
                     <div className="overflow-auto d-flex justify-content-center align-items-center" style={{ width: "200px", maxWidth: "300px", margin: "0 auto", height: "200px" }} >
                             <Helper imageSrc={"/img/humu/humu-happy.png"} className={`humu-mascot me-4 ${animation.spinnerImage} `} h={200} style={{}}>
-                                <h2 className="text-center display-5">¡Felicidades por tus logros! 🏆</h2>
-                                <div className="modal-body d-flex align-items-center text-start">
-                                    <img
-                                        src="/img/humu/humu-talking.png"
-                                        height={300}
-                                        className={`humu-mascot me-4 ${animation.spinnerImage}`}
-                                    />
-                                    <div>
-                                        <p className="lead fs-4">
-                                            En esta página podrás <strong>ver tu progreso</strong> y revisar todos los
-                                            logros que has alcanzado en tu camino.
-                                        </p>
-                                        <p className="lead fs-4">
-                                            Cada logro se presenta en forma de una carta.
-                                            Puedes hacer clic en ellas para descubrir más detalles sobre tus éxitos.
-                                        </p>
-                                        <p className="lead fs-4">
-                                            Además, con cada logro, encontrarás <strong>simbología inspirada en culturas
-                                                ecuatorianas</strong>, lo que te permitirá aprender más sobre el patrimonio
-                                            cultural mientras avanzas.
-                                        </p>
-                                    </div>
-                                </div>
+                                <AchievementsInstructions />                                
                             </Helper>
                         </div>
                         <div className="overflow" style={{ maxHeight: "70%", maxWidth: "100%"}}>
