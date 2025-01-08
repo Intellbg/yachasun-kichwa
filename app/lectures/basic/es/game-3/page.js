@@ -44,12 +44,8 @@ export default function Game3() {
     }, [send, level, id, key, addLevel]);
 
     return (
-        <>
-            <Helper imageSrc="/img/humu/humu-happy.png">
-                <CrosswordInstructions />
-            </Helper>
+        <>            
             <Navbar />
-            <h1 className="text-center">Crucigrama</h1>
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <Crossword data={data} onComplete={handleChildData} />
             </div>
