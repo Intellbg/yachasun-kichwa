@@ -116,7 +116,7 @@ const DragAndDrop = ({ phrase, onSendData }) => {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
-        <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
+        <div className="container text bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
           <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
           <div className="mb-4">
           <Helper imageSrc="/img/humu/humu-happy.png">

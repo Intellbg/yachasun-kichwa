@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { generateCrosswordMatrix } from "./matrix";
 
-const Crossword = ({ data, onComplete }) => {
+const Crossword = (({ data, onComplete }) => {
   const { matrix, clues } = generateCrosswordMatrix(data);
   const [userInput, setUserInput] = useState(
     matrix.map((row) => row.map((cell) => (cell.letter ? "" : null)))
