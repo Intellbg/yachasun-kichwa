@@ -53,7 +53,8 @@ export default function Courses() {
   return (
     <>
       <Navbar />
-      <div className="container d-flex justify-content-center align-items-center h-75">
+      <h1 className={`${styles.titleAchievements} text-center display-3`}>Cursos</h1>
+      <div className="container d-flex justify-content-center align-items-center h-60">
         <div className="row">
           <div className="col">
             {courses.map((item) => (
