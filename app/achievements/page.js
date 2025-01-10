@@ -36,13 +36,12 @@ export default function Logros() {
         <>
             <Navbar />
             <div className="container-fluid p-0">
-                <main className="container my-3">
+                <main className="container my-1 p-0">
                     <section className="text-start mb-2">
-                        <h2 className="text-success text-center display-3">Logros obtenidos</h2>
-                    </section>
-                    <div className="row">
-                        <div className="col-md-3 d-flex justify-content-center align-items-center">
-                            <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${styles.imgFloat} d-block`} h={250} style={{}}>
+                        <h2 className={`${styles.titleAchievements} text-center display-3`}>Logros obtenidos</h2>
+                    </section>                    
+                    <div className="overflow-auto d-flex justify-content-center align-items-center" style={{ width: "200px", maxWidth: "300px", margin: "0 auto", height: "200px" }} >
+                            <Helper imageSrc={"/img/humu/humu-happy.png"} className={`humu-mascot me-4 ${animation.spinnerImage} `} h={200} style={{}}>
                                 <h2 className="text-center display-5">¡Felicidades por tus logros! 🏆</h2>
                                 <div className="modal-body d-flex align-items-center text-start">
                                     <img
@@ -68,11 +67,11 @@ export default function Logros() {
                                 </div>
                             </Helper>
                         </div>
-                        <div className="col-md-9 overflow-auto" style={{ maxHeight: "80%" }}>
+                        <div className="overflow" style={{ maxHeight: "70%", maxWidth: "100%"}}>
                             <div className="row">
                                 {cards.map((card, index) => (
                                     <div
-                                        className={`col-6 p-1`}
+                                        className={`col-4 p-1`}
                                         onClick={() => handleCardClick(index, card.unlockLevel)}
                                         key={index}
                                         style={{
@@ -80,27 +79,25 @@ export default function Logros() {
                                             opacity: level >= card.unlockLevel ? 1 : 0.25
                                         }}
                                     >
+                                        <img src={card.Banner} className={`${styles.imgbanner}`} />
+                                        <p className={`${styles.titlebanner} text-center`}>{card.titulobanner}</p>
                                         <div
                                             className={`${styles.card} ${currentCard === index ? styles.selected : ''} d-flex align-items-center justify-content-between py-5 px-2`}
-
                                         >
-                                            <div className={`mx-3 ${styles.cardInfo}`}>
+                                            <div className={`mx-3 ${styles.cardInfo}`}>                                                
                                                 <div className={styles.title}>
                                                     {card.titulo}
                                                 </div>
                                                 <div className={styles.progress}>
                                                     {card.detalle}
                                                 </div>
-                                            </div>
-                                            <div className={`pointsAndTrophies text-end ${styles.pointsAndTrophies}`}>
-                                                {level >= card.unlockLevel && <span className={styles.trofeos}>🏆</span>}
-                                            </div>
+                                            </div>                                            
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    
                 </main>
                 <div className="d-flex justify-content-center align-items-center">
                     <BackButton href='/courses'></BackButton>

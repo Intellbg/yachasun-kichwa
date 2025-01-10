@@ -41,7 +41,7 @@ export default function Game1() {
 
             <h1 className="text-center">Palabrando</h1>
             <div className="container d-flex justify-content-center align-items-center h-75">
-            <CompleteSentence sentence="Paykuna	rima shka kuna" missingWordIndex= {0} options={["Ñuka", "Kan","Paykuna"]} onSendData={handleChildData}  />
+            <CompleteSentence Lectures="grammar-7,grammar-8.grammar-9" onSendData={handleChildData}  />
             </div>
             {
                 (send || level >= 46) && (

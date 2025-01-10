@@ -1,72 +1,76 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 20px;
-    width: 100%; 
-  }
-  
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  width: 100%;
+}
 
-  .characterImage {
-    width: 150px;  
-    height: auto;
-    margin-right: 20px;
-    flex-shrink: 0; 
-  }
-  
+.leftAlign {
+  flex-direction: row;
+}
 
-  @keyframes float {
-    0% {
-      transform: translateY(0); 
-    }
-    50% {
-      transform: translateY(-20px); 
-    }
-    100% {
-      transform: translateY(0); 
-    }
-  }
-  
-  .imgFloat {
-    animation: float 3s ease-in-out infinite; 
-  }
-  
+.rightAlign {
+  flex-direction: row-reverse;
+}
 
-  .speechBubble {
-    position: relative;
-    text-align: center;
-    background-color: #fff; 
-    border: 2px solid black; 
-    padding: 10px;
-    border-radius: 10px; 
-    font-family: 'Comic Sans MS', cursive, sans-serif; 
-    flex-grow: 1; 
-    margin-right: 20px; 
-  }
-  
+.characterImage {
+  width: 150px;
+  height: auto;
+  flex-shrink: 0;
+}
 
-  .speechBubble::after {
-    content: '';
-    position: absolute;
-    top: 50%; 
-    left: -20px; 
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-right-color: black; 
-    border-left: 0;
-    margin-top: -10px;
-  }
-  
+.imgFloat {
+  animation: float 3s ease-in-out infinite;
+}
 
-  .speechBubble p {
-    margin: 0;
-    font-size: 14px; 
-    color: black; 
-    word-wrap: break-word; 
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
-  
-  
-  
-  
-  
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.speechBubble {
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.speechArrow {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  transform: translateY(-50%);
+}
+
+.arrowLeft {
+  left: -20px;
+  border-right-color: black;
+  border-left: 0;
+}
+
+.arrowRight {
+  right: -20px;
+  border-left-color: black;
+  border-right: 0;
+}
+
+.speechBubble p {
+  margin: 0;
+  font-size: 14px;
+  color: black;
+  word-wrap: break-word;
+}

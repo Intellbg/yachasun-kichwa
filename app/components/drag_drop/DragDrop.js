@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { getSentence } from "@/app/lib/getSentence.js";
 import Helper from "@/app/components/helper/Helper.js";
 import DragDropInstructions from "@/app/components/instructions/drag_drop/DragDropInstruction.js";
 import update from 'immutability-helper';
@@ -60,21 +61,42 @@ const Target = ({ index, word, setTargetWord }) => {
   );
 };
 
-const DragAndDrop = ({ phrase, onSendData }) => {
-  const initialWords = (phrase ? phrase.split(' ') : []).map((word, index) => ({ id: index, word }));
-  
+const DragAndDrop = ({ Lectures, onSendData }) => {
+  const [question, setQuestion] = useState(null);
+  const [initialWords, setInitialWords] = useState([]);
   const [words, setWords] = useState([]);
   const [targetWords, setTargetWords] = useState([]);
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    const shuffledWords = shuffleArray(initialWords);
-    setWords(shuffledWords);
-    setTargetWords(Array(initialWords.length).fill(''));
-    setGameOver(false);
-    setIsCorrectGuess(false);
-  }, [phrase]);
+    let isMounted = true;
+
+    const fetchQuestions = async () => {
+      const questions = await getSentence(Lectures);
+      if (isMounted) {
+        const randomQuestion = questions[0];
+        setQuestion({
+          kichwa: randomQuestion.kichwa,
+          spanish: randomQuestion.spanish,
+        });
+
+        const wordsArray = randomQuestion.kichwa.split(' ').map((word, index) => ({
+          id: index,
+          word,
+        }));
+        setInitialWords(wordsArray);
+        setWords(shuffleArray(wordsArray));
+        setTargetWords(Array(wordsArray.length).fill(''));
+      }
+    };
+
+    fetchQuestions();
+
+  return () => {
+      isMounted = false; // Cancela actualizaciones si el componente se desmonta
+    };
+  }, [Lectures]);
 
   const moveWord = (fromIndex, toIndex) => {
     const updatedWords = update(words, {
@@ -97,9 +119,8 @@ const DragAndDrop = ({ phrase, onSendData }) => {
     const isCorrect = JSON.stringify(targetWords) === JSON.stringify(correctOrder);
         
    setIsCorrectGuess(isCorrect);
-   if (isCorrect){
-    setGameOver(true);
-    setIsCorrectGuess(isCorrect);
+   setGameOver(true);
+   if (isCorrect){    
     onSendData(isCorrect);
    }  // Llama a onResolve solo si la oración es correcta
   };
@@ -108,16 +129,18 @@ const DragAndDrop = ({ phrase, onSendData }) => {
 
 
   useEffect(() => {
-    if (targetWords.every(word => word !== '')) {
+    if (targetWords.length > 0 && targetWords.every(word => word !== '')) {
       checkAnswer();
     }
   }, [targetWords]);
 
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
-        <div className="container text bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
-          <h5 className="text-uppercase mb-4">Ordena la siguiente oración</h5>
+        <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
+          <h5 className="text mb-4">Ordena la siguiente oración</h5>
+          <h5 className="text mb-2">Su significado en español es: {question?.spanish}</h5>
           <div className="mb-4">
           <Helper imageSrc="/img/humu/humu-happy.png">
                 <DragDropInstructions />

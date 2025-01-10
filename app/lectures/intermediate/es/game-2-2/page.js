@@ -41,7 +41,7 @@ export default function Game1() {
 
             <h1 className="text-center">Arrastra y ordena</h1>
             <div className="container d-flex justify-content-center align-items-center h-75">
-                <DragDrop phrase="ñuknchik tuhunkapak rinhik" onSendData={handleChildData}/>
+                <DragDrop Lectures="grammar-2-2,grammar-3-2,grammar-4,grammar-5,grammar-6" onSendData={handleChildData}/>
             </div>
             {
                 (send || level >= 32) && (

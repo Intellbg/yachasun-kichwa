@@ -3,10 +3,15 @@
   color: white;
 }
 
+.titleAchievements {  
+  font-size: 52px;
+  font-weight: bold;
+  color: #175c05;
+}
 
 .card {
   border: 2px solid transparent;
-  background-color: #4cab20;
+  background-color: #175c05;
   border-radius: 8px;
   margin: 10px 0;
   padding: 10px;
@@ -16,7 +21,7 @@
 }
 
 .card.selected {
-  border: 2px solid #198754;
+  border: 2px solid #175c05;
 }
 
 .card-img {
@@ -34,10 +39,17 @@
   text-align: left;
 }
 
-.title {
+.title {  
   font-size: 25px;
   font-weight: bold;
   color: rgb(255, 255, 255);
+}
+
+.titlebanner {  
+  font-size: 25px;
+  font-weight: bold;
+  color: #175c05;
+  margin: 0;
 }
 
 .pointsAndTrophies {
@@ -73,6 +85,12 @@
   opacity: 0;
   overflow: hidden;
 }
+.imgbanner {
+  width: 440px;
+  height: 200px;
+  margin: 10px 0px;
+
+}
 
 /* Animación de humu */
 @keyframes float {
@@ -104,7 +122,7 @@
 
 .cardModalHeader, .cardModalFooter {
   color: White; 
-  background-color: #4cab20;
+  background-color: #175c05;
 }
 
 .cardModalBody {
