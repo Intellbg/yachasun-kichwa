@@ -1,12 +1,60 @@
 import ImageFlipContainer from "../../../../components/ImageFlipContainer"
+import ImageFlipCard from "../../../../components/ImageFlipCard"
 import Quiz from "../../../../components/Quiz"
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
 
-# La familia (Ayllu)
+# **La familia (Ayllu)**
+Para el mundo indígena la familia es muy importante. En esta lección aprenderás como referirte a los integrantes de la familia
 
-En esta lección aprenderás como referirte a los integrantes de la familia
+Empezamos con los más sabios
+<div class='container d-inline-flex py-2 w-50'>
+    <ImageFlipCard img={"/img/downloads/" + "grandfather" + '.jpg'} front="Hatuntayta" back="Abuelo"/>
+    <ImageFlipCard img={"/img/downloads/" + "grandmother" + '.jpg'} front="Hatunmama" back="Abuela"/>
+</div>
+<ComicSpeechBubble text="" character = "humu" >
+    Para referirse a sus nietos 
+    
+    
+    **Hatunushshi** es Nieta
+    
+    
+    **Hatunchuri** es Nieto
+</ComicSpeechBubble>
+<hr/>
 
-<ImageFlipContainer lecture="family" />
+<div class='container d-inline-flex py-2 w-50'>
+    <ImageFlipCard img={"/img/downloads/" + "father" + '.jpg'} front="Tayta" back="Papá"/>
+    <ImageFlipCard img={"/img/downloads/" + "mother" + '.jpg'} front="Mama" back="Mamá"/>
+</div>
+<ComicSpeechBubble text="" character = "humu" alignment="right" >
+    Para referirse entre pareja 
+    
+    
+    **Warmi** es Esposa
+    
+    
+    **Kusa** es Esposo
+</ComicSpeechBubble>
+<hr/>
 
+
+<div class='container d-inline-flex py-2 w-50'>
+    <ImageFlipCard img={"/img/downloads/" + "son" + '.jpg'} front="Churi" back="Hijo"/>
+    <ImageFlipCard img={"/img/downloads/" + "daughter" + '.jpg'} front="Ushishi" back="Hija"/>
+</div>
+<ComicSpeechBubble text="" character = "humuFeliz" >
+    Para referirse a sus hermanos
+    
+    
+    **Ñaña** es Hermana
+    
+    
+    **Turi** es Hermano
+</ComicSpeechBubble>
+<hr/>
+
+
+<ComicSpeechBubble text="" character = "humu" alignment="right" >
 La familia se considera muy importante en el 
 mundo indígena, es la parte esencial de la vida. 
 Todos los miembros de la familia deben 
@@ -21,6 +69,7 @@ Para los indígenas, es considerado también
 como parte de la familia las plantas, el agua, los 
 animales y las montañas. Son partes 
 complementarias para la crianza. 
+</ComicSpeechBubble>
 
 <hr />
 <Quiz lecture="family" />
