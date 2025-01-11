@@ -83,7 +83,7 @@ export default function Game({ lectures, onSendData }) {
     window.location.reload();
   };
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '85vh' }}>
       <div className="container text-center bg-white text-dark " style={{ maxWidth: '700px' }}>
         <div className="d-flex align-items-center justify-content-center mb-4">
           <h1 className="me-3">Palabrando</h1>
