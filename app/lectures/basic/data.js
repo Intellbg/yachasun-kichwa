@@ -2,8 +2,8 @@ const activities = [
     {
         "name": "Módulo 1",
         "score_required": 0,
-        "imagen": "/img/cover/basic-m1.jpg",
-        "description": "En este módulo aprenderá primeras el alfabeto, los número colores y pronombres.",
+        "imagen": "/img/cover/basic-m1-1.jpg",
+        "description": "En este módulo aprenderás el alfabeto, los número colores y pronombres.",
         "lectures": [
             {
                 "name": "Alfabeto",

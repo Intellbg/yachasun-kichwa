@@ -67,7 +67,7 @@ const lectureQuestions = [
         "slug": "grammar-1",
         "question": "¿Qué significa kikinkuna?",
         "options": [
-            "el",
+            "él",
             "yo",
             "ustedes",
             "nosotros",

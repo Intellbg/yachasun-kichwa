@@ -6,7 +6,7 @@ function Success() {
     return (
         <>
             <img src='/img/iconography/check.png' height={400} width={400} className='m-auto' alt='success icon' />
-            <h1>!Cuenta verificada exitosamente!</h1>
+            <h1>¡Cuenta verificada exitosamente!</h1>
             <h2>Ingresa con tus credenciales.</h2>
             <a className='btn btn-success btn-lg' href='/login'>Continuar</a>
         </>
