@@ -1,7 +1,7 @@
 export const cards = [
     {
         titulo: "Primeros pasos",
-        titulobanner: "Nivel básico, modulo 1",
+        titulobanner: "Nivel básico, módulo 1",
         Banner: "/img/cover/basic-m1-1.jpg",
         detalle: "Primer módulo completado del nivel básico",
         significado: "La anaconda",            
@@ -11,7 +11,7 @@ export const cards = [
     },
     {
         titulo: "Aprendiendo poco a poco",
-        titulobanner: "Nivel básico, modulo 2",
+        titulobanner: "Nivel básico, módulo 2",
         Banner: "/img/cover/basic-m2-1.jpg",
         detalle: "Segundo módulo completado del nivel básico",
         significado: "Lumu tarpuna",            
@@ -21,7 +21,7 @@ export const cards = [
     },
     {
         titulo: "Sabemos lo básico",
-        titulobanner: "Nivel básico, modulo 3",
+        titulobanner: "Nivel básico, módulo 3",
         Banner: "/img/cover/basic-m3-1.jpg",
         detalle: "Tercer módulo completado del nivel básico",        
         significado: "El rayu",            
@@ -31,7 +31,7 @@ export const cards = [
     },
     {
         titulo: "De lo básico a lo sorprendente",
-        titulobanner: "Nivel intermedio, modulo 1",
+        titulobanner: "Nivel intermedio, módulo 1",
         Banner: "/img/cover/intermediate-m1-2.jpg",
         detalle: "Primer módulo completado del nivel intermedio",
         significado: "Kuyllur y Duziru",            
@@ -42,7 +42,7 @@ export const cards = [
     },
     {
         titulo: "Preguntar y conectar",
-        titulobanner: "Nivel intermedio, modulo 2",
+        titulobanner: "Nivel intermedio, módulo 2",
         Banner: "/img/cover/intermediate-m2-2.jpg",
         detalle: "Segundo módulo completado del nivel intermedio",
         significado: "Amazanka",            
@@ -52,7 +52,7 @@ export const cards = [
     },
     {
         titulo: "Del verbo a la acción",
-        titulobanner: "Nivel intermedio, modulo 3",
+        titulobanner: "Nivel intermedio, módulo 3",
         Banner: "/img/cover/intermediate-m3-2.jpg",
         detalle: "Tercer módulo completado del nivel intermedio",
         significado: "Búho (Bullukuku)",            
@@ -62,9 +62,9 @@ export const cards = [
     },
     {
         titulo: "Viajando en el tiempo",
-        titulobanner: "Nivel intermedio, modulo 4",
+        titulobanner: "Nivel intermedio, módulo 4",
         Banner: "/img/cover/intermediate-m4-2.jpg",
-        detalle: "Cuarto modulo completado del nivel intermedio",
+        detalle: "Cuarto módulo completado del nivel intermedio",
         significado: "Anka, ñanpi y yawati",            
         imgSrc: "/img/achievements/Anka_Nanpi_Yawati.png",
         descripcion: "El diseño de aves y animales son representadas en el rostro de las personas para adquirir sus poderes y destrezas en la cotidianidad.",            
@@ -72,7 +72,7 @@ export const cards = [
     },
     {
         titulo: "El presente y el futuro",
-        titulobanner: "Nivel intermedio, modulo 5",
+        titulobanner: "Nivel intermedio, módulo 5",
         Banner: "/img/cover/intermediate-m5-2.jpg",
         detalle: "Quinto módulo completado del nivel intermedio",
         significado: "Charapa",            
