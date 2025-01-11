@@ -5,13 +5,13 @@ import { WORDS_ENDPOINT } from "../../constants"
 const ImageFlipContainer = async ({ lecture,sort='kichwa', tag="" }) => {
   var url = `${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`
   if (tag){ url+=`&tags=${tag}`}
-  const data = await authFetch(url, { cache: 'no-store', method: "GET" })
+  const data = await authFetch(url, { method: "GET" })
     .then((response) => response.json())
     .catch((error) => console.error(error));
   return (
     <div className='container d-inline-flex py-2'>
       <div className='row justify-content-center '>
-        {data.map((word) => (
+        {data?.map((word) => (
           <div className='col-sm-3 my-4' key={word.id} >
             <ImageFlipCard
               key={word.id}
