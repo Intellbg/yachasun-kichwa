@@ -1,9 +1,30 @@
-import ImageFlipContainer from "../../../../components/ImageFlipContainer"
 import Quiz from "../../../../components/Quiz"
+import TablesWithTabs from '../../../../components/TablesWithTabs'
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
 
+export const tablesData = [
+    {
+        title: 'Números base',
+        headers: ['Kichwa', 'Español'],
+        rows: [
+            ['Illak', '0'],
+            ['Sunk', '1'],
+            ['Ishkay', '2'],
+            ['Kimsa', '3'],
+            ['Chusku', '4'],
+            ['Pichka', '5'],
+            ['Sukta', '6'],
+            ['Kanchis', '7'],
+            ['Pusak', '8'],
+            ['Iskun', '9'],
+            ['Chunka', '10'],
+            ['Chunka shuk', '100'],
+        ],
+    },
+];
 
-# Los Números (Yupaykuna)
- 
+# **Los Números (Yupaykuna)**
+
 En esta lección aprenderás a contar del 1 al 999
 
 El Kichwa es un idioma aglutinante, lo que quiere decir que las palabras se unen para generar una nueva palabra u 
@@ -12,33 +33,45 @@ oración.
 Para contar en Kichwa es importante conocer como referirse a las unidades y posteriormente a las potencias de 10.
 Similar al español los números tienen prefijos y se van concatenando con los números inferiores con las 
 potencias de 10. Lo interesante del Kichwa es que no se deben conjugar ya que mantienen su pronunciación y escritura. 
-### Números base 
-<ImageFlipContainer lecture="numbers" sort="value" />
+
+<TablesWithTabs tables={tablesData} />
+
     
-### Números del 10 al 100
+### **Números del 10 al 100**
+
 Para decir números entre el 10 y el 100 simplemente para las decenas se añade el número seguido del número diez 
 [chunka] y luego el número correspondiente al dígito por lo tanto:
+<ComicSpeechBubble text="" character = "humuFeliz"  >
+30 es kimsa chunka 
 
-- 30 es kimsa chunka 
-- 56 es pichka chunka sukta
 
+56 es pichka chunka sukta
+</ComicSpeechBubble>
+<hr/>
 
-### Números del 100 al 1000
+### **Números del 100 al 1000**
 De manera muy similar los números del 100 al 1000 se componen del número de centenas seguido del número 100 [patsak]
 luego el número de decenas seguido del número diez [chunka] y luego el número correspondiente al dígito por lo tanto:
 
-- 300 es kimsa patsak 
-- 562 es pichka patsak sukta chunka ishikay
+<ComicSpeechBubble text="" character = "humuFeliz"  alignment="right">
+300 es kimsa patsak 
 
-#### ¿Como se diría 673?
+
+562 es pichka patsak sukta chunka ishikay
+</ComicSpeechBubble>
+<hr/>
+
+#### **¿Como se diría 673?**
 - El 3 que se dice [kimsa]
 - Ahora las decenas se dicen [chunka] y son 7 que se dice [kanchis] por lo tanto 70: kanchis chunka
 - Finalmente centenas se dicen [patsak] y son 6 que se dice [sukta] por lo tanto 600 es: sukta patsak
+<ComicSpeechBubble text="" character = "humuFeliz" >
 Ahora se que 673 es: *sukta patsak kanchis chunka kimsa*
+</ComicSpeechBubble>
+<hr/>
 
 
-
-## La edad
+## **La edad**
 Con los números aprendidos fácilmente se puede responder la pregunta:
 
 **Kikinka mashna watakunatak charinki** (¿Cuántos años tienes?)
@@ -51,6 +84,5 @@ Su respuesta es:
 
 
 **¡Buen trabajo! Esto concluye la segunda lección.**
-<hr />
 <hr />
 <Quiz lecture="numbers" />

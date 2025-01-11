@@ -87,10 +87,19 @@ export default function Quiz({ lecture }) {
           />
         ))}
         <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
+
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
 
       </div>
-      <a href={`${lectureData.next}`} className={`text-center btn btn-success ${(lectureData.score_required < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
-    </div>
+
+      {
+        ((lectureData.score_required < level) || isAnswerCorrect) &&
+        <div className='text-center'>
+          <ComicSpeechBubble text="¡Buen trabajo! Ya has completado esta lección" character={humuExpression} >
+          </ComicSpeechBubble>
+          <a href={`${lectureData.next}`} className={`text-center btn btn-success`}>Continuar</a>
+        </div>
+      }
+    </div >
   );
 };
