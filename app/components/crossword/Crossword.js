@@ -12,6 +12,9 @@ const Crossword = (({ data, onComplete }) => {
     matrix.map((row) => row.map((cell) => (cell.letter ? "" : null)))
   );
 
+  const [isComplete, setIsComplete] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(null);
+
   const handleChange = (row, col, value) => {
     if (value.length > 1) return;
     const newInput = [...userInput];
@@ -20,20 +23,34 @@ const Crossword = (({ data, onComplete }) => {
   };
 
   const checkCompletion = () => {
-    const isComplete = matrix.every((row, rowIndex) =>
-      row.every((cell, colIndex) =>
-        cell.letter ? userInput[rowIndex][colIndex] === cell.letter.toUpperCase() : true
-      )
-    );
-    if (isComplete) onComplete(true);
+    let complete = true;
+    let correct = true;
+
+   matrix.forEach((row, rowIndex) => {
+      row.forEach((cell, colIndex) => {
+        if (cell.letter) {
+          const userValue = userInput[rowIndex][colIndex] || "";
+          if (userValue === "") complete = false;
+          if (userValue !== cell.letter.toUpperCase()) correct = false;
+        }
+      });
+    });
+
+    setIsComplete(complete);
+    setIsCorrect(correct);
+
+    if (complete && correct) {
+      onComplete(true);
+    }
   };
+
 
   useEffect(() => {
     checkCompletion();
   }, [userInput]);
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '75vh' }}>
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '95vh' }}>
     <div className="container text-center bg-white text-dark" style={{ maxWidth: '900px' }}>
       <div className="d-flex align-items-center justify-content-center my-4">
           <h1 className="me-3">Crucigrama</h1>
@@ -101,6 +118,13 @@ const Crossword = (({ data, onComplete }) => {
           </ul>
         </div>
       </div>
+      <div className="mt-3">
+          {isComplete && (
+            <div className={`alert ${isCorrect ? "alert-success" : "alert-danger"}`} role="alert">
+              {isCorrect ? "¡Crucigrama completado correctamente!" : "Hay errores en tu crucigrama. Revisa tus respuestas."}
+            </div>
+          )}
+        </div>
     </div>
     </div>
   );
