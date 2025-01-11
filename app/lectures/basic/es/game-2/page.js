@@ -89,8 +89,9 @@ export default function Game2() {
                 <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
             </div>
             </div>
-            {send && (
-                <div className="m-auto">
+            {(level >= 12 || send) && (
+                <div className="m-auto text-center">
+                    <p className="h6">Juego ya superado</p>
                     <a href="/lectures/basic/es/test-2" className="btn btn-success">Continuar</a>
                 </div>
             )}

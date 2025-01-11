@@ -44,12 +44,12 @@ export default function Game3() {
     }, [send, level, id, key, addLevel]);
 
     return (
-        <>            
+        <>
             <Navbar />
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <Crossword data={data} onComplete={handleChildData} />
             </div>
-            {(send || level >= 19) && (
+            {(level >= 17 || send) && (
                 <div className="m-auto">
                     <a href="/lectures/basic/es/test-3" className="text-center btn btn-success">
                         Continuar

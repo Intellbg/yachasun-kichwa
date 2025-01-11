@@ -33,14 +33,15 @@ export default function Game1() {
     }, [send]);
 
     return (
-        <>            
+        <>
             <Navbar />
-            <div className="container d-flex justify-content-center align-items-center h-75">
+            <div className="container d-flex justify-content-center align-items-center">
                 <Wordle lectures="alphabet,colors,numbers,grammar-1" onSendData={handleChildData} />
             </div>
             {
-                (send || level >= 5) && (
-                    <div className="m-auto">
+                (level >= 5 || send) && (
+                    <div className="m-auto text-center">
+                        <p className="h6">Juego ya superado</p>
                         <a href="/lectures/basic/es/test-1" className='text-center btn btn-success'>Continuar</a>
                     </div>
                 )

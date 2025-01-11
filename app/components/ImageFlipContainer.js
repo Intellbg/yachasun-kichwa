@@ -4,7 +4,8 @@ import { WORDS_ENDPOINT } from "../../constants"
 
 const ImageFlipContainer = async ({ lecture,sort='kichwa', tag="" }) => {
   var url = `${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`
-  if (tag){ url+=`&tags=${tag}`}
+  if (tag) { url += `&tags=${tag}` }
+  if (notTag) { url += `&ntags=${notTag}` }
   const data = await authFetch(url, { method: "GET" })
     .then((response) => response.json())
     .catch((error) => console.error(error));
