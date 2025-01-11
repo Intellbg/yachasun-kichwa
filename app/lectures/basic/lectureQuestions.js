@@ -88,11 +88,11 @@ const lectureQuestions = [
         "question": "¿Cómo se dice la vaca en kiwcha?",
         "options": [
             "Wallinku",
-            "Wakraka",
+            "Wakra",
             "Misi",
             "Ukucha",
         ],
-        "answer": "Wakraka"
+        "answer": "Wakra"
     },
     {
         "slug": "animals",
@@ -175,12 +175,12 @@ const lectureQuestions = [
         "slug": "grammar-2",
         "question": "¿Cómo se dice la vaca es grande en kiwcha?",
         "options": [
-            "Wakraka hatunmi kan",
-            "Wakraka uchillami kan",
+            "Wakra hatunmi kan",
+            "Wakra uchillami kan",
             "Misi uchillami kan",
             "Misi hatunmi kan",
         ],
-        "answer": "Wakraka hatunmi kan"
+        "answer": "Wakra hatunmi kan"
     },
     {
         "question": "¿Cuál es la traducción de \"cocinar\" en kichwa?",
