@@ -47,7 +47,7 @@ const lectureQuestions = [
         "slug": "colors",
         "question": "¿Cómo se dice morado en Kichwa?",
         "options": [
-            "wamisnsi",
+            "waminsi",
             "maywa",
             "killu",
             "kishpu"
@@ -67,7 +67,7 @@ const lectureQuestions = [
         "slug": "grammar-1",
         "question": "¿Qué significa kikinkuna?",
         "options": [
-            "el",
+            "él",
             "yo",
             "ustedes",
             "nosotros",
@@ -88,11 +88,11 @@ const lectureQuestions = [
         "question": "¿Cómo se dice la vaca en kiwcha?",
         "options": [
             "Wallinku",
-            "Wakraka",
+            "Wakra",
             "Misi",
             "Ukucha",
         ],
-        "answer": "Wakraka"
+        "answer": "Wakra"
     },
     {
         "slug": "animals",
@@ -118,7 +118,7 @@ const lectureQuestions = [
     },
     {
         "slug": "body",
-        "question": "¿Qué significa anaku",
+        "question": "¿Qué significa anaku?",
         "options": [
             "falda",
             "pantalón",
@@ -151,7 +151,7 @@ const lectureQuestions = [
     },
     {
         "slug": "food",
-        "question": "¿Qué significa mishki haku?",
+        "question": "¿Qué significa mishkihaku?",
         "options": [
             "azúcar",
             "harina",
@@ -172,15 +172,15 @@ const lectureQuestions = [
         "answer": "ñuñu"
     },
     {
-        "slug": "grammar-2",
+        "slug": "grammar-b-2",
         "question": "¿Cómo se dice la vaca es grande en kiwcha?",
         "options": [
-            "Wakraka hatunmi kan",
-            "Wakraka uchillami kan",
+            "Wakra hatunmi kan",
+            "Wakra uchillami kan",
             "Misi uchillami kan",
             "Misi hatunmi kan",
         ],
-        "answer": "Wakraka hatunmi kan"
+        "answer": "Wakra hatunmi kan"
     },
     {
         "question": "¿Cuál es la traducción de \"cocinar\" en kichwa?",
@@ -249,7 +249,7 @@ const lectureQuestions = [
         "answer": "familia"
     },
     {
-        "slug": "grammar-3",
+        "slug": "grammar-b-3",
         "question": "¿Warmi es prefijo para referirse a femenino?",
         "options": [
             "si",
@@ -258,7 +258,7 @@ const lectureQuestions = [
         "answer": "si"
     },
     {
-        "slug": "grammar-3",
+        "slug": "grammar-b-3",
         "question": "¿Cómo se diría coneja en kichwa?",
         "options": [
             "warmiwallinku",

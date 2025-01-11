@@ -54,7 +54,7 @@ export default function Test3() {
         })
       }
     } else {
-      setResult(`Obtuvo ${correctCount} de ${questions.length} correctas`);
+      setResult(`Obtuviste ${correctCount} de ${questions.length} correctas`);
       setHumuExpression(`humuSad`);
     }
   };
@@ -81,7 +81,7 @@ export default function Test3() {
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
       </div>
       <div className={`${(17 >= level) ? "d-none" : ""} text-center`}>
-        <h1>Felicitaciones ya ha completado el módulo 3 del nivel básico!</h1>
+        <h1>¡Felicitaciones completaste el módulo 3 del nivel básico!</h1>
         <img
           src="/img/humu/humu-talking.png"
           height={300}
@@ -89,6 +89,7 @@ export default function Test3() {
         />
         <br />
         <h3><a href="/achievements">Revisa tus Logros</a></h3>
+        <a className="btn btn-success" href="/courses">Continuar</a>
         <div className="m-auto text-center">
           <a href={`/courses`} className={`text-center btn btn-success ${(18 < level) | isAnswerCorrect ? "" : "d-none"}`}>Continuar</a>
         </div>

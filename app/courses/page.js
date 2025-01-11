@@ -67,7 +67,7 @@ export default function Courses() {
           <div className="col pe-auto">
             <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${styles.imgFloat}`} h={400} style={{}} isOpen={openModal}>
               <div className='container'>
-                <h2 className='text-center'>IMANALLA! 👋</h2>
+                <h2 className='text-center'>!IMANALLA! 👋</h2>
                 <div className=' d-flex align-items-center text-start'>
                   {getImageByStep(step)}
                   <div>

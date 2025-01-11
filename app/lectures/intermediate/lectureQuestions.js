@@ -12,7 +12,7 @@ const lectureQuestions = [
     },
     {
         "slug": "numbers-2",
-        "question": "¿Qué numero es el Shuk waranka chunka shuk?",
+        "question": "¿Qué número es el Shuk waranka chunka shuk?",
         "options": [
             "1011",
             "1000",
@@ -34,7 +34,7 @@ const lectureQuestions = [
     },
     {
         "slug": "ordinal_numbers",
-        "question": "¿Qué numero ordinal es el Ishkay chunka shukniki?",
+        "question": "¿Qué número ordinal es el Ishkay chunka shukniki?",
         "options": [
             "Vigésimoprimero",
             "Vigésimo",

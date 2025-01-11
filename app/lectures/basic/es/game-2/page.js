@@ -64,7 +64,7 @@ export default function Game2() {
     useEffect(() => {
         const fetchData = async () => {
             const wordsData = await getWords("grammar-2,body,animals,family,greetings-farewells");
-            const { kichwa, spanish } = getRandomWords(wordsData, 10, 2);
+            const { kichwa, spanish } = getRandomWords(wordsData, 10, 5);
             setKichwa(kichwa);
             setSpanish(spanish);
             console.log(kichwa)
@@ -89,8 +89,9 @@ export default function Game2() {
                 <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
             </div>
             </div>
-            {send && (
-                <div className="m-auto">
+            {(level >= 12 || send) && (
+                <div className="m-auto text-center">
+                    <p className="h6">Juego ya superado</p>
                     <a href="/lectures/basic/es/test-2" className="btn btn-success">Continuar</a>
                 </div>
             )}

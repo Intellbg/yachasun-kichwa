@@ -33,7 +33,7 @@ function Success() {
     return (
         <div className='text-center'>
             <img src='/img/iconography/check.png' />
-            <h1>!Cuenta creada exitosamente!</h1>
+            <h1>¡Cuenta creada exitosamente!</h1>
             <h2>Recuerda revisar tu correo para activar tu cuenta</h2>
             <a className='btn btn-success btn-lg' href='/login'>Continuar</a>
         </div>
