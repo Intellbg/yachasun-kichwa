@@ -95,7 +95,7 @@ export default function Quiz({ lecture }) {
       {
         ((lectureData.score_required < level) || isAnswerCorrect) &&
         <div className='text-center'>
-          <ComicSpeechBubble text="Ya has completado esta lección" character={humuExpression} >
+          <ComicSpeechBubble text="¡Buen trabajo! Ya has completado esta lección" character={humuExpression} >
           </ComicSpeechBubble>
           <a href={`${lectureData.next}`} className={`text-center btn btn-success`}>Continuar</a>
         </div>
