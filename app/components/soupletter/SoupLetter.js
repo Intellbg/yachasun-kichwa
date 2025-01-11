@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./style.module.css";
 
+
+
 const directions = [
   [0, 1],   // derecha
   [1, 0],   // abajo
@@ -171,12 +173,9 @@ const SoupLetter = ({ words = [], size = 10, spanish = [], onSendData }) => {
     }`;
   };
 
-  return (
+  return (    
     <div className="d-flex" onMouseUp={handleMouseUp}>
-      <div
-        className="container"
-        onMouseLeave={() => (isSelecting.current = false)}
-      >
+      <div className="container" onMouseLeave={() => (isSelecting.current = false)}>
         {grid.map((row, rowIndex) => (
           <div className={styles.row} key={rowIndex}>
             {row.map((letter, colIndex) => (
