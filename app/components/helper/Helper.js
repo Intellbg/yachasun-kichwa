@@ -5,6 +5,9 @@ import './style.css';
 
 const Helper = ({ imageSrc, children, style, className, h=150, isOpen=false }) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hoverImageSrc = '/img/humu/Talking-Outline-Question-Trace-Color-Texture.png';
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -13,12 +16,14 @@ const Helper = ({ imageSrc, children, style, className, h=150, isOpen=false }) =
   return (
     <>
       <img
-        src={imageSrc}
+        src={isHovered ? hoverImageSrc : imageSrc}
         alt="Open Modal"
         style={style}
         className={`${className}`}
         height={h}
         onClick={toggleModal}
+        onMouseEnter={() => setIsHovered(true)} 
+        onMouseLeave={() => setIsHovered(false)}
       />
 
       {isModalOpen && (
