@@ -25,6 +25,7 @@ export default function ForgotPassword({ params }) {
         resolver: yupResolver(ResetPasswordSchema),
     });
     const [apiError, setApiError] = useState("")
+    const [apiError406, setApiError406] = useState(false)
     const [isFormVisible, setIsFormVisible] = useState(true);
     const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -41,7 +42,7 @@ export default function ForgotPassword({ params }) {
             setFormSubmitted(true);
         } else {
             if (res.status == 406) {
-                setApiError("La solicitud a expirado porfavor vuelva a <a href='/forgot-password'>solicitar el restablecimiento de contrasña</a>")
+                setApiError406(true)
             } else {
                 setApiError("Ocurrió un error intente nuevamente más tarde")
             }
@@ -72,6 +73,8 @@ export default function ForgotPassword({ params }) {
                             {errors.confirmPassword && <p role="alert" className='text-danger'>{errors.confirmPassword?.message}</p>}
                         </div>
                         {apiError && <div><p role='alert' className='text-danger'>{apiError}</p></div>}
+                        {apiError406 && <div><p role='alert' className='text-danger'> La solicitud ha expirado. Por favor, vuelva a{" "}
+                            <a href="/forgot-password">solicitar el restablecimiento de contraseña</a>.</p></div>}
                         <div className="d-grid">
                             <button type="submit" className="btn btn-primary bg-primary-custom" >Restablecer contraseña</button>
                         </div>
