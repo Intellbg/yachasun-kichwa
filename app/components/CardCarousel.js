@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const CardCarousel = ({ data, level }) => {
+const CardCarousel = ({ data, level, course }) => {
   const cards = data
   const [cardContent, setCardContent] = useState(data);
 
@@ -42,7 +42,7 @@ const CardCarousel = ({ data, level }) => {
                 <div className="col overflow-column" style={{maxHeight:'200px'}}>
                   {
                     card.lectures.map(element => {
-                      return <LectureCard key={element.name} data={element} currentScore={level} />
+                      return <LectureCard key={element.name} data={element} currentScore={level} course={course}/>
                     })
                   }
                 </div>

@@ -1,11 +1,11 @@
 import '../lecture_card/style.css'
 
 export default function CourseCard({ data, currentScore }) {
-    const unlocked = currentScore >= data.score_required; // true si está desbloqueado
+    const unlocked = currentScore >= data.score_required;
 
     const handleClick = (e) => {
         if (!unlocked) {
-            e.preventDefault();  // Prevenir el click en caso de estar bloqueado
+            e.preventDefault();
         }
     }
 

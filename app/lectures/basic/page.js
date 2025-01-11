@@ -18,7 +18,7 @@ export default function Lectures() {
       <div className="container d-flex justify-content-center align-items-center">
         <div className="row" style={{ minHeight: "500px" }}>
           <div className="col-md-8">
-            <CardCarousel data={activities} level={level} />
+            <CardCarousel data={activities} level={level} course={"basic"}/>
           </div>
           <div className="col-md-4">
             <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${animation.imgFloat} d-block pt-5`} h={400} style={{}}>

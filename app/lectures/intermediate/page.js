@@ -14,15 +14,15 @@ export default function Lectures() {
 
   return (
     <>
-      <Navbar />     
+      <Navbar />
       <h1 className={`${animation.titleAchievements} text-center display-3`}>Curso Intermedio</h1>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="row" style={{ minHeight: "500px" }}>
           <div className="col-md-8">
-            <CardCarousel data={activities} level={level} />
+            <CardCarousel data={activities} level={level} course={"intermediate"} />
           </div>
           <div className="col-md-4">
-          <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${animation.imgFloat} d-block pt-5`} h={400} style={{}}>
+            <Helper imageSrc={"/img/humu/humu-happy.png"} className={`${animation.imgFloat} d-block pt-5`} h={400} style={{}}>
               <h2 className="text-center display-5">Acceso a lecciones</h2>
               <div className="modal-body d-flex align-items-center text-start">
                 <img
