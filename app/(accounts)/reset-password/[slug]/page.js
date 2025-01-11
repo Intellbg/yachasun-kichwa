@@ -40,7 +40,11 @@ export default function ForgotPassword({ params }) {
             setIsFormVisible(false);
             setFormSubmitted(true);
         } else {
-            setApiError("Ocurrió un error intente nuevamente más tarde")
+            if (res.status == 406) {
+                setApiError("La solicitud a expirado porfavor vuelva a <a href='/forgot-password'>solicitar el restablecimiento de contrasña</a>")
+            } else {
+                setApiError("Ocurrió un error intente nuevamente más tarde")
+            }
         }
     }
 
