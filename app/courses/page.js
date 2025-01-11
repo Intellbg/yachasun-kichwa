@@ -73,14 +73,12 @@ export default function Courses() {
                   <div>
                     {step === 1 && (
                       <>
-                        <p className="lead fs-4">
+                        <p className="lead fs-3">
                           ¡Hola! Soy <strong>Humu</strong>, tu amigo emocionado de acompañarte
                           en este curso para aprender Kichwa. ¡Espero que disfrutes cada momento!
                         </p>
                         <p className='lead fs-3'>
-                          <strong>
                             Siempre que necesites ayuda puedes dar click sobre mi imagen y yo estaré listo para ayudar
-                          </strong>
                         </p>
                       </>
                     )}
