@@ -37,7 +37,7 @@ export default function Game1() {
         <>            
             <Navbar />            
             <div className="container d-flex justify-content-center align-items-center h-75">
-                <Wordle lectures="animals-2" onSendData={handleChildData} />
+                <Wordle lectures="animals-2,food-2" onSendData={handleChildData} />
             </div>
             {
                 (send || level >= 25) && (
