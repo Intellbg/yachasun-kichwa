@@ -33,13 +33,8 @@ export default function Game1() {
     }, [send]);
 
     return (
-        <>
-            {/* <Helper imageSrc="/img/humu/humu-happy.png">
-                <WordleInstructions />
-            </Helper> */}
-            <Navbar />
-
-            <h1 className="text-center">Arrastra y ordena</h1>
+        <>            
+            <Navbar />            
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <DragDrop Lectures="grammar-2-2,grammar-3-2,grammar-4,grammar-5,grammar-6" onSendData={handleChildData}/>
             </div>

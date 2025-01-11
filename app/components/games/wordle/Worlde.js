@@ -1,7 +1,10 @@
 "use client";
+import Helper from "@/app/components/helper/Helper.js";
 import { useState, useRef, useEffect } from 'react';
 import styles from './Game.module.css';
 import { getQuestions } from "@/app/lib/getQuestions.js";
+import WordleInstructions from '../../instructions/wordle/WordleInstructions';
+import animation from '@/app/animation.module.css';
 
 export default function Game({ lectures, onSendData }) {
   const [question, setQuestion] = useState({});
@@ -80,8 +83,18 @@ export default function Game({ lectures, onSendData }) {
     window.location.reload();
   };
   return (
-    <div className="container">
-      <h1 className='text-center'>{question?.question}</h1>
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}> 
+    <div className="container text-center bg-white text-dark " style={{ maxWidth: '700px' }}>
+      <div className="d-flex align-items-center justify-content-center mb-4">
+          <h1 className="me-3">Palabrando</h1>
+          <div>
+            <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
+                <WordleInstructions />
+            </Helper>               
+            </div>                    
+        </div>
+      <h2 className="text my-4"> Completa los espacios para responder la pregunta </h2>
+      <h5 className="text my-4">{question?.question}</h5>
       {guesses.map((guess, rowIndex) => (
         <div className="d-flex justify-content-center mb-2" key={rowIndex}>
           {Array.from({ length: correctWord.length }).map((_, colIndex) => {
@@ -125,6 +138,7 @@ export default function Game({ lectures, onSendData }) {
         )}
       </div>
 
+    </div>
     </div>
   );
 }

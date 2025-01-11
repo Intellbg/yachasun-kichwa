@@ -1,8 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { generateCrosswordMatrix } from "./matrix";
+import Helper from "@/app/components/helper/Helper.js";
+import CrosswordInstructions from "../instructions/crossword/CrosswordInstructions";
+import animation from '@/app/animation.module.css';
 
 const Crossword = (({ data, onComplete }) => {
+
   const { matrix, clues } = generateCrosswordMatrix(data);
   const [userInput, setUserInput] = useState(
     matrix.map((row) => row.map((cell) => (cell.letter ? "" : null)))
@@ -29,7 +33,17 @@ const Crossword = (({ data, onComplete }) => {
   }, [userInput]);
 
   return (
-    <div className="container mt-4">
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '75vh' }}>
+    <div className="container text-center bg-white text-dark" style={{ maxWidth: '900px' }}>
+      <div className="d-flex align-items-center justify-content-center my-4">
+          <h1 className="me-3">Crucigrama</h1>
+          <div>
+            <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
+                <CrosswordInstructions />
+            </Helper>               
+            </div>                    
+        </div> 
+        <h2 className="text my-4 p-4">Completa el siguiente crucigrama</h2> 
       <div className="row">
         <div className="col-md-8">
           <div className="d-flex flex-column align-items-center">
@@ -68,8 +82,8 @@ const Crossword = (({ data, onComplete }) => {
           </div>
         </div>
         <div className="col-md-4">
-          <h5>Clues</h5>
-          <strong>Across</strong>
+          <h5>Pistas</h5>
+          <strong>Horizontales</strong>
           <ul className="list-group">
             {clues.across.map((clue) => (
               <li key={clue.number} className="list-group-item">
@@ -77,7 +91,7 @@ const Crossword = (({ data, onComplete }) => {
               </li>
             ))}
           </ul>
-          <strong>Down</strong>
+          <strong>Verticales</strong>
           <ul className="list-group">
             {clues.down.map((clue) => (
               <li key={clue.number} className="list-group-item">
@@ -87,6 +101,7 @@ const Crossword = (({ data, onComplete }) => {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   );
 });

@@ -7,6 +7,7 @@ import Helper from "@/app/components/helper/Helper.js";
 import DragDropInstructions from "@/app/components/instructions/drag_drop/DragDropInstruction.js";
 import update from 'immutability-helper';
 import styles from './style.module.css'; 
+import animation from '@/app/animation.module.css';
 
 const shuffleArray = (array) => {
   const shuffledArray = [...array];
@@ -137,15 +138,18 @@ const DragAndDrop = ({ Lectures, onSendData }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '55vh' }}>
         <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
-          <h5 className="text mb-4">Ordena la siguiente oración</h5>
-          <h5 className="text mb-2">Su significado en español es: {question?.spanish}</h5>
-          <div className="mb-4">
-          <Helper imageSrc="/img/humu/humu-happy.png">
+        <div class="d-flex align-items-center justify-content-center my-4">
+          <h1 class="me-3">Arrastra y ordena</h1>
+          <div>
+            <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
                 <DragDropInstructions />
-            </Helper>          
-        </div>
+            </Helper>               
+            </div>                    
+        </div>         
+          <h2 className="text my-4">Ordena la siguiente oración</h2>
+          <h5 className="text my-4">Su significado en español es: {question?.spanish}</h5>          
           <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
             {words.map((item, index) => (
               <Word key={item.id} word={item.word} index={index} moveWord={moveWord} />

@@ -2,10 +2,12 @@
 import Navbar from "@/app/components/Navbar.js";
 import Helper from "@/app/components/helper/Helper.js";
 import SoupLetter from "@/app/components/soupletter/SoupLetter.js";
+import SoupLetterInstructions from "@/app/components/instructions/soupletter/SoupLetterInstruction.js";
 import { useAuthStore } from '@/providers/auth-store-provider.js';
 import { USER_ENDPOINT } from "@/constants.js";
 import { useState, useCallback, useEffect } from 'react';
 import { getWords } from "@/app/lib/getWords";
+import animation from '@/app/animation.module.css';
 
 export default function Game2() {
     const { level, addLevel, id, key } = useAuthStore((state) => state);
@@ -72,30 +74,21 @@ export default function Game2() {
 
     return (
         <>
-            <Helper imageSrc="/img/humu/humu-happy.png">
-                <div className="container mt-5">
-                    <h1 className="text-center mb-4">Guía para Jugar Sopa de Letras</h1>
-                    <ul className="list-group">
-                        <li className="list-group-item">
-                            <strong>1. Objetivo:</strong> Encuentra todas las palabras ocultas en la cuadrícula.
-                        </li>
-                        <li className="list-group-item">
-                            <strong>2. Direcciones posibles:</strong> Horizontal, Vertical, y Diagonal.
-                        </li>
-                        <li className="list-group-item">
-                            <strong>3. Selección:</strong> Haz clic o arrastra para seleccionar.
-                        </li>
-                        <li className="list-group-item">
-                            <strong>4. Finalización:</strong> Encuentra todas las palabras para completar el juego.
-                        </li>
-                    </ul>
-                </div>
-            </Helper>
-            <Navbar />
-            <h1 className="text-center">Sopa de Letras</h1>
+            <Navbar />            
+            <div className="container text-center bg-white text-dark" style={{ maxWidth: '1200px' }}>
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <h1 class="me-3">Sopa de Letras</h1>
+                <div>
+                    <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
+                        <SoupLetterInstructions />
+                    </Helper>               
+                </div>                    
+            </div> 
+            <h2 className="text my-4"> Busca, encuentra y señala las palabras de la lista </h2>
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
             </div>
+            </div>            
             {send && (
                 <div className="m-auto">
                     <a href="/lectures/intermediate/es/test-3" className="btn btn-success">Continuar</a>
