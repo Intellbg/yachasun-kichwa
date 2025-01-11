@@ -74,7 +74,7 @@ export default function Quiz({ lecture }) {
   return (
     <div className="container">
       <div className={`${(lectureData.score_required < level) | isAnswerCorrect ? "d-none" : ""}`}>
-        <h3>Evaluación</h3>
+        <h3><b>Evaluación</b></h3>
 
         {questions.map((questionData, index) => (
           <Question

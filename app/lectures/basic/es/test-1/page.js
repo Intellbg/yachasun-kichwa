@@ -64,9 +64,9 @@ export default function Test1() {
   }, [questions]);
 
   return (
-    <div className="container">
+    <div className="container ">
       <div className={`${(5 < level) | isAnswerCorrect ? "d-none" : ""}`}>
-        <h1 className="text-center">Evaluación 1</h1>
+        <h1 className="text-center"><b>Evaluación 1</b></h1>
         {questions.map((questionData, index) => (
           <Question
             key={index}
@@ -77,7 +77,7 @@ export default function Test1() {
             onSelectAnswer={handleSelectAnswer}
           />
         ))}
-        <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
+        <button className={`btn btn-success  ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
       </div>
       <div className={`${!((5 < level)) ? "d-none" : ""} text-center`}>

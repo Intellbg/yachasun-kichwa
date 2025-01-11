@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/app/components/Navbar.js";
 import Wordle from "@/app/components/games/wordle/Worlde.js";
+import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import { useState, useCallback, useEffect } from 'react';
@@ -41,7 +42,9 @@ export default function Game1() {
             {
                 (level >= 5 || send) && (
                     <div className="m-auto text-center">
-                        <p className="h6">Juego ya superado</p>
+                        <ComicSpeechBubble text="" character="humuFeliz" alignment="left" >
+                            <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>
+                        </ComicSpeechBubble>
                         <a href="/lectures/basic/es/test-1" className='text-center btn btn-success'>Continuar</a>
                     </div>
                 )
