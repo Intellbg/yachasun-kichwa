@@ -6,7 +6,7 @@ const CrosswordInstructions = () => {
         <div className="container">
             <h1 className={styles.header}>¿Cómo Jugar Crucigrama?</h1>
             <p className={styles.paragraph}>
-            Crucigrama es un juego donde debes resolver pistas para completar un crucigrama. Selecciona una pista, escribe la respuesta letra por letra en las celdas correspondientes, y corrige cualquier error en cualquier momento. Tu objetivo es llenar todas las celdas con las respuestas correctas para completar el crucigrama.<br />
+            Crucigrama es un juego donde debes resolver pistas para completar un tablero. Selecciona una pista, escribe la respuesta letra por letra en las celdas correspondientes, y corrige cualquier error en cualquier momento. Tu objetivo es llenar todas las celdas con las respuestas correctas para completar el crucigrama.<br />
             ¡Demuestra tus habilidades y diviértete resolviendo! 
             </p>         
             <h2 className={styles.header}>Instrucciones</h2>

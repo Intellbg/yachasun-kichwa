@@ -4,7 +4,7 @@ import styles from './WordleInstructions.module.css';
 const WordleInstructions = () => {
     return (
         <div className="container">
-            <h1 className={styles.header}>¿Cómo Jugar Wordle?</h1>
+            <h1 className={styles.header}>¿Cómo Jugar Palabrando?</h1>
             <p className={styles.paragraph}>
                 Palabrando es un juego donde tienes que adivinar una palabra de en 6 intentos o menos.
                 Cada vez que adivines, las letras cambiarán de color para mostrar qué tan cerca estás de acertar.
