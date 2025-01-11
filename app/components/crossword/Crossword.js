@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { generateCrosswordMatrix } from "./matrix";
 import Helper from "@/app/components/helper/Helper.js";
 import CrosswordInstructions from "../instructions/crossword/CrosswordInstructions";
+import animation from '@/app/animation.module.css';
 
 const Crossword =  (({ data, onComplete }) => {
   const { matrix, clues } = generateCrosswordMatrix(data);
@@ -31,12 +32,12 @@ const Crossword =  (({ data, onComplete }) => {
   }, [userInput]);
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
-    <div className="container text-center bg-white text-dark" style={{ maxWidth: '1100px' }}>
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '75vh' }}>
+    <div className="container text-center bg-white text-dark" style={{ maxWidth: '900px' }}>
       <div className="d-flex align-items-center justify-content-center my-4">
           <h1 className="me-3">Crucigrama</h1>
           <div>
-            <Helper imageSrc="/img/humu/humu-happy.png">
+            <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
                 <CrosswordInstructions />
             </Helper>               
             </div>                    
