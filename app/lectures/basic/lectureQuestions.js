@@ -151,7 +151,7 @@ const lectureQuestions = [
     },
     {
         "slug": "food",
-        "question": "¿Qué significa mishki haku?",
+        "question": "¿Qué significa haku?",
         "options": [
             "azúcar",
             "harina",
