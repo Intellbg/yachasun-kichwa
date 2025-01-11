@@ -27,7 +27,7 @@ function LoggedInMenu() {
 }
 
 export default function Navbar() {
-    const { username } = useAuthStore((state) => state)
+    const { username, name } = useAuthStore((state) => state)
     return (
         <nav className={`bg-primary-custom navbar navbar-expand-lg fixed-top px-3 navbar-dark`}>
             <a className="navbar-brand" href="/">
@@ -45,6 +45,9 @@ export default function Navbar() {
 
             <div className="collapse navbar-collapse w-100" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto">
+                    {name &&
+                        <span class="navbar-text text-white mx-3">Imanalla {name}</span>
+                    }
                     {
                         username !== "" ? <LoggedInMenu /> : <Menu />
                     }
