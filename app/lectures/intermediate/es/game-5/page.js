@@ -4,6 +4,8 @@ import DragDrop from "@/app/components/drag_drop/DragDrop.js";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import { useState, useCallback, useEffect } from 'react';
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
 
 export default function Game1() {
     const { level, addLevel, id, key } = useAuthStore(
@@ -19,7 +21,7 @@ export default function Game1() {
     }, [childData]);
 
     useEffect(() => {
-        if (send) {
+        if (50 >= level && send) {
             fetch(USER_ENDPOINT + `${id}/level`, {
                 method: "PATCH",
                 headers: {
@@ -40,8 +42,9 @@ export default function Game1() {
                  <DragDrop Lectures="grammar-10,grammar-11,grammar-12" onSendData={handleChildData}/>
             </div>
             {
-                (send) && (
-                    <div className="m-auto">
+                (send|| level >= 51) && (
+                    <div className="m-auto text-center">
+                        <ComicSpeechBubble text="¡Eso estuvo fácil, ¿no?!. Juego superado" character="humu" />
                         <a href="/lectures/intermediate/es/test-5" className='text-center btn btn-success'>Continuar</a>
                     </div>
                 )

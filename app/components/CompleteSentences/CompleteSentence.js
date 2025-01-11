@@ -90,13 +90,7 @@ const CompleteSentence = ({ Lectures, onSendData }) => {
     }
   };
 
-  if (loading) {
-    return <div>Cargando datos...</div>;
-  }
-
-  if (!sentenceData || sentence.length === 0 || !sentenceData.options) {
-    return <div>Error al cargar los datos. Inténtalo nuevamente.</div>;
-  }
+  
 
   return (
     <DndProvider backend={HTML5Backend}>
@@ -111,7 +105,7 @@ const CompleteSentence = ({ Lectures, onSendData }) => {
             </div>                    
         </div>        
         <h2 className="text my-4">Arrastra la palabra correcta para completar la oración</h2>
-        <h5 className="text my-4">Significado en español: {sentenceData.spanish}</h5>        
+        <h5 className="text my-4">Significado en español: {sentenceData?.spanish}</h5>        
         <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
           {sentence.map((word, index) => (
             <Word
@@ -123,7 +117,7 @@ const CompleteSentence = ({ Lectures, onSendData }) => {
           ))}
         </div>
         <div className="d-flex justify-content-center mb-4">
-          {sentenceData.options.map((option, index) => (
+          {sentenceData?.options.map((option, index) => (
             <DraggableWord key={index} word={option} />
           ))}
         </div>
