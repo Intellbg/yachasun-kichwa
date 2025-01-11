@@ -1,36 +1,66 @@
 import Quiz from "../../../../components/Quiz"
 import VocabularyTable from "../../../../components/VocabularyTable"
+import TablesWithTabs from '../../../../components/TablesWithTabs'
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+export const tablesData = [
+    {
+        title: 'Adjetivos',
+        headers: ['Kichwa', 'Español'],
+        rows: [
+            ['hatun', 'grande'],
+            ['kuyaylla', 'simpático'],
+            ['tsala', 'delgado'],
+            ['uchilla', 'pequeño'],
+            ['uchillaku', 'pequeñito'],
+            ['wira', 'gordo'],
+        ],
+    },
+    {
+        title: 'Estructura',
+        headers: ['Sustantivo conjugado', 'Calificativo conjugado',"Verbo"],
+        rows: [
+            ['Kuchi-ka', 'wira-mi','kan'],
+        ],
+    },
+];
 
-# Gramática 2
-## Adjetivos (Shutillikuna)
+
+# **Gramática 2**
+## **Adjetivos (Shutillikuna)**
 
 En el kichwa también se pueden calificar sustantivos para identificar sus cualidades.
 
  A continuación se presenta una lista de adjetivos comunes que podrían ser utilizados
 para calificar.
 
-<VocabularyTable lecture="animals" tag='adjective' />
+<TablesWithTabs tables={tablesData} />
 
-Una oración completa tiene la siguiente estructura:
-<table>
-<tbody>
-<tr>
-<th>Sustantivo conjugado</th>
-<th>Calificativo conjugado</th>
-<th>Verbo</th>
-</tr>
-<tr>
-<td><strong>Kuchi</strong>ka</td>
-<td><strong>wira</strong>mi</td>
-<td>kan</td>
-</tr>
-</tbody>
-</table>
-Esto significa El chancho es gordo
+<hr/>
 
+<ComicSpeechBubble text="" character = "humu"  alignment="right">
+El sustantivo debe conjugarse con la partícula **ka** al final
+
+El adjetivo calificativo debe conjugarse añadiendo **mi** al final
+
+Y el verbo se coloca final
+
+</ComicSpeechBubble>
+<hr/>
+
+<ComicSpeechBubble text="" character = "humu"  >
+La oración : **Kuchikawiramikan**
+
+Significa: **El chancho es gordo**
+</ComicSpeechBubble>
+<hr/>
+
+<ComicSpeechBubble text="" character = "humuFeliz"  alignment="right">
 Un ejemplo adicional 
-- Atukka millaymi kan | El lobo es bravo
-- Ukuchaka uchillami kan | El ratón es pequeño
+
+Atukka millaymi kan | El lobo es bravo
+
+Ukuchaka uchillami kan | El ratón es pequeño
+</ComicSpeechBubble>
 
 <hr/>
 <Quiz lecture="grammar-b-2" />

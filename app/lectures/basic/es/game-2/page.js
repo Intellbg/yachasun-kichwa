@@ -8,6 +8,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { getWords } from "@/app/lib/getWords";
 import animation from '@/app/animation.module.css';
 import SoupLetterInstructions from "@/app/components/instructions/soupletter/SoupLetterInstruction.js";
+import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble";
 
 export default function Game2() {
     const { level, addLevel, id, key } = useAuthStore((state) => state);
@@ -86,12 +87,16 @@ export default function Game2() {
             </div> 
             <h2 className="text my-4"> Busca, encuentra y señala las palabras de la lista </h2>
             <div className="container d-flex justify-content-center align-items-center h-75">
-                <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
+                {
+                    !send && <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
+                }
             </div>
             </div>
             {(level >= 12 || send) && (
                 <div className="m-auto text-center">
-                    <p className="h6">Juego ya superado</p>
+                    <ComicSpeechBubble text="" character="humuFeliz" alignment="left" >
+                            <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>
+                        </ComicSpeechBubble>
                     <a href="/lectures/basic/es/test-2" className="btn btn-success">Continuar</a>
                 </div>
             )}
