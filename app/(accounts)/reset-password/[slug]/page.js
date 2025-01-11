@@ -74,7 +74,7 @@ export default function ForgotPassword({ params }) {
                     </form>) : (
                         <div className="mb-3">
                             <h3>Contraseña re establecida</h3>
-                            <a href="/login" className="btn btn-primary bg-primary-custom text-decoration-none w-100">Inicial sesión</a>
+                            <a href="/login" className="btn btn-primary bg-primary-custom text-decoration-none w-100">Iniciar sesión</a>
                         </div>
                     )
                 }

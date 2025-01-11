@@ -119,7 +119,7 @@ export default function Home() {
                   <li>Nicolás Burbano</li>
                   <li>Santiago León</li>
                   <li>Milton Heras</li>
-                  <li>Fausto Roman</li>
+                  <li>Fausto Román</li>
                 </ul>
               </div>
             </SlideInItem>
