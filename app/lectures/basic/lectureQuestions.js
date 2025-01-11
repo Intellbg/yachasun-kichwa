@@ -118,7 +118,7 @@ const lectureQuestions = [
     },
     {
         "slug": "body",
-        "question": "¿Qué significa anaku",
+        "question": "¿Qué significa anaku?",
         "options": [
             "falda",
             "pantalón",
@@ -172,7 +172,7 @@ const lectureQuestions = [
         "answer": "ñuñu"
     },
     {
-        "slug": "grammar-2",
+        "slug": "grammar-b-2",
         "question": "¿Cómo se dice la vaca es grande en kiwcha?",
         "options": [
             "Wakra hatunmi kan",
