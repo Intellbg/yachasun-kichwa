@@ -249,7 +249,7 @@ const lectureQuestions = [
         "answer": "familia"
     },
     {
-        "slug": "grammar-3",
+        "slug": "grammar-b-3",
         "question": "¿Warmi es prefijo para referirse a femenino?",
         "options": [
             "si",
@@ -258,7 +258,7 @@ const lectureQuestions = [
         "answer": "si"
     },
     {
-        "slug": "grammar-3",
+        "slug": "grammar-b-3",
         "question": "¿Cómo se diría coneja en kichwa?",
         "options": [
             "warmiwallinku",

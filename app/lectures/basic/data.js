@@ -125,7 +125,7 @@ const activities = [
                 "score_required": 16,
                 "name": "Gramática 3: Adjetivos",
                 "module": 3,
-                "slug": "grammar-3",
+                "slug": "grammar-b-3",
                 "next": "/lectures/basic/es/game-3",
             },
             {
