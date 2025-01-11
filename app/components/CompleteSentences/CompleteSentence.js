@@ -99,14 +99,18 @@ const CompleteSentence = ({ Lectures, onSendData }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div>
-        <h2 className="text mb-4">Arrastra la palabra correcta para completar la oración</h2>
-        <h5 className="text mb-2">Significado en español: {sentenceData.spanish}</h5>
-        <div className="mb-4">
-          <Helper imageSrc="/img/humu/humu-happy.png">
-            <CompleteSentenceInstructions />
-          </Helper>
-        </div>
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
+      <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '700px' }}>
+      <div class="d-flex align-items-center justify-content-between my-4">
+          <h1 class="me-3">Completa y gana</h1>
+          <div>
+            <Helper imageSrc="/img/humu/humu-happy.png">
+              <CompleteSentenceInstructions />
+            </Helper>               
+            </div>                    
+        </div>        
+        <h2 className="text mb-4 p-4">Arrastra la palabra correcta para completar la oración</h2>
+        <h5 className="text my-4">Significado en español: {sentenceData.spanish}</h5>        
         <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
           {sentence.map((word, index) => (
             <Word
@@ -129,7 +133,8 @@ const CompleteSentence = ({ Lectures, onSendData }) => {
               : "La oración es incorrecta. Intenta de nuevo."}
           </div>
         )}
-      </div>
+      </div> 
+      </div>     
     </DndProvider>
   );
 };
