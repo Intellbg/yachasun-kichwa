@@ -7,7 +7,7 @@ const imageMap = {
   humuSad: '/img/humu/humu-disappointed.png',
 };
 
-const ComicSpeechBubble = ({ text, character, alignment = 'left' }) => {
+const ComicSpeechBubble = ({ text, character, alignment = 'left', children }) => {
   const imageSrc = imageMap[character] || imageMap['humu'];
 
   return (
@@ -25,6 +25,7 @@ const ComicSpeechBubble = ({ text, character, alignment = 'left' }) => {
       </div>
       <div className={styles.speechBubble}>
         <p>{text}</p>
+        {children}
         <div
           className={`${styles.speechArrow} ${
             alignment === 'right' ? styles.arrowRight : styles.arrowLeft
