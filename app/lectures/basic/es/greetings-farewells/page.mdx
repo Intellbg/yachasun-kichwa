@@ -1,0 +1,63 @@
+import Quiz from "../../../../components/Quiz"
+import TablesWithTabs from '../../../../components/TablesWithTabs'
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
+
+export const tablesData = [
+  {
+    title: 'Saludos',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['alichishi', 'buenas tardes'],
+      ['alli', 'bueno'],
+      ['allipuncha', 'buenos días'],
+      ['allituta', 'buenas noches'],
+      ['chisi', 'tarde'],
+      ['imanalla', 'hola'],
+    ],
+  },
+  {
+    title: 'Despedidas',
+    headers: ['Kichwa', 'Español'],
+    rows: [
+      ['ashtakashkaman', 'hasta luego'],
+      ['chishikaman', 'hasta tarde'],
+      ['kayakaman', 'hasta mañana'],
+      ['rikurishun', 'adiós'],
+    ],
+  },
+]
+
+# **Saludos y despedidas. (Napaykuna, Mishkishimirimay)**
+
+Los saludos son una parte fundamental de la comunicación diaria. En esta lección aprenderás a saludar y a despedirte 
+<hr/> 
+
+<TablesWithTabs tables={tablesData} />
+<hr/> 
+
+# **Espacio cultural**
+
+<ComicSpeechBubble text="" character = "humu" alignment="right" >
+La palabra Ango significa jefe, señor, 
+gobernador; mientras que en el idioma 
+kayambi (kayanqui), significa espíritu y 
+unidad, por lo tanto quienes llevan apellido 
+con esta terminación son personas de alma, 
+de valor, y de gran fuerza moral.
+
+ 
+Abajo están unos ejemplos de personas 
+cuyos apellidos tienen la terminación ango. 
+
+
+Dolores Cacuango 
+
+
+Guillermo Cabascango 
+
+
+</ComicSpeechBubble>
+<hr />
+
+
+<Quiz lecture="greetings-farewells" />
