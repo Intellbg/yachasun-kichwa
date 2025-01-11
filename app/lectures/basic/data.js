@@ -3,7 +3,7 @@ const activities = [
         "name": "Módulo 1",
         "score_required": 0,
         "imagen": "/img/cover/basic-m1-1.jpg",
-        "description": "En este módulo aprenderá primeras el alfabeto, los número colores y pronombres.",
+        "description": "En este módulo aprenderás primeras el alfabeto, los número colores y pronombres.",
         "lectures": [
             {
                 "name": "Alfabeto",
@@ -77,7 +77,7 @@ const activities = [
             {
                 "score_required": 10,
                 "name": "Gramática: género, plural, tamaño, cantidad",
-                "slug": "grammar-2",
+                "slug": "grammar-b-2",
                 "next": "/lectures/basic/es/game-2",
             },
             {
@@ -125,7 +125,7 @@ const activities = [
                 "score_required": 16,
                 "name": "Gramática 3: Adjetivos",
                 "module": 3,
-                "slug": "grammar-3",
+                "slug": "grammar-b-3",
                 "next": "/lectures/basic/es/game-3",
             },
             {

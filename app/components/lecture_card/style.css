@@ -37,6 +37,6 @@ a:hover .hover-div {
 }
 
 .text-decoration-none {
-    color: black !important;  /* Cambiar el color del enlace a blanco */
-    text-decoration: none;  /* Evitar subrayado */
+    color: black !important;  
+    text-decoration: none; 
 }

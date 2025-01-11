@@ -64,7 +64,7 @@ export default function Game2() {
     useEffect(() => {
         const fetchData = async () => {
             const wordsData = await getWords("grammar-2,body,animals,family,greetings-farewells");
-            const { kichwa, spanish } = getRandomWords(wordsData, 10, 2);
+            const { kichwa, spanish } = getRandomWords(wordsData, 10, 5);
             setKichwa(kichwa);
             setSpanish(spanish);
             console.log(kichwa)

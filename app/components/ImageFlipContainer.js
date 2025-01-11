@@ -2,7 +2,7 @@ import ImageFlipCard from './ImageFlipCard';
 import authFetch from '../api/authFetch'
 import { WORDS_ENDPOINT } from "../../constants"
 
-const ImageFlipContainer = async ({ lecture,sort='kichwa', tag="" }) => {
+const ImageFlipContainer = async ({ lecture, sort = 'kichwa', tag = "", notTag = "" }) => {
   var url = `${WORDS_ENDPOINT}?lecture=${lecture}&sortOrder=asc&sort=${sort}`
   if (tag) { url += `&tags=${tag}` }
   if (notTag) { url += `&ntags=${notTag}` }
@@ -16,7 +16,7 @@ const ImageFlipContainer = async ({ lecture,sort='kichwa', tag="" }) => {
           <div className='col-sm-3 my-4' key={word.id} >
             <ImageFlipCard
               key={word.id}
-              img={"/img/downloads/"+word.english+'.jpg'}
+              img={"/img/downloads/" + word.english + '.jpg'}
               front={word.kichwa}
               back={word.spanish}
             />
