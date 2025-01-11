@@ -59,7 +59,7 @@ export default function Quiz({ lecture }) {
         })
       }
     } else {
-      setResult(`Obtuvo ${correctCount} de ${questions.length} correctas`);
+      setResult(`Obtuviste ${correctCount} de ${questions.length} correctas`);
       setHumuExpression(`humuSad`);
     }
   };
