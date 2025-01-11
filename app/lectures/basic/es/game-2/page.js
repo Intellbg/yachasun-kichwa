@@ -74,29 +74,29 @@ export default function Game2() {
     }, [level]);
 
     return (
-        <>            
+        <>
             <Navbar />
             <div className="container text-center bg-white text-dark" style={{ maxWidth: '1200px' }}>
-            <div class="d-flex align-items-center justify-content-center mb-4">
-                <h1 class="me-3">Sopa de Letras</h1>
-                <div>
-                    <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
-                        <SoupLetterInstructions />
-                    </Helper>               
-                </div>                    
-            </div> 
-            <h2 className="text my-4"> Busca, encuentra y señala las palabras de la lista </h2>
-            <div className="container d-flex justify-content-center align-items-center h-75">
-                {
-                    !send && <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
-                }
-            </div>
+                <div class="d-flex align-items-center justify-content-center mb-4">
+                    <h1 class="me-3">Sopa de Letras</h1>
+                    <div>
+                        <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
+                            <SoupLetterInstructions />
+                        </Helper>
+                    </div>
+                </div>
+                <h2 className="text my-4"> Busca, encuentra y señala las palabras de la lista </h2>
+                <div className="container d-flex justify-content-center align-items-center h-75">
+                    {
+                        !send && <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
+                    }
+                </div>
             </div>
             {(level >= 12 || send) && (
                 <div className="m-auto text-center">
                     <ComicSpeechBubble text="" character="humuFeliz" alignment="left" >
-                            <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>
-                        </ComicSpeechBubble>
+                        <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>
+                    </ComicSpeechBubble>
                     <a href="/lectures/basic/es/test-2" className="btn btn-success">Continuar</a>
                 </div>
             )}

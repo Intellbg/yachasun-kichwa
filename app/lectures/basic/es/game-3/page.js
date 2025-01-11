@@ -6,6 +6,7 @@ import CrosswordInstructions from "@/app/components/instructions/crossword/Cross
 import Helper from "@/app/components/helper/Helper.js";
 import { useAuthStore } from "@/providers/auth-store-provider.js";
 import { USER_ENDPOINT } from "@/constants.js";
+import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble";
 
 const data = [
     { word: "ACEITE", question: "¿Cuál es la traducción de 'yakuwira'?" },
@@ -50,7 +51,10 @@ export default function Game3() {
                 <Crossword data={data} onComplete={handleChildData} />
             </div>
             {(level >= 17 || send) && (
-                <div className="m-auto">
+                <div className="m-auto text-center">
+                    <ComicSpeechBubble text="" character="humuFeliz" alignment="left" >
+                        <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>
+                    </ComicSpeechBubble>
                     <a href="/lectures/basic/es/test-3" className="text-center btn btn-success">
                         Continuar
                     </a>
