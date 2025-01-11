@@ -5,10 +5,10 @@ function Menu() {
     return (
         <>
             <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
+                <a className="nav-link text-white" aria-current="page" href="/login">Iniciar Sesión</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/signup">Crear cuenta</a>
+                <a className="nav-link text-white" aria-current="page" href="/signup">Crear cuenta</a>
             </li>
         </>
     )

@@ -22,7 +22,8 @@ nav {
   color: #fff !important;
   background-color: #003011 !important;
 }
-.bg-semi-transparent{
+
+.bg-semi-transparent {
   background-color: rgba(255, 255, 255, 0.4)
 }
 
@@ -133,6 +134,7 @@ td {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -140,6 +142,13 @@ td {
 }
 
 .btn-warning {
-  background-color: #FFC107 !important; 
+  background-color: #FFC107 !important;
   color: #000 !important;
+}
+
+
+.nav-link:hover {
+  color: #e0e0e0;
+  background-color: #005022;
+  border-radius: 20px;
 }
