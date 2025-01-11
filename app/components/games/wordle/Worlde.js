@@ -1,7 +1,7 @@
 "use client";
 import Helper from "@/app/components/helper/Helper.js";
 import { useState, useRef, useEffect } from 'react';
-import styles from './Game.module.css';
+import styles from "./game.module.css";
 import { getQuestions } from "@/app/lib/getQuestions.js";
 import WordleInstructions from '../../instructions/wordle/WordleInstructions';
 import animation from '@/app/animation.module.css';
@@ -20,7 +20,7 @@ export default function Game({ lectures, onSendData }) {
       const questions = await getQuestions(lectures);
       const randomQuestion = questions[0];
       setQuestion(randomQuestion);
-      setCorrectWord(randomQuestion.answer.toUpperCase());      
+      setCorrectWord(randomQuestion.answer.toUpperCase());
     };
     fetchData();
   }, [lectures]);
@@ -83,62 +83,62 @@ export default function Game({ lectures, onSendData }) {
     window.location.reload();
   };
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}> 
-    <div className="container text-center bg-white text-dark " style={{ maxWidth: '700px' }}>
-      <div className="d-flex align-items-center justify-content-center mb-4">
+    <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+      <div className="container text-center bg-white text-dark " style={{ maxWidth: '700px' }}>
+        <div className="d-flex align-items-center justify-content-center mb-4">
           <h1 className="me-3">Palabrando</h1>
           <div>
             <Helper imageSrc="/img/humu/humu-happy.png" className={`${animation.spinnerImage}`}>
-                <WordleInstructions />
-            </Helper>               
-            </div>                    
+              <WordleInstructions />
+            </Helper>
+          </div>
         </div>
-      <h2 className="text my-4"> Completa los espacios para responder la pregunta </h2>
-      <h5 className="text my-4">{question?.question}</h5>
-      {guesses.map((guess, rowIndex) => (
-        <div className="d-flex justify-content-center mb-2" key={rowIndex}>
-          {Array.from({ length: correctWord.length }).map((_, colIndex) => {
-            const letter = guess[colIndex] || '';
-            return (
-              <input
-                key={colIndex}
-                ref={(el) => (inputRefs.current[rowIndex * correctWord.length + colIndex] = el)}
-                type="text"
-                maxLength="1"
-                value={letter}
-                onChange={(e) => handleChange(e, rowIndex, colIndex)}
-                className={`d-flex justify-content-center align-items-center border text-center ${styles.cell} ${getCellStyle(letter, colIndex, rowIndex)}`}
-                disabled={gameOver || rowIndex !== currentGuessIndex}
-              />
-            );
-          })}
-        </div>
-      ))}
-      <div className="w-50 text-center m-auto">
-        {gameOver && (
-          <>
-            <div
-              className={`alert mt-3 ${isCorrectGuess ? 'alert-success' : 'alert-danger'}`}
-              role="alert"
-            >
-              {isCorrectGuess
-                ? '¡Felicidades! Has adivinado la palabra correcta.'
-                : `¡Lo siento! No has adivinado la palabra correcta. La respuesta era: ${question.answer}`
-              }
-            </div>
-            {!isCorrectGuess && (
-              <button
-                className="btn btn-warning mt-2"
-                onClick={reloadPage}
+        <h2 className="text my-4"> Completa los espacios para responder la pregunta </h2>
+        <h5 className="text my-4">{question?.question}</h5>
+        {guesses.map((guess, rowIndex) => (
+          <div className="d-flex justify-content-center mb-2" key={rowIndex}>
+            {Array.from({ length: correctWord.length }).map((_, colIndex) => {
+              const letter = guess[colIndex] || '';
+              return (
+                <input
+                  key={colIndex}
+                  ref={(el) => (inputRefs.current[rowIndex * correctWord.length + colIndex] = el)}
+                  type="text"
+                  maxLength="1"
+                  value={letter}
+                  onChange={(e) => handleChange(e, rowIndex, colIndex)}
+                  className={`d-flex justify-content-center align-items-center border text-center ${styles.cell} ${getCellStyle(letter, colIndex, rowIndex)}`}
+                  disabled={gameOver || rowIndex !== currentGuessIndex}
+                />
+              );
+            })}
+          </div>
+        ))}
+        <div className="w-50 text-center m-auto">
+          {gameOver && (
+            <>
+              <div
+                className={`alert mt-3 ${isCorrectGuess ? 'alert-success' : 'alert-danger'}`}
+                role="alert"
               >
-                Reintentar
-              </button>
-            )}
-          </>
-        )}
-      </div>
+                {isCorrectGuess
+                  ? '¡Felicidades! Has adivinado la palabra correcta.'
+                  : `¡Lo siento! No has adivinado la palabra correcta. La respuesta era: ${question.answer}`
+                }
+              </div>
+              {!isCorrectGuess && (
+                <button
+                  className="btn btn-warning mt-2"
+                  onClick={reloadPage}
+                >
+                  Reintentar
+                </button>
+              )}
+            </>
+          )}
+        </div>
 
-    </div>
+      </div>
     </div>
   );
 }

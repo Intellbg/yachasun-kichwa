@@ -4,7 +4,7 @@ const SoupLetterInstructions = () => {
     return (
         <div className="container mt-5  justify-content-center">
             <div className="text-center">
-                <h2>¿Cómo Jugar "Sopa de letras"?</h2>
+                <h2>¿Cómo Jugar &quot;Sopa de letras&quot;?</h2>
             </div>
             <ol className="list-group list-group-numbered">
                 <li className="list-group-item">

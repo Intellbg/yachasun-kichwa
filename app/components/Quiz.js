@@ -1,11 +1,16 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import Question from "./Question";
-import lectureQuestions from '../lectures/intermediate/lectureQuestions'
-import lectures from '../lectures/intermediate/data'
+import lectureQuestionsI from '../lectures/intermediate/lectureQuestions'
+import lecturesI from '../lectures/intermediate/data'
+import lectureQuestionsB from '../lectures/basic/lectureQuestions'
+import lecturesB from '../lectures/basic/data'
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
+
+const lectureQuestions = [...lectureQuestionsI, ...lectureQuestionsB]
+const lectures = [...lecturesI, ...lecturesB]
 
 function getQuestions(lecture) {
   var questions = lectureQuestions.filter((element) => (element.slug == lecture))
@@ -58,7 +63,7 @@ export default function Quiz({ lecture }) {
       setHumuExpression(`humuSad`);
     }
   };
-  
+
   useEffect(() => {
     setQuestions(getQuestions(lecture))
   }, []);
