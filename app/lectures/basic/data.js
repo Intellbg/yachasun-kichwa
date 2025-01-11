@@ -2,7 +2,7 @@ const activities = [
     {
         "name": "Módulo 1",
         "score_required": 0,
-        "imagen": "/img/cover/basic-m1.jpg",
+        "imagen": "/img/cover/basic-m1-1.jpg",
         "description": "En este módulo aprenderá primeras el alfabeto, los número colores y pronombres.",
         "lectures": [
             {
@@ -46,7 +46,7 @@ const activities = [
     {
         "name": "Módulo 2",
         "score_required": 6,
-        "imagen": "/img/cover/basic-m2.jpg",
+        "imagen": "/img/cover/basic-m2-1.jpg",
         "description": "Este módulo contiene expresiones para saludar y despedirse adicionalmente vocabulario sobre familia, animales, partes del cuerpo y ropa.",
         "lectures": [
             {
@@ -96,7 +96,7 @@ const activities = [
     },
     {
         "name": "Módulo 3",
-        "imagen": "/img/cover/basic-m3.jpg",
+        "imagen": "/img/cover/basic-m3-1.jpg",
         "score_required": 13,
         "description": "Este es el ultimo módulo contiene vocabulario sobre el hogar, el aula, los animales, y muestra como formar oraciones en presente.",
         "lectures": [
