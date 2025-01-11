@@ -14,7 +14,7 @@ const ImageFlipCard = ({ front, back, img = 'https://www.shutterstock.com/image-
           <strong onClick={(flipped) => setFlipped(!flipped)}>{front}</strong>
         </h2>
       </div>
-      <div className={` d-flex align-items-center h-100 text-center ${flipped ? "" : "d-none"}`}>
+      <div className={` d-flex align-items-center h-100 text-center ${flipped ? "" : "d-none"}`} style={{ minHeight: '350px' }}>
         <h2 className='w-100'>{back}</h2>
       </div>
     </div >
