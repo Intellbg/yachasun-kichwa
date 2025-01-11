@@ -88,6 +88,7 @@ export default function Test1() {
           className={`humu-mascot me-4 ${animation.spinnerImage}`}
         /> 
         <br />
+        <h3><a href="/achievements">Revisa tus Logros</a></h3>
         <div className="m-auto text-center">
           <a href={`/lectures/intermediate/es/verbs`} className={`text-center btn btn-success ${(32 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
         </div>       

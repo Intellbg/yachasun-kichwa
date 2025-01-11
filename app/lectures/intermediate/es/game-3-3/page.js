@@ -8,6 +8,7 @@ import { USER_ENDPOINT } from "@/constants.js";
 import { useState, useCallback, useEffect } from 'react';
 import { getWords } from "@/app/lib/getWords";
 import animation from '@/app/animation.module.css';
+import ComicSpeechBubble from "../../../../components/ComicSpeechBubble/ComicSpeechBubble"
 
 export default function Game2() {
     const { level, addLevel, id, key } = useAuthStore((state) => state);
@@ -89,8 +90,10 @@ export default function Game2() {
                 <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
             </div>
             </div>            
-            {send && (
-                <div className="m-auto">
+            {
+                (send || level >= 39)&& (
+                <div className="m-auto text-center">
+                    <ComicSpeechBubble text="¡Eso estuvo fácil, ¿no?!. Juego superado" character="humu" />
                     <a href="/lectures/intermediate/es/test-3" className="btn btn-success">Continuar</a>
                 </div>
             )}
