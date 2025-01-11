@@ -77,7 +77,7 @@ const activities = [
             {
                 "score_required": 10,
                 "name": "Gramática: género, plural, tamaño, cantidad",
-                "slug": "grammar-2",
+                "slug": "grammar-b-2",
                 "next": "/lectures/basic/es/game-2",
             },
             {
