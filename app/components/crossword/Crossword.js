@@ -5,7 +5,8 @@ import Helper from "@/app/components/helper/Helper.js";
 import CrosswordInstructions from "../instructions/crossword/CrosswordInstructions";
 import animation from '@/app/animation.module.css';
 
-const Crossword =  (({ data, onComplete }) => {
+const Crossword = (({ data, onComplete }) => {
+
   const { matrix, clues } = generateCrosswordMatrix(data);
   const [userInput, setUserInput] = useState(
     matrix.map((row) => row.map((cell) => (cell.letter ? "" : null)))

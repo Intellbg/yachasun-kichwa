@@ -1,8 +1,8 @@
 export const courses = [
     {
-        "title": "Curso Inicial",
+        "title": "Curso Básico",
         "img": "/img/iconography/llama.png",
-        "description": "Este curso esta diseñado introducir al lenguaje",
+        "description": "Empieza a descubrir el idioma aprendiendo vocabulario esencial y gramática básica,",
         "score_required": 0,
         'url': "/lectures/basic"
     },
