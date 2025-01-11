@@ -47,7 +47,7 @@ const lectureQuestions = [
         "slug": "colors",
         "question": "¿Cómo se dice morado en Kichwa?",
         "options": [
-            "wamisnsi",
+            "waminsi",
             "maywa",
             "killu",
             "kishpu"
