@@ -36,7 +36,7 @@ export default function Game({ lectures, onSendData }) {
     if (gameOver) return;
 
     const value = e.target.value.toUpperCase();
-    const isValidInput = /^[A-ZÑñ0-9]$/.test(value) || value === '';
+    const isValidInput = /^[A-ZÑ0-9ÁÉÍÓÚ]$/.test(value) || value === '';
 
     if (!isValidInput) return;
 
