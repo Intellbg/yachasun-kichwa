@@ -50,8 +50,8 @@ const Crossword = (({ data, onComplete }) => {
   }, [userInput]);
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '95vh' }}>
-    <div className="container text-center bg-white text-dark" style={{ maxWidth: '900px' }}>
+    <div className="d-flex justify-content-center align-items-center responsive-height">
+    <div className="container text-center bg-white text-dark responsive-max-width">
       <div className="d-flex align-items-center justify-content-center my-4">
           <h1 className="me-3">Crucigrama</h1>
           <div>
