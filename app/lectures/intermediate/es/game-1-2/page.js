@@ -20,7 +20,7 @@ export default function Game1() {
     }, [childData]);
 
     useEffect(() => {
-        if (4 >= level && send) {
+        if (24 >= level && send) {
             fetch(USER_ENDPOINT + `${id}/level`, {
                 method: "PATCH",
                 headers: {

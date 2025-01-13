@@ -48,7 +48,7 @@ export default function Game2() {
     }
 
     useEffect(() => {
-        if (send && level < 39) {
+        if (send && level <= 38) {
             fetch(USER_ENDPOINT + `${id}/level`, {
                 method: "PATCH",
                 headers: {
@@ -65,7 +65,7 @@ export default function Game2() {
     useEffect(() => {
         const fetchData = async () => {
             const wordsData = await getWords("verbs,adjetives,kitchen,city,room");
-            const { kichwa, spanish } = getRandomWords(wordsData, 10, 2);
+            const { kichwa, spanish } = getRandomWords(wordsData, 10, 4);
             setKichwa(kichwa);
             setSpanish(spanish);
             console.log(kichwa)
@@ -87,13 +87,17 @@ export default function Game2() {
             </div> 
             <h2 className="text my-4"> Busca, encuentra y señala las palabras de la lista </h2>
             <div className="container d-flex justify-content-center align-items-center h-75">
-                <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />
-            </div>
+                {
+                    !send && <SoupLetter words={kichwa} spanish={spanish} onSendData={handleChildData} size={12} />            
+                }
+                </div>
             </div>            
             {
                 (send || level >= 39)&& (
                 <div className="m-auto text-center">
-                    <ComicSpeechBubble text="¡Eso estuvo fácil, ¿no?!. Juego superado" character="humu" />
+                    <ComicSpeechBubble text="" character="humuFeliz" alignment="left" >
+                    <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>
+                    </ComicSpeechBubble>
                     <a href="/lectures/intermediate/es/test-3" className="btn btn-success">Continuar</a>
                 </div>
             )}

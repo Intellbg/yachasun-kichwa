@@ -45,25 +45,25 @@ const lectureQuestions = [
     },
     {
         "slug": "animals-2",
-        "question": "¿Qué significa Wakra?",
+        "question": "¿Qué significa Puma?",
         "options": [
-            "Pez",
-            "Gato",
-            "Perro",
-            "Ganado"
+            "Puma",
+            "Pájaro",
+            "Araña",
+            "Tortuga"
         ],
-        "answer": "Ganado" 
+        "answer": "Puma" 
     },
     {
         "slug": "animals-2",
-        "question": "¿Cómo se escribe Llama en kichwa?",
+        "question": "¿Cómo se escribe Burro en kichwa?",
         "options": [
-            "Llama",
-            "Runa llama",
-            "Mashu",
-            "Uru"
+            "Chuspi",
+            "Katsu",
+            "Kuru",
+            "Chantazu"
         ],
-        "answer": "Runa llama" 
+        "answer": "Chantazu" 
     },
     {
         "slug": "food-2",
@@ -77,14 +77,14 @@ const lectureQuestions = [
     },
     {
         "slug": "food-2",
-        "question": "¿Cómo se dice Aguacate en Kichwa?",
+        "question": "¿Cómo se dice Ají en Kichwa?",
         "options": [
-            "Palta",
-            "Chukllu",
-            "Sara",
-            "Yaku"            
+            "Wiru",
+            "Kita",
+            "Lumu",
+            "Uchu"            
         ],
-        "answer": "Palta" 
+        "answer": "Uchu" 
     },
     {
         "slug": "grammar-1-2",

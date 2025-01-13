@@ -78,7 +78,6 @@ const activities = [
                 "name": "Las partículas pi y man",
                 "slug": "grammar-5",
                 "next": "/lectures/intermediate/es/grammar-6",
-
             },
             {
                 "score_required": 30,
