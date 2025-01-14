@@ -138,8 +138,8 @@ const DragAndDrop = ({ Lectures, onSendData }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '55vh' }}>
-        <div className="container text-center bg-white text-dark p-4" style={{ maxWidth: '600px' }}>
+      <div className="d-flex justify-content-center align-items-center responsive-height">
+        <div className="container text-center bg-white text-dark p-4 responsive-max-width">
         <div class="d-flex align-items-center justify-content-center my-4">
           <h1 class="me-3">Arrastra y ordena</h1>
           <div>

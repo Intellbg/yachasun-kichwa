@@ -30,7 +30,7 @@ export default function Game3() {
     }, []);
 
     useEffect(() => {
-        if (send && level <= 4) {
+        if (send && level <= 17) {
             fetch(USER_ENDPOINT + `${id}/level`, {
                 method: "PATCH",
                 headers: {
@@ -50,7 +50,7 @@ export default function Game3() {
             <div className="container d-flex justify-content-center align-items-center h-75">
                 <Crossword data={data} onComplete={handleChildData} />
             </div>
-            {(level >= 17 || send) && (
+            {(level >= 18 || send) && (
                 <div className="m-auto text-center">
                     <ComicSpeechBubble text="" character="humuFeliz" alignment="left" >
                         <p className="h6">¡Eso estuvo fácil, ¿no?!. Juego superado</p>

@@ -15,8 +15,8 @@ export default function Lectures() {
   return (
     <>
       <Navbar />
-      <h1 className={`${animation.titleAchievements} text-center display-3`}>Curso Intermedio</h1>
-      <div className="container d-flex justify-content-center align-items-center">
+      <h1 className={`${animation.titleAchievements} text-center p-4`}>Curso Intermedio</h1>
+      <div className="container d-flex justify-content-center align-items-center h-75">
         <div className="row" style={{ minHeight: "500px" }}>
           <div className="col-md-8">
             <CardCarousel data={activities} level={level} course={"intermediate"} />

@@ -4,9 +4,9 @@ import Question from "@/app/components/Question";
 import { useAuthStore } from '@/providers/auth-store-provider.js'
 import { USER_ENDPOINT } from "@/constants.js"
 import { getQuestions } from "@/app/lib/getQuestions.js";
-import { getQuestionsSentence } from "@/app/lib/getQuestionsSentence.js";
 import ComicSpeechBubble from "@/app/components/ComicSpeechBubble/ComicSpeechBubble.js"
 import animation from "@/app/animation.module.css"
+import { getQuestionsSentence } from "@/app/lib/getQuestionsSentence";
 
 export default function Test1() {
   const { level, addLevel, id, key } = useAuthStore(
@@ -24,7 +24,7 @@ export default function Test1() {
       const questions = await await getQuestions("ordinal_numbers,animals-2,numbers-2,food-2", 8, 4)
       const questions2 = await await getQuestionsSentence("grammar-1-2",2,4);
       const combinedQuestions = questions.concat(questions2);      
-      console.log(combinedQuestions)
+      console.log(combinedQuestions)      
       setQuestions(combinedQuestions);
     };
     fetchData()
@@ -67,9 +67,9 @@ export default function Test1() {
   }, [questions]);
 
   return (
-    <div className="container">
+    <div className="container ">
       <div className={`${(25 < level) | isAnswerCorrect ? "d-none" : ""}`}>
-        <h1 className="text-center">Evaluación 1</h1>
+        <h1 className="text-center"><b>Evaluación 1</b></h1>
         {questions.map((questionData, index) => (
           <Question
             key={index}
@@ -80,7 +80,7 @@ export default function Test1() {
             onSelectAnswer={handleSelectAnswer}
           />
         ))}
-        <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
+        <button className={`btn btn-success  ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
       </div>
       <div className={`${!((25 < level)) ? "d-none" : ""} text-center`}>
@@ -93,7 +93,7 @@ export default function Test1() {
         <br />
         <h3><a href="/achievements">Revisa tus Logros</a></h3>
         <div className="m-auto text-center">
-          <a href={`/lectures/intermediate/es/grammar-2`} className={`text-center btn btn-success ${(25 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
+          <a href={`/lectures/intermediate/es/grammar-3`} className={`text-center btn btn-success ${(25 < level) | isAnswerCorrect ? "" : "d-none m-auto"}`}>Continuar</a>
         </div>
       </div>
     </div>

@@ -55,7 +55,7 @@ export default function Courses() {
       <div className='d-flex flex-column justify-content-center align-items-center h-100'>
         <Navbar />
 
-        <h1 className={`${styles.titleAchievements} text-center display-3`}>Cursos</h1>
+        <h1 className={`${styles.titleAchievements} text-center`}>Cursos</h1>
         <div className="container d-flex justify-content-center align-items-center" >
           <div className="row">
             <div className="col">

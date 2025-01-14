@@ -12,10 +12,10 @@ const DragDropInstructions = () => {
             </p>         
             <h2 className={styles.header}>Instrucciones</h2>
             <p className={styles.paragraph}>
-                <strong>1. Observa las palabras desordenadas:</strong> Revisa las palabras en la parte superior y piensa en el orden que tendría sentido para formar una oración.<br />
-                <strong>2. Arrastra las palabras al orden correcto:</strong> Usa tu conocimiento para arrastrar cada palabra a los espacios vacíos en la parte inferior y construir la oración en el orden correcto. <br />
-                <strong>3. Coloca cada palabra en su posición:</strong> Suelta cada palabra en el lugar donde creas que debería ir para formar la oración.<br />
-                <strong>4. Verifica o corrige tu orden:</strong> Una vez que hayas completado la oración, el juego verificará si el orden es correcto. Si es así, recibirás una felicitación; si no, podrás intentarlo de nuevo.
+                1. Revisa las palabras en la parte superior y piensa en el orden que tendría sentido para formar una oración.<br />
+                2. Usa tu conocimiento para arrastrar cada palabra a los espacios vacíos en la parte inferior y construir la oración en el orden correcto. <br />
+                3. Suelta cada palabra en el lugar donde creas que debería ir para formar la oración.<br />
+                4. Una vez que hayas completado la oración, el juego verificará si el orden es correcto. Si es así, recibirás una felicitación; si no, podrás intentarlo de nuevo.
             </p>
         </div>        
     );

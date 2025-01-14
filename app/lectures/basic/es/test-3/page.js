@@ -65,7 +65,7 @@ export default function Test3() {
 
   return (
     <div className="container">
-      <div className={`${(17 < level) | isAnswerCorrect ? "d-none" : ""}`}>
+      <div className={`${(18 < level) | isAnswerCorrect ? "d-none" : ""}`}>
         <h1 className="text-center">Evaluación 3</h1>
         {questions.map((questionData, index) => (
           <Question
@@ -80,7 +80,7 @@ export default function Test3() {
         <button className={`btn btn-success ${isAnswerCorrect ? "d-none" : ""}`} onClick={checkAnswers} level={level}>Enviar</button>
         {result && <ComicSpeechBubble text={result} character={humuExpression} />}
       </div>
-      <div className={`${(17 >= level) ? "d-none" : ""} text-center`}>
+      <div className={`${(18 >= level) ? "d-none" : ""} text-center`}>
         <h1>¡Felicitaciones completaste el módulo 3 del nivel básico!</h1>
         <img
           src="/img/humu/humu-talking.png"

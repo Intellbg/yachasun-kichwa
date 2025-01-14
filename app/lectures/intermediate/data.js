@@ -78,7 +78,6 @@ const activities = [
                 "name": "Las partículas pi y man",
                 "slug": "grammar-5",
                 "next": "/lectures/intermediate/es/grammar-6",
-
             },
             {
                 "score_required": 30,
@@ -152,49 +151,49 @@ const activities = [
     },
     {
         "name": "Módulo 4",
-        "score_required": 39,
+        "score_required": 40,
         "imagen": "/img/cover/intermediate-m4-2.jpg",
         "description": "En este módulo aprenderemos más sobre gramática y vocabulario relacionado con la ubicación, el tiempo, el pasado progresivo, el pasado simple y el participio pasado",
         "lectures": [
 
             {
-                "score_required": 39,
+                "score_required": 40,
                 "name": "La ubicación",
                 "slug": "location",
                 "next": "/lectures/intermediate/es/time",
             },
             {
-                "score_required": 40,
+                "score_required": 41,
                 "name": "EL tiempo",
                 "slug": "time",
                 "next": "/lectures/intermediate/es/grammar-7",
             },
             {
-                "score_required": 41,
+                "score_required": 42,
                 "name": "El pasado progresivo",
                 "slug": "grammar-7",
                 "next": "/lectures/intermediate/es/grammar-8",
             },
             {
-                "score_required": 42,
+                "score_required": 43,
                 "name": "El pasado simple",
                 "slug": "grammar-8",
                 "next": "/lectures/intermediate/es/grammar-9",
             },
             {
-                "score_required": 43,
+                "score_required": 44,
                 "name": "El participio pasado",
                 "slug": "grammar-9",
                 "next": "/lectures/intermediate/es/game-4",
             },
             {
-                "score_required": 44,
+                "score_required": 45,
                 "name": "Juego completa la oración",
                 "slug": "game-4",
                 "next": "/lectures/intermediate/es/test-4",
             },
             {
-                "score_required": 45,
+                "score_required": 46,
                 "name": "Evaluación 4",
                 "slug": "test-4",
                 "next": "/lectures/intermediate/es/grammar-10",
@@ -202,36 +201,36 @@ const activities = [
     },
     {
         "name": "Módulo 5",
-        "score_required": 46,
+        "score_required": 47,
         "imagen": "/img/cover/intermediate-m5-2.jpg",
         "description": "En este módulo aprenderemos más sobre gramática, enfocándonos en la conjugación en el tiempo presente progresivo, el futuro próximo y el futuro simple",
         "lectures": [
             {
-                "score_required": 46,
+                "score_required": 47,
                 "name": "La conjugación en el tiempo presente progresivo",
                 "slug": "grammar-10",
                 "next": "/lectures/intermediate/es/grammar-11",
             },
             {
-                "score_required": 47,
+                "score_required": 48,
                 "name": "El futuro próximo",
                 "slug": "grammar-11",
                 "next": "/lectures/intermediate/es/grammar-12",
             },
             {
-                "score_required": 48,
+                "score_required": 49,
                 "name": "El futuro simple",
                 "slug": "grammar-12",
                 "next": "/lectures/intermediate/es/game-5",
             },
             {
-                "score_required": 49,
+                "score_required": 50,
                 "name": "Juego arrastra y ordena",
                 "slug": "game-5",
                 "next": "/lectures/intermediate/es/test-5",
             },
             {
-                "score_required": 50,
+                "score_required": 51,
                 "name": "Evaluación 5",
                 "slug": "test-5",
                 "next": "/lectures/intermediate/",
