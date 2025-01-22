@@ -67,7 +67,7 @@ export default function Login() {
                     </div>
                     <div>{apiError && <p role='alert' className='text-danger'>{apiError}</p>}</div>
                     <div className="d-grid">
-                        <button type="submit" className="btn btn-primary bg-primary-custom" >Login</button>
+                        <button type="submit" className="btn btn-primary bg-primary-custom" >Iniciar Sesión</button>
                     </div>
 
                     <div className="text-center mt-3">
